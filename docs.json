@@ -25,12 +25,12 @@
   "navigation": {
     "groups": [
       {
-        "group": "🏠 Welcome",
+        "group": "Welcome",
         "icon": "house",
         "pages": ["index"]
       },
       {
-        "group": "🚀 Get Started",
+        "group": "Get Started",
         "icon": "rocket",
         "pages": [
           "get-started/account-creation",
@@ -39,7 +39,7 @@
         ]
       },
       {
-        "group": "🤖 Automated Trading",
+        "group": "Automated Trading",
         "icon": "robot",
         "pages": [
           "automated-trading/trading-accounts",
@@ -48,17 +48,17 @@
         ]
       },
       {
-        "group": "👥 Copy Trading",
+        "group": "Copy Trading",
         "icon": "users",
         "pages": ["copy-trading/setup"]
       },
       {
-        "group": "⚡ External Algorithms",
+        "group": "External Algorithms",
         "icon": "bolt",
         "pages": ["external-algorithms/tradingview-webhooks"]
       },
       {
-        "group": "🌟 Other Features",
+        "group": "Other Features",
         "icon": "star",
         "pages": [
           "other-features/economic-calendar",

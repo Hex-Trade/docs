@@ -1,64 +1,64 @@
 ---
-title: ⚡ Setting up TradingView Webhooks
+title:  Setting up TradingView Webhooks
 description: Connect your TradingView Pine Script strategy to Hextrade via webhook. Automate order execution on ProjectX, Tradovate, Alpaca, and more.
 ---
 
-# ⚡ Setting up TradingView Webhooks
+#  Setting up TradingView Webhooks
 
 Use your own **TradingView Pine Script** strategy and let Hextrade automatically execute orders on your connected broker accounts. No code changes required on your broker side — just set the webhook URL and use the correct JSON format.
 
 ---
 
-## 🌐 Supported Platforms for Webhooks
+##  Supported Platforms for Webhooks
 
 <Columns cols={3}>
-  <Card title="ProjectX" icon="p">
-    Futures trading on ProjectX via TradingView webhook.
-  </Card>
-  <Card title="Tradovate" icon="t">
-    Futures on Tradovate. Set `platformType` to `tradovate`.
-  </Card>
-  <Card title="Alpaca" icon="a">
-    Equities on Alpaca. Set `platformType` to `alpaca`.
-  </Card>
-  <Card title="DxTrade" icon="d">
-    Multi-asset via DxTrade. Set `platformType` to `dxtrade`.
-  </Card>
-  <Card title="Tradier" icon="t">
-    Equities and options via Tradier. Set `platformType` to `tradier`.
-  </Card>
-  <Card title="More coming" icon="plus">
-    Additional platforms added regularly. Check Discord for updates.
-  </Card>
+<Card title="ProjectX" icon="p">
+Futures trading on ProjectX via TradingView webhook.
+</Card>
+<Card title="Tradovate" icon="t">
+Futures on Tradovate. Set `platformType` to `tradovate`.
+</Card>
+<Card title="Alpaca" icon="a">
+Equities on Alpaca. Set `platformType` to `alpaca`.
+</Card>
+<Card title="DxTrade" icon="d">
+Multi-asset via DxTrade. Set `platformType` to `dxtrade`.
+</Card>
+<Card title="Tradier" icon="t">
+Equities and options via Tradier. Set `platformType` to `tradier`.
+</Card>
+<Card title="More coming" icon="plus">
+Additional platforms added regularly. Check Discord for updates.
+</Card>
 </Columns>
 
 ---
 
-## 📋 TradingView Webhook JSON Format
+##  TradingView Webhook JSON Format
 
 When creating a TradingView alert, use the following JSON in the alert message. Hextrade will parse this and place the corresponding order on your connected broker.
 
 ```json
 {
-  "ticker": "NQ",
-  "action": "{{strategy.order.action}}",
-  "sentiment": "{{strategy.market_position}}",
-  "quantity": "{{strategy.order.contracts}}",
-  "price": "{{close}}",
-  "platformType": "projectx",
-  "accountId": "your_account_id",
-  "tp": "100",
-  "sl": "20"
+"ticker": "NQ",
+"action": "{{strategy.order.action}}",
+"sentiment": "{{strategy.market_position}}",
+"quantity": "{{strategy.order.contracts}}",
+"price": "{{close}}",
+"platformType": "projectx",
+"accountId": "your_account_id",
+"tp": "100",
+"sl": "20"
 }
 ```
 
 <Note>
-  `tp` (Take Profit) and `sl` (Stop Loss) values are calculated in **ticks**, not dollars. Ensure these match your instrument's tick size.
+`tp` (Take Profit) and `sl` (Stop Loss) values are calculated in **ticks**, not dollars. Ensure these match your instrument's tick size.
 </Note>
 
 ---
 
-## 🗺️ Field Mapping: TradingView → Hextrade API
+## ️ Field Mapping: TradingView → Hextrade API
 
 | TradingView Field | Hextrade API Field | Description |
 |-------------------|--------------------|-------------|
@@ -72,7 +72,7 @@ When creating a TradingView alert, use the following JSON in the alert message. 
 
 ---
 
-## ✅ Required Fields
+##  Required Fields
 
 Every webhook payload **must** include:
 
@@ -86,60 +86,60 @@ Every webhook payload **must** include:
 
 ---
 
-## 🔗 Setting Up the Webhook in TradingView
+##  Setting Up the Webhook in TradingView
 
 <Steps>
-  <Step title="Get your Webhook URL">
-    Visit [**dash.hextrade.io/accounts**](https://dash.hextrade.io/accounts) and open the **Webhooks** section.
+<Step title="Get your Webhook URL">
+Visit [**dash.hextrade.io/accounts**](https://dash.hextrade.io/accounts) and open the **Webhooks** section.
 
-    Copy your unique Hextrade webhook URL — it looks like:
-    ```
-    https://api.hextrade.io/webhook/your-unique-token
-    ```
-  </Step>
-  <Step title="Open your Pine Script strategy in TradingView">
-    In TradingView, open the chart where your strategy is applied. Click **"Add Alert"** (or right-click → Add Alert).
-  </Step>
-  <Step title="Configure the alert">
-    - **Condition** — Select your strategy and the trigger condition (e.g. `strategy.order.action`).
-    - **Webhook URL** — Paste your Hextrade webhook URL.
-    - **Message** — Paste the JSON payload (from the template above). Replace `your_account_id` with your actual account ID from the Accounts page.
-  </Step>
-  <Step title="Customize the JSON for your instrument">
-    Adjust the following fields:
-    - `"platformType"` — Set to your broker (e.g. `"projectx"`, `"alpaca"`).
-    - `"accountId"` — Your account ID.
-    - `"ticker"` — Your instrument (e.g. `"NQ"`, `"ES"`, `"AAPL"`).
-    - `"tp"` and `"sl"` — Take profit and stop loss in ticks (optional).
-  </Step>
-  <Step title="Save and test the alert">
-    Save the alert. The next time your strategy fires a signal, Hextrade will receive the webhook and execute the order on your connected broker.
+Copy your unique Hextrade webhook URL — it looks like:
+```
+https://api.hextrade.io/webhook/your-unique-token
+```
+</Step>
+<Step title="Open your Pine Script strategy in TradingView">
+In TradingView, open the chart where your strategy is applied. Click **"Add Alert"** (or right-click → Add Alert).
+</Step>
+<Step title="Configure the alert">
+- **Condition** — Select your strategy and the trigger condition (e.g. `strategy.order.action`).
+- **Webhook URL** — Paste your Hextrade webhook URL.
+- **Message** — Paste the JSON payload (from the template above). Replace `your_account_id` with your actual account ID from the Accounts page.
+</Step>
+<Step title="Customize the JSON for your instrument">
+Adjust the following fields:
+- `"platformType"` — Set to your broker (e.g. `"projectx"`, `"alpaca"`).
+- `"accountId"` — Your account ID.
+- `"ticker"` — Your instrument (e.g. `"NQ"`, `"ES"`, `"AAPL"`).
+- `"tp"` and `"sl"` — Take profit and stop loss in ticks (optional).
+</Step>
+<Step title="Save and test the alert">
+Save the alert. The next time your strategy fires a signal, Hextrade will receive the webhook and execute the order on your connected broker.
 
-    <Tip>
-      Test with a **small quantity** (e.g. 1 micro contract) first to confirm the webhook is working correctly before scaling up.
-    </Tip>
-  </Step>
+<Tip>
+Test with a **small quantity** (e.g. 1 micro contract) first to confirm the webhook is working correctly before scaling up.
+</Tip>
+</Step>
 </Steps>
 
 <img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FVlYdG7Nw4ugPHrwrTpjn%2Fuploads%2FuyvoxCNq2Uzj6NwEYQm5%2FTradingView.gif?alt=media&token=f11ecb28-8d44-4323-a775-99a048e1601d" alt="Setting up TradingView webhooks on Hextrade" />
 
 ---
 
-## 🧪 Example Payloads
+##  Example Payloads
 
 ### ProjectX — NQ Futures
 
 ```json
 {
-  "ticker": "NQ",
-  "action": "{{strategy.order.action}}",
-  "sentiment": "{{strategy.market_position}}",
-  "quantity": "{{strategy.order.contracts}}",
-  "price": "{{close}}",
-  "platformType": "projectx",
-  "accountId": "your_account_id",
-  "tp": "100",
-  "sl": "20"
+"ticker": "NQ",
+"action": "{{strategy.order.action}}",
+"sentiment": "{{strategy.market_position}}",
+"quantity": "{{strategy.order.contracts}}",
+"price": "{{close}}",
+"platformType": "projectx",
+"accountId": "your_account_id",
+"tp": "100",
+"sl": "20"
 }
 ```
 
@@ -147,12 +147,12 @@ Every webhook payload **must** include:
 
 ```json
 {
-  "ticker": "AAPL",
-  "action": "{{strategy.order.action}}",
-  "quantity": "{{strategy.order.contracts}}",
-  "price": "{{close}}",
-  "platformType": "alpaca",
-  "accountId": "your_account_id"
+"ticker": "AAPL",
+"action": "{{strategy.order.action}}",
+"quantity": "{{strategy.order.contracts}}",
+"price": "{{close}}",
+"platformType": "alpaca",
+"accountId": "your_account_id"
 }
 ```
 
@@ -160,21 +160,21 @@ Every webhook payload **must** include:
 
 ```json
 {
-  "ticker": "ES",
-  "action": "{{strategy.order.action}}",
-  "sentiment": "{{strategy.market_position}}",
-  "quantity": "{{strategy.order.contracts}}",
-  "price": "{{close}}",
-  "platformType": "tradovate",
-  "accountId": "your_account_id",
-  "tp": "50",
-  "sl": "15"
+"ticker": "ES",
+"action": "{{strategy.order.action}}",
+"sentiment": "{{strategy.market_position}}",
+"quantity": "{{strategy.order.contracts}}",
+"price": "{{close}}",
+"platformType": "tradovate",
+"accountId": "your_account_id",
+"tp": "50",
+"sl": "15"
 }
 ```
 
 ---
 
-## ❓ Troubleshooting
+##  Troubleshooting
 
 | Issue | Solution |
 |-------|----------|
@@ -185,12 +185,12 @@ Every webhook payload **must** include:
 | Order rejected by broker | Check account balance, position limits, and broker-side trading hours. |
 
 <Warning>
-  TradingView alerts have a **delivery delay** of up to a few seconds. For highly time-sensitive strategies, account for this latency. Always monitor the first few live executions carefully.
+TradingView alerts have a **delivery delay** of up to a few seconds. For highly time-sensitive strategies, account for this latency. Always monitor the first few live executions carefully.
 </Warning>
 
 ---
 
-## 🔒 Security
+##  Security
 
 - Your webhook URL contains a **unique token** — keep it private.
 - Do not share your webhook URL publicly (e.g. in Discord or GitHub).
