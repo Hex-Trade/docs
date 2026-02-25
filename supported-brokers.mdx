@@ -1,0 +1,72 @@
+---
+title: Supported Brokers & Accounts
+description: Connect your trading accounts. Hextrade supports Tradier, DxTrade, Alpaca, CQG, ProjectX, Tradovate, and more.
+---
+
+# Supported Brokers & Accounts
+
+Hextrade lets you connect **multiple broker accounts** so you can trade, run algorithms, and copy trade from one dashboard. Each account appears on the [Accounts](/accounts) page with its platform, balance, and P&L.
+
+---
+
+## Supported platforms
+
+We integrate with the following brokers and platforms. Connect one or more accounts depending on your plan limits.
+
+| Broker / platform | Equity | Options | Notes |
+| -----------------| ------ | --------| ----- |
+| **Tradier** | Yes | Yes | Full equity and options; market, limit, stop, stop-limit; multi-leg options. |
+| **DxTrade** | Yes | — | Integrated via dashboard API. |
+| **Alpaca** | Yes | — | Commission-free API trading. |
+| **CQG** | Yes | — | Futures and derivatives connectivity. |
+| **ProjectX** | Yes | — | Seamless integration. |
+| **Tradovate** | Yes | — | Futures and trading platform. |
+
+*Additional brokers may be added over time. Check the dashboard or [Discord](/discord) for the latest list.*
+
+---
+
+## What “supported” means
+
+- **Connect** — Link your broker account to Hextrade via the dashboard (OAuth or API keys as required by the broker).
+- **See in one place** — All connected accounts appear on [Accounts](/accounts) with portfolio value, completed trades, and active count.
+- **Trade** — Use the [Trade](/trading) page to place orders on the selected account (market, limit, stop, etc., per broker).
+- **Algorithms** — Run Hextrade algorithms on connected accounts that support the required order types.
+- **Copy trade** — Use any connected account as master or follower in [Copy Trade](/copy-trade) groups.
+
+---
+
+## Connecting an account
+
+1. Open **[Accounts](/accounts)** from the sidebar.
+2. Use **Add account** (or equivalent) and choose the broker (e.g. Tradier, DxTrade, Alpaca).
+3. Complete the broker’s sign-in or API key flow. Hextrade will not store your broker password; we use OAuth or tokens where possible.
+4. After connection, the account appears in the Accounts table with its name, platform, and status.
+5. You can open **Account stats** for that account to see performance and history.
+
+Account limits depend on your [subscription](/subscriptions). If you hit the limit, you’ll see a message; upgrade your plan to add more accounts.
+
+---
+
+## Broker-specific details
+
+### Tradier
+
+- **Equity & options** — Market, limit, stop, stop-limit; day and GTC.
+- **Auth** — OAuth2; you’ll need a Tradier account and to authorize Hextrade.
+- **Use cases** — Stocks, single- and multi-leg options strategies.
+
+### DxTrade / Alpaca / CQG / ProjectX / Tradovate
+
+- Connect via the dashboard using each platform’s connection flow.
+- Supported order types and products depend on the broker; the Trade page shows only what your selected account supports.
+
+For API or developer details (e.g. webhooks, Tradier modules), see the technical docs in the Hextrade dashboard repository.
+
+---
+
+## Support
+
+- **Broker connection issues** — Check [Discord](/discord) or your broker’s status page.
+- **Account limits** — See [Subscriptions](/subscriptions) and [Accounts](/accounts).
+- **Trading and orders** — See [Trading](/trading) and your broker’s documentation.

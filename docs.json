@@ -4,9 +4,13 @@
   "description": "How to use Hextrade — your AI copy-trade platform. Accounts, algorithms, copy trading, analytics, and trading.",
   "theme": "mint",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373"
+    "primary": "#00C9A7",
+    "light": "#00E5C0",
+    "dark": "#00A88A",
+    "anchors": {
+      "from": "#00C9A7",
+      "to": "#00E5C0"
+    }
   },
   "navbar": {
     "links": [
@@ -23,7 +27,7 @@
       {
         "group": "Getting started",
         "icon": "rocket",
-        "pages": ["index", "getting-started", "discord"]
+        "pages": ["index", "getting-started", "supported-brokers", "discord"]
       },
       {
         "group": "Dashboard",

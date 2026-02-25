@@ -1,38 +1,78 @@
 ---
 title: Accounts
-description: How to view and manage your trading accounts on Hextrade.
+description: View and manage your connected broker accounts. Portfolio value, trades, limits, and supported brokers.
 ---
 
 # Accounts
 
-The **Accounts** page is your home after login. It shows your connected trading accounts and overall activity.
+The **Accounts** page is your home after login. It shows every **connected broker account** in one place: portfolio value, completed trades, and a clear view of your account limit.
+
+---
 
 ## What you’ll see
 
-At the top you’ll see summary cards:
+At the top, summary cards give you the big picture:
 
-- **Portfolio value** — Total value across your accounts (updates with live P&L when available).
-- **Completed trades** — Number of completed trades.
-- **Active accounts** — How many accounts you have connected.
-- **Account limit** — Your plan’s account limit (e.g. up to 20 accounts).
+| Card | What it shows |
+| ---- | ---------------- |
+| **Portfolio value** | Total value across all connected accounts. Updates with live P&L when available. |
+| **Completed trades** | Total number of completed trades across accounts. |
+| **Active accounts** | How many broker accounts you have connected. |
+| **Account limit** | Your plan’s maximum accounts (e.g. up to 20). Upgrade in [Subscriptions](/subscriptions) for more. |
 
-Below that, a **table lists your accounts** with details for each (name, platform, status, P&L, etc.).
+Below that, a **table lists each account** with:
+
+- Account name and **broker/platform** (e.g. Tradier, DxTrade, Alpaca)
+- Status (connected, error, etc.)
+- P&L and performance where available
+- Quick actions (e.g. open stats, disconnect)
+
+<img src="/images/accounts-overview.png" alt="Accounts page — portfolio value, completed trades, account list" />
+
+---
+
+## Supported brokers
+
+Hextrade supports multiple brokers so you can centralize trading and copy trading. Supported platforms include:
+
+- **Tradier** — Equity and options
+- **DxTrade** — Integrated trading
+- **Alpaca** — Commission-free API
+- **CQG** — Futures and derivatives
+- **ProjectX** — Seamless integration
+- **Tradovate** — Futures and trading
+
+For connection steps and broker-specific details, see [Supported brokers & accounts](/supported-brokers).
+
+---
 
 ## What you can do
 
-- **View all accounts** — See every connected account in one place.
-- **Open account stats** — Click an account to see its detailed statistics and performance.
-- **Use shared reports** — Use the shared report view to see or share report data.
-- **Add accounts** — Connect new trading accounts from the dashboard (subject to your account limit and plan).
+- **View all accounts** — See every connected account and its broker in one table.
+- **Open account stats** — Click an account to see detailed statistics, balance, and trade history for that account.
+- **Use shared reports** — Use the shared report view to see or share report data across accounts.
+- **Add accounts** — Connect new broker accounts via **Add account** (subject to your [account limit](#limits)).
+
+---
 
 ## Account stats
 
-From the accounts list you can open **Account stats** for a single account. There you get:
+From the accounts list, open **Account stats** for a single account. You get:
 
-- Performance and balance for that account
+- Performance and balance for that account only
 - Trade history and P&L
-- Other account-specific metrics
+- Other account-specific metrics the broker provides
+
+Use this to compare performance across brokers or to audit a single account.
+
+---
 
 ## Limits
 
-Your subscription or plan may limit how many accounts you can add. If you hit the limit, you’ll see a message; upgrade or adjust your plan in **Subscriptions** if you need more.
+Your [subscription](/subscriptions) or plan sets how many accounts you can add. When you hit the limit:
+
+- The dashboard will show a message when you try to add another account.
+- Upgrade or change your plan in **Subscriptions** to increase the limit.
+- Some plans (e.g. “unlimited”) allow higher or no cap; the Accounts page reflects your current limit.
+
+Need more than one broker? Connect each broker account separately; each connection counts toward your account limit.
