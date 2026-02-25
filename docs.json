@@ -1,21 +1,25 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Hextrade",
-  "description": "How to use Hextrade — your AI copy-trade platform. Accounts, algorithms, copy trading, analytics, and trading.",
+  "description": "Your gateway to smarter, more efficient trading. AI copy-trade platform with algorithms, copy trading, and TradingView webhooks.",
   "theme": "mint",
   "colors": {
-    "primary": "#00C9A7",
-    "light": "#00E5C0",
-    "dark": "#00A88A",
+    "primary": "#00CCFF",
+    "light": "#33D6FF",
+    "dark": "#00AADD",
     "anchors": {
-      "from": "#00C9A7",
-      "to": "#00E5C0"
+      "from": "#00CCFF",
+      "to": "#00FFCC"
     }
   },
+  "appearance": {
+    "default": "dark"
+  },
+  "favicon": "/favicon.svg",
   "navbar": {
     "links": [
       { "label": "Dashboard", "href": "https://dash.hextrade.io" },
-      { "label": "Register", "href": "https://dash.hextrade.io/en/auth/register" }
+      { "label": "Register Free", "href": "https://dash.hextrade.io/en/auth/register" }
     ],
     "primary": {
       "type": "discord",
@@ -25,24 +29,40 @@
   "navigation": {
     "groups": [
       {
-        "group": "Getting started",
-        "icon": "rocket",
-        "pages": ["index", "getting-started", "supported-brokers", "discord"]
+        "group": "🏠 Welcome",
+        "pages": ["index"]
       },
       {
-        "group": "Dashboard",
-        "icon": "layout-dashboard",
-        "pages": ["accounts", "algos", "copy-trade", "analytics", "calendar", "subscriptions"]
+        "group": "🚀 Get Started",
+        "pages": [
+          "get-started/account-creation",
+          "get-started/account-login",
+          "get-started/account-utilities"
+        ]
       },
       {
-        "group": "Trading",
-        "icon": "chart-candlestick",
-        "pages": ["trading", "chart-settings"]
+        "group": "🤖 Automated Trading",
+        "pages": [
+          "automated-trading/trading-accounts",
+          "automated-trading/finding-algorithm",
+          "automated-trading/trading-analytics"
+        ]
       },
       {
-        "group": "Account",
-        "icon": "settings",
-        "pages": ["settings"]
+        "group": "👥 Copy Trading",
+        "pages": ["copy-trading/setup"]
+      },
+      {
+        "group": "⚡ External Algorithms",
+        "pages": ["external-algorithms/tradingview-webhooks"]
+      },
+      {
+        "group": "🌟 Other Features",
+        "pages": [
+          "other-features/economic-calendar",
+          "other-features/discord",
+          "other-features/coming-soon"
+        ]
       }
     ]
   },

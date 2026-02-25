@@ -1,0 +1,118 @@
+---
+title: 📊 Trading Accounts
+description: Connect your broker accounts to Hextrade. Supports ProjectX, Tradovate, NinjaTrader, Tradier, Oanda, DxTrade, Alpaca, CQG, and more.
+---
+
+# 📊 Trading Accounts
+
+To start automated trading, copy trading, or webhook-based algorithmic trading, you first need to **connect a broker account** to Hextrade. Once connected, your account appears in the accounts table and is available for algorithms, copy groups, and manual trading.
+
+---
+
+## Adding an Account
+
+<Steps>
+  <Step title="Navigate to Accounts">
+    Go to [**Hextrade Accounts**](https://dash.hextrade.io/accounts) and click **"Add Account"**.
+  </Step>
+  <Step title="Select your platform">
+    Choose your broker or prop firm from the supported platforms list (see below).
+  </Step>
+  <Step title="Fill in required details">
+    Enter the credentials or API keys provided by your broker or prop firm. Each platform has slightly different required fields.
+  </Step>
+  <Step title="Verify the account">
+    Once submitted and verified, the account appears in your accounts table — ready to manage.
+  </Step>
+</Steps>
+
+<img src="https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FVlYdG7Nw4ugPHrwrTpjn%2Fuploads%2F2bpZfCApBGHN1Dn9IYTa%2FAnimation.gif?alt=media&token=beee7e8c-23fb-4b2d-a7ec-aed3599c71e0" alt="Adding a trading account on Hextrade" />
+
+---
+
+## 🌐 Supported Platforms
+
+Hextrade supports a growing list of brokers and prop firms:
+
+<Columns cols={2}>
+  <Card title="ProjectX" icon="p">
+    Prop trading platform with full futures support. Webhooks, algorithms, and copy trading supported.
+  </Card>
+  <Card title="Tradovate" icon="t">
+    Futures and trading platform. Full algorithm and copy trade integration.
+  </Card>
+  <Card title="NinjaTrader" icon="n">
+    Popular futures and forex platform. Connect and run automated strategies.
+  </Card>
+  <Card title="Tradier" icon="t">
+    Equities and multi-leg options. Market, limit, stop, stop-limit; day and GTC orders.
+  </Card>
+  <Card title="Oanda" icon="o">
+    Forex and CFDs. Connect and trade currency pairs with algorithms.
+  </Card>
+  <Card title="DxTrade" icon="d">
+    Multi-asset platform with full dashboard integration.
+  </Card>
+  <Card title="Alpaca" icon="a">
+    Commission-free equities API. Fast, developer-friendly connectivity.
+  </Card>
+  <Card title="CQG" icon="c">
+    Futures and derivatives connectivity. Industry-standard market data.
+  </Card>
+</Columns>
+
+<Note>
+  More platforms are added regularly. Join the [Discord server](/other-features/discord) to request a new integration or check what's coming.
+</Note>
+
+---
+
+## 📋 Platform Comparison
+
+| Platform | Asset Class | Algorithm Support | Webhook Support | Copy Trade |
+|----------|-------------|-------------------|-----------------|------------|
+| **ProjectX** | Futures | ✅ | ✅ | ✅ |
+| **Tradovate** | Futures | ✅ | ✅ | ✅ |
+| **NinjaTrader** | Futures / Forex | ✅ | ✅ | ✅ |
+| **Tradier** | Equities / Options | ✅ | ✅ | ✅ |
+| **Oanda** | Forex / CFDs | ✅ | ✅ | ✅ |
+| **DxTrade** | Multi-asset | ✅ | ✅ | ✅ |
+| **Alpaca** | Equities | ✅ | ✅ | ✅ |
+| **CQG** | Futures / Derivatives | ✅ | ✅ | ✅ |
+
+---
+
+## ⚠️ Account Limits
+
+The number of accounts you can connect depends on your **subscription plan**:
+
+- **Free / Beta** — Up to 20 accounts
+- **Upgraded plans** — Higher limits available
+- **Unlimited accounts** — Available on select plans
+
+If you reach your limit, the dashboard will notify you. Manage plans from [Subscriptions](https://dash.hextrade.io/subscriptions).
+
+<Warning>
+  Always use API keys or credentials specific to the Hextrade integration. Do **not** share your main broker login password — use API access tokens where possible.
+</Warning>
+
+---
+
+## 🔗 What to Do Next
+
+Once your account is connected, you can:
+
+<Columns cols={2}>
+  <Card title="🤖 Find an Algorithm" href="/automated-trading/finding-algorithm">
+    Browse and activate algorithms on your connected account.
+  </Card>
+  <Card title="👥 Set Up Copy Trading" href="/copy-trading/setup">
+    Use this account as master or follower in a copy-trade group.
+  </Card>
+  <Card title="⚡ Connect a Webhook" href="/external-algorithms/tradingview-webhooks">
+    Use your own TradingView strategy to drive trades on this account.
+  </Card>
+  <Card title="📈 View Analytics" href="/automated-trading/trading-analytics">
+    Analyze this account's performance, P&L, and trade history.
+  </Card>
+</Columns>

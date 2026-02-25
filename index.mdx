@@ -1,70 +1,86 @@
 ---
-title: Welcome to Hextrade
-description: Your gateway to smarter, more efficient trading. AI copy-trade platform with supported brokers, algorithms, and TradingView.
+title: Welcome To Hextrade
+description: Your gateway to smarter, more efficient trading. AI copy-trade platform blending automation with AI — algorithms, copy trading, and TradingView webhooks.
 ---
 
-# Welcome to Hextrade
+<img
+  className="block"
+  src="/images/hero-dark.png"
+  alt="Hextrade Dashboard"
+/>
 
-Welcome to **Hextrade** — your gateway to smarter, more efficient trading. This guide explains how to use the platform, connect your broker accounts, and get the most out of algorithms and copy trading.
+# 👋 Welcome To Hextrade
+
+Welcome to **Hextrade** — your gateway to smarter, more efficient trading! We're thrilled to have you on our AI copy-trade platform.
+
+Hextrade is an innovative **copy-trade platform** that empowers traders by blending automation with AI. Use our advanced algorithms, set up copy trading across multiple accounts, or connect your own strategy via a **TradingView webhook**.
+
+---
+
+## ✨ Key Features
 
 <Columns cols={2}>
-  <Card title="Create account" icon="user-plus" href="https://dash.hextrade.io/en/auth/register">
-    Sign up free (Beta). Use email or Google.
+  <Card title="🔄 Copy Trading" icon="users" href="/copy-trading/setup">
+    Replicate the strategies of successful traders. Manage multiple accounts with different risk profiles — all from one dashboard.
   </Card>
-  <Card title="Open dashboard" icon="layout-dashboard" href="https://dash.hextrade.io">
-    Log in and land on your Accounts overview.
+  <Card title="🤖 Algorithmic Trading" icon="binary" href="/automated-trading/finding-algorithm">
+    Browse and deploy powerful trading algorithms. View APY, win rate, P&L, and connect your accounts in seconds.
+  </Card>
+  <Card title="🌐 Platform Integrations" icon="plug" href="/automated-trading/trading-accounts">
+    Connect to **ProjectX, Tradovate, NinjaTrader, Tradier, Oanda, DxTrade, Alpaca, CQG**, and more.
+  </Card>
+  <Card title="⚡ TradingView Webhooks" icon="webhook" href="/external-algorithms/tradingview-webhooks">
+    Use your own Pine Script strategy. Connect via webhook and automate order execution on any supported broker.
+  </Card>
+  <Card title="📈 Trading Analytics" icon="chart-mixed" href="/automated-trading/trading-analytics">
+    Deep insights into account performance, P&L, risk metrics, and trade history — general and per-account.
+  </Card>
+  <Card title="📅 Economic Calendar" icon="calendar" href="/other-features/economic-calendar">
+    Stay ahead of market-moving events. Plan your trades around geopolitical developments and economic releases.
   </Card>
 </Columns>
 
 ---
 
-## What is Hextrade?
+## 🏁 Getting Started
 
-Hextrade is an **AI copy-trade platform** that blends automation with AI. You can:
+<Steps>
+  <Step title="Create your account">
+    Sign up for free (while in Beta). Use email or Google.
+    [**Register at dash.hextrade.io →**](https://dash.hextrade.io/en/auth/register)
+  </Step>
+  <Step title="Connect a broker account">
+    Link your trading account from [Accounts](https://dash.hextrade.io/accounts). We support **ProjectX, Tradovate, NinjaTrader, Tradier, Oanda, DxTrade, Alpaca, CQG**, and more.
+  </Step>
+  <Step title="Choose your strategy">
+    Browse [Algorithms](https://dash.hextrade.io/algos) to run automated trades, set up [Copy Trading](/copy-trading/setup) across accounts, or connect your own strategy via [TradingView Webhook](/external-algorithms/tradingview-webhooks).
+  </Step>
+  <Step title="Monitor & optimize">
+    Use [Analytics](https://dash.hextrade.io/analytics) and the [Economic Calendar](https://dash.hextrade.io/calendar) to track performance and time your trades.
+  </Step>
+</Steps>
 
-- Use **Hextrade algorithms** — ready-made strategies you subscribe to and run on your accounts.
-- Connect **your own logic** — via TradingView webhooks or external algorithms.
-- **Copy trade** — one master account leads; follower accounts copy trades automatically.
-- **Trade manually** — full-screen charts and order entry with supported brokers.
+---
 
-<Card title="Supported brokers & accounts" icon="building-columns" href="/supported-brokers">
-  See the full list of supported brokers (Tradier, DxTrade, Alpaca, CQG, ProjectX, Tradovate, and more) and how to connect accounts.
+## 🛡️ Supported Brokers & Platforms
+
+| Platform | Type | Notes |
+|----------|------|-------|
+| **ProjectX** | Prop Firm | Futures, webhooks supported |
+| **Tradovate** | Futures | Full integration |
+| **NinjaTrader** | Futures | Supported |
+| **Tradier** | Equities & Options | Market, limit, stop; multi-leg options |
+| **Oanda** | Forex & CFDs | Supported |
+| **DxTrade** | Multi-asset | Full integration |
+| **Alpaca** | Equities | Commission-free API |
+| **CQG** | Futures & Derivatives | Full integration |
+
+---
+
+## 💬 Need Help?
+
+Join our community — traders, algorithm enthusiasts, and the Hextrade team are all there.
+
+<Card title="💬 Join the Discord Server" icon="discord" href="https://discord.com/invite/hextrade">
+  Get help, share strategies, and stay updated on new algorithms and features.
 </Card>
-
----
-
-## What you can do
-
-<Columns cols={2}>
-  <Card title="Manage accounts" icon="wallet">
-    See all connected trading accounts, **portfolio value**, and **completed trades** in one place. Connect multiple brokers; each account appears with its platform, status, and P&L.
-  </Card>
-  <Card title="Use algorithms" icon="binary">
-    Browse and run trading algorithms. View performance, risk level, and subscription requirements. Enable an algo on your account and monitor from the dashboard.
-  </Card>
-  <Card title="Copy trade" icon="users">
-    Create groups with a **master** account and **follower** accounts. Trades from the master are replicated to followers so you can scale strategies across accounts.
-  </Card>
-  <Card title="Analyze & plan" icon="chart-mixed">
-    Use **Analytics** for performance and the **Economic calendar** for events. Support your decisions with data and avoid trading blind around major news.
-  </Card>
-  <Card title="Trade" icon="chart-candlestick">
-    Use the full-screen **Trade** page with charts (TradingView-style) and order entry. Place market, limit, and stop orders; trade options when your broker supports it.
-  </Card>
-  <Card title="Subscriptions" icon="crown">
-    View and manage algorithm subscriptions. Unlock more algos and higher account limits by upgrading your plan.
-  </Card>
-</Columns>
-
----
-
-## Get started
-
-1. **[Create an account](https://dash.hextrade.io/en/auth/register)** — Sign up for free (while in Beta).
-2. **Log in** — Go to the [dashboard](https://dash.hextrade.io) and sign in.
-3. **Connect a broker** — Add your first trading account from [Accounts](/accounts). See [Supported brokers](/supported-brokers) for the list.
-4. **Explore** — Open **Algos**, **Copy Trade**, **Analytics**, and **Trading** from the sidebar.
-
-For step-by-step setup, see [Getting started](/getting-started). For help and community, join [Discord](/discord).
-
-<img src="/images/dashboard-welcome.png" alt="Hextrade dashboard — Accounts overview" />
