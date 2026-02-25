@@ -49,7 +49,7 @@
       },
       {
         "group": "Algorithms",
-        "icon": "chart-candlestick",
+        "icon": "chart-line",
         "pages": [
           "algorithms/overview",
           "algorithms/raptor",
