@@ -15,7 +15,7 @@
   "navbar": {
     "links": [
       { "label": "Dashboard", "href": "https://dash.hextrade.io" },
-      { "label": "Register Free", "href": "https://dash.hextrade.io/en/auth/register" }
+      { "label": "Register Free", "href": "https://dash.hextrade.io/signup" }
     ],
     "primary": {
       "type": "discord",
