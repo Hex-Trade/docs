@@ -6,11 +6,7 @@
   "colors": {
     "primary": "#00CCFF",
     "light": "#33D6FF",
-    "dark": "#00AADD",
-    "anchors": {
-      "from": "#00CCFF",
-      "to": "#00FFCC"
-    }
+    "dark": "#00AADD"
   },
   "appearance": {
     "default": "dark"
@@ -30,10 +26,12 @@
     "groups": [
       {
         "group": "🏠 Welcome",
+        "icon": "house",
         "pages": ["index"]
       },
       {
         "group": "🚀 Get Started",
+        "icon": "rocket",
         "pages": [
           "get-started/account-creation",
           "get-started/account-login",
@@ -42,6 +40,7 @@
       },
       {
         "group": "🤖 Automated Trading",
+        "icon": "robot",
         "pages": [
           "automated-trading/trading-accounts",
           "automated-trading/finding-algorithm",
@@ -50,14 +49,17 @@
       },
       {
         "group": "👥 Copy Trading",
+        "icon": "users",
         "pages": ["copy-trading/setup"]
       },
       {
         "group": "⚡ External Algorithms",
+        "icon": "bolt",
         "pages": ["external-algorithms/tradingview-webhooks"]
       },
       {
         "group": "🌟 Other Features",
+        "icon": "star",
         "pages": [
           "other-features/economic-calendar",
           "other-features/discord",
