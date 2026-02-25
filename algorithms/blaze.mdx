@@ -1,0 +1,49 @@
+---
+title: Blaze
+description: The Blaze strategy family — NQ, GC, and NKD variants on 1-hour timeframes.
+---
+
+# Blaze
+
+The Blaze family is a set of hourly algorithms covering Nasdaq 100 (NQ), Gold (GC), and Nikkei 225 (NKD). Multiple NQ versions exist (Blaze, Blazer, BlazeV2, BlazeV3), each with incremental improvements.
+
+---
+
+## Available Variants
+
+| Channel | Instrument | Timeframe | Notes |
+|---------|-----------|----------|-------|
+| `nq-blazer-1h` | Nasdaq 100 (NQ) | 1 hour | Original Blazer |
+| `nq-blaze-1h` | Nasdaq 100 (NQ) | 1 hour | Blaze standard |
+| `nq-blazev2-1h` | Nasdaq 100 (NQ) | 1 hour | Version 2 |
+| `nq-blazev3-1h` | Nasdaq 100 (NQ) | 1 hour | Version 3 |
+| `gc-blaze-1h` | Gold (GC) | 1 hour | Gold variant |
+| `nkd-blaze-1h` | Nikkei 225 (NKD) | 1 hour | Nikkei variant |
+
+---
+
+## NQ Variants Explained
+
+Multiple NQ Blaze versions are available. Each iteration reflects changes to the algorithm's logic:
+
+- **Blazer** — the original NQ 1-hour strategy.
+- **Blaze** — refined version.
+- **BlazeV2** — second-generation improvements.
+- **BlazeV3** — latest iteration with the most recent adjustments.
+
+Check the individual algorithm detail pages on [dash.hextrade.io/algos](https://dash.hextrade.io/algos) to compare metrics across versions before choosing one.
+
+---
+
+## Connecting a Blaze Variant
+
+1. Browse to [dash.hextrade.io/algos](https://dash.hextrade.io/algos) and find the Blaze variant.
+2. Review APY, win rate, and drawdown history.
+3. Connect via **Connected Accounts** with your preferred broker account.
+4. Set risk and activate.
+
+---
+
+<Warning>
+  If running multiple NQ Blaze versions simultaneously on the same account, be aware that signals may overlap — this can increase effective exposure beyond your intended risk level.
+</Warning>

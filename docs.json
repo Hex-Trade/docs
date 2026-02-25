@@ -48,6 +48,27 @@
         ]
       },
       {
+        "group": "Algorithms",
+        "icon": "chart-candlestick",
+        "pages": [
+          "algorithms/overview",
+          "algorithms/raptor",
+          "algorithms/blaze",
+          "algorithms/spark",
+          "algorithms/core",
+          "algorithms/volt",
+          "algorithms/strike",
+          "algorithms/flux",
+          "algorithms/bro",
+          "algorithms/pag",
+          "algorithms/don",
+          "algorithms/gray",
+          "algorithms/surge",
+          "algorithms/pulse",
+          "algorithms/beast"
+        ]
+      },
+      {
         "group": "Copy Trading",
         "icon": "users",
         "pages": ["copy-trading/setup"]

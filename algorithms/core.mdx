@@ -1,0 +1,40 @@
+---
+title: Core
+description: The Core strategy — a daily ES (S&P 500) algorithm.
+---
+
+# Core
+
+Core is a daily timeframe strategy running on the S&P 500 futures (ES). Operating on the daily chart makes it a longer-duration, lower-frequency algorithm compared to the intraday strategies in the Hextrade library.
+
+---
+
+## Available Variants
+
+| Channel | Instrument | Timeframe |
+|---------|-----------|----------|
+| `es-core-1d` | S&P 500 (ES) | Daily (1D) |
+
+---
+
+## About Daily Timeframe Algorithms
+
+Daily algorithms hold positions for longer periods than intraday strategies. Key considerations:
+
+- **Fewer trades** — signals fire once per day at most.
+- **Larger moves targeted** — designed to capture multi-day trends rather than intraday fluctuations.
+- **Overnight risk** — positions may be held overnight and through weekends.
+- **Prop firm rules** — some prop firms restrict or prohibit overnight/weekend holds. Check your firm's rules before connecting Core.
+
+---
+
+## Connecting Core
+
+1. Go to [dash.hextrade.io/algos](https://dash.hextrade.io/algos) and find `es-core-1d`.
+2. Check the performance detail page — pay attention to drawdown and hold duration.
+3. Connect via **Connected Accounts** and set risk.
+4. Activate.
+
+<Warning>
+  Daily strategies carry overnight and weekend exposure. Verify your prop firm or broker permits holding positions outside regular trading hours before using Core.
+</Warning>

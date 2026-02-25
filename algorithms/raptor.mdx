@@ -1,0 +1,46 @@
+---
+title: Raptor
+description: The Raptor strategy — available across NQ, ES, GC, CL, BTC, ETH, NKD, and YM on 10–30 minute timeframes.
+---
+
+# Raptor
+
+Raptor is one of Hextrade's most widely deployed algorithm families, covering a broad range of instruments from equity futures to commodities and crypto. Each variant is tuned for a specific instrument and timeframe.
+
+---
+
+## Available Variants
+
+| Channel | Instrument | Timeframe |
+|---------|-----------|----------|
+| `cl-raptor-30m` | Crude Oil (CL) | 30 minutes |
+| `btc-raptor-10m` | Bitcoin (BTC) | 10 minutes |
+| `eth-raptor-30m` | Ethereum (ETH) | 30 minutes |
+| `es-raptor-30m` | S&P 500 (ES) | 30 minutes |
+| `nq-raptor-30m` | Nasdaq 100 (NQ) | 30 minutes |
+| `nq-raptor-22m` | Nasdaq 100 (NQ) | 22 minutes |
+| `nkd-raptor-30m` | Nikkei 225 (NKD) | 30 minutes |
+| `ym-raptor-30m` | Dow Jones (YM) | 30 minutes |
+| `gc-raptor-15m` | Gold (GC) | 15 minutes |
+
+---
+
+## Supported Platforms
+
+Connect Raptor to any of your linked broker accounts. Supported platforms include ProjectX, Tradovate, NinjaTrader, and others. See [Trading Accounts](/automated-trading/trading-accounts) for the full list.
+
+---
+
+## Connecting a Raptor Variant
+
+1. Go to [dash.hextrade.io/algos](https://dash.hextrade.io/algos) and search for the Raptor variant you want.
+2. Open the detail page and review the metrics: APY, win rate, total trades, and P&L.
+3. Check that the variant supports your connected broker.
+4. Go to **Connected Accounts**, select your account, and set your risk level.
+5. Activate — Hextrade will execute trades automatically based on the algorithm's signals.
+
+---
+
+<Warning>
+  Each Raptor variant is tuned for a different instrument. Do not connect an account funded in an incompatible currency or asset class. Always start with micro contract sizes to verify the integration before scaling.
+</Warning>

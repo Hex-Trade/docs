@@ -1,0 +1,63 @@
+---
+title: Algorithms Overview
+description: Browse all Hextrade algorithm categories — Raptor, Blaze, Spark, Volt, Strike, and more.
+---
+
+# Algorithms Overview
+
+Hextrade offers a growing library of trading algorithms, each designed for specific instruments and timeframes. Algorithms are named using the format:
+
+```
+[instrument]-[strategy]-[timeframe]
+```
+
+For example, `nq-raptor-30m` means the **Raptor** strategy running on **NQ (Nasdaq 100)** on a **30-minute** chart.
+
+---
+
+## Instrument Reference
+
+| Code | Instrument | Exchange |
+|------|-----------|---------|
+| **NQ** | Nasdaq 100 Futures | CME |
+| **ES** | S&P 500 Futures | CME |
+| **GC** | Gold Futures | COMEX |
+| **CL** | Crude Oil Futures | NYMEX |
+| **YM** | Dow Jones Futures | CBOT |
+| **NKD** | Nikkei 225 Futures | CME |
+| **BTC** | Bitcoin | Crypto |
+| **ETH** | Ethereum | Crypto |
+
+---
+
+## Strategy Categories
+
+| Category | Variants | Instruments |
+|----------|---------|------------|
+| [Raptor](/algorithms/raptor) | 9 | NQ, ES, GC, CL, BTC, ETH, NKD, YM |
+| [Blaze](/algorithms/blaze) | 6 | NQ, GC, NKD |
+| [Spark](/algorithms/spark) | 2 | NQ, GC |
+| [Core](/algorithms/core) | 1 | ES |
+| [Volt](/algorithms/volt) | 2 | NQ, ES |
+| [Strike](/algorithms/strike) | 1 | GC |
+| [Flux](/algorithms/flux) | 1 | GC |
+| [Bro](/algorithms/bro) | 1 | ES |
+| [Pag](/algorithms/pag) | 1 | ES |
+| [Don](/algorithms/don) | 1 | NQ |
+| [Gray](/algorithms/gray) | 1 | NQ |
+| [Surge](/algorithms/surge) | 1 | NQ |
+| [Pulse](/algorithms/pulse) | 1 | NQ |
+| [Beast](/algorithms/beast) | 1 | NQ |
+
+---
+
+## How to Connect an Algorithm
+
+1. Browse available algorithms at [dash.hextrade.io/algos](https://dash.hextrade.io/algos).
+2. Open the algorithm detail page and review its performance metrics.
+3. Navigate to **Connected Accounts** and link one of your [broker accounts](/automated-trading/trading-accounts).
+4. Set an appropriate risk level before activating.
+
+<Warning>
+  Always review an algorithm's performance history and set risk carefully before going live. Past performance does not guarantee future results.
+</Warning>
