@@ -65,7 +65,8 @@
           "algorithms/gray",
           "algorithms/surge",
           "algorithms/pulse",
-          "algorithms/beast"
+          "algorithms/beast",
+          "algorithms/pow"
         ]
       },
       {
