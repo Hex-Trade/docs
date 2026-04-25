@@ -86,6 +86,85 @@ Every webhook payload **must** include:
 
 ---
 
+##  Optional Webhook Parameters
+
+You can add these optional fields to control logging, risk limits, session/day filters, and order behavior.
+
+### Optional inputs
+
+| Input | Type | Description |
+|-------|------|-------------|
+| `strategyName` / `alertName` | string | Label for logs (e.g. strategy or alert name). |
+| `note` | string | Free-text note stored in logs only. |
+| `tags` | array or comma string | Tags for filtering logs (e.g. `["scalp","MNQ"]` or `"scalp,MNQ"`). |
+| `dryRun` | boolean | If `true`, validates and returns planned trade; no order sent. |
+| `maxQty` | number | Hard cap on quantity (e.g. `5` → never send more than 5). |
+| `cooldown` | number | Seconds to block another trade on the same account+symbol after a fill. |
+| **Session filters** | | |
+| `session` | string | `"RTH"` = only 09:30–16:00 in timezone; `"ETH"` = only outside that window. |
+| `sessionTimezone` | string | Timezone for session (e.g. `"ET"`). Defaults to `tradeWindow.timezone` or `"ET"`. |
+| **Day / time window** | | |
+| `tradeWindow` | object | Optional window for allowed trading days and times (see below). |
+| `tradeWindow.timezone` | string | Timezone for the window (e.g. `"ET"`). |
+| `tradeWindow.days` | string | Allowed days (e.g. `"Mon-Fri"`). |
+| `tradeWindow.start` | string | Window start time (e.g. `"06:30"`). |
+| `tradeWindow.end` | string | Window end time (e.g. `"16:00"`). |
+| **Symbol & risk** | | |
+| `allowedSymbols` | array or comma string | Whitelist; trade is blocked if ticker is not in the list. |
+| `symbolOverride` | string | Use this symbol instead of ticker (e.g. send NQ to one account, MNQ to another). |
+| `maxTradesPerDay` | number | Max executed trades per day for this webhook (in-memory; resets on restart). |
+| **Order options** | | |
+| `comment` | string | Order comment sent to broker (if supported). |
+| `timeInForce` | string | Pass-through (e.g. `GTC`, `DAY`, `IOC`, `FOK`). |
+| `slippage` | number | Pass-through for limit orders (e.g. ticks/points). |
+| `callbackUrl` | string | URL to POST result to after success or failure (fire-and-forget). |
+
+**Session filters:** Use `session` + `sessionTimezone` to allow only regular trading hours (RTH) or extended hours (ETH). Use `tradeWindow` for custom day-of-week and time ranges (e.g. Mon–Fri 06:30–16:00 ET).
+
+<Note>
+`cooldown` and `maxTradesPerDay` use in-memory state; they reset when the process restarts.  
+`session` "RTH" = 09:30–16:00 in the given timezone; "ETH" = outside that window.  
+`callbackUrl` receives a POST with `success`, `trade`/`result`, `error` (on failure), `logId`, `strategyName`, `note`, `tags`, etc.  
+`dryRun: true` returns HTTP 200 with `dryRun: true` and the planned `tradeData`; no order is sent and cooldown/maxTradesPerDay are not updated.
+</Note>
+
+### Example payload with optional parameters
+
+```json
+{
+  "ticker": "MNQ",
+  "action": "{{strategy.order.action}}",
+  "sentiment": "{{strategy.market_position}}",
+  "quantity": "8",
+  "platformType": "tradovate",
+  "accountId": "41199734",
+  "sl": "109",
+  "tp": "218",
+  "strategyName": "ES Scalp v2",
+  "note": "Pre-market only",
+  "tags": "scalp,MNQ,premarket",
+  "dryRun": false,
+  "maxQty": "10",
+  "cooldown": "60",
+  "session": "RTH",
+  "sessionTimezone": "ET",
+  "allowedSymbols": "MNQ,ES,NQ",
+  "maxTradesPerDay": "20",
+  "comment": "TV-alert",
+  "timeInForce": "DAY",
+  "slippage": "2",
+  "callbackUrl": "https://your-server.com/webhook-result",
+  "tradeWindow": {
+    "timezone": "ET",
+    "days": "Mon-Fri",
+    "start": "06:30",
+    "end": "16:00"
+  }
+}
+```
+
+---
+
 ##  Setting Up the Webhook in TradingView
 
 <Steps>

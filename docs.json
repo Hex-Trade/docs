@@ -33,18 +33,44 @@
         "group": "Get Started",
         "icon": "rocket",
         "pages": [
+          "getting-started",
           "get-started/account-creation",
           "get-started/account-login",
           "get-started/account-utilities"
         ]
       },
       {
-        "group": "Automated Trading",
-        "icon": "robot",
+        "group": "Dashboard",
+        "icon": "layout-dashboard",
         "pages": [
-          "automated-trading/trading-accounts",
-          "automated-trading/finding-algorithm",
-          "automated-trading/trading-analytics"
+          "accounts",
+          "supported-brokers",
+          "portfolio/overview",
+          "portfolio/cumulative-pnl",
+          "portfolio/calendar",
+          "portfolio/analytics",
+          "portfolio/trades",
+          "portfolio/hedge",
+          "portfolio/correlation",
+          "portfolio/simulations",
+          "portfolio/import-csv",
+          "portfolio/share",
+          "portfolio/clear",
+          "portfolio/optimize",
+          "portfolio/deploy",
+          "algos",
+          "subscriptions",
+          "analytics",
+          "calendar",
+          "trading",
+          "chart-settings",
+          "settings/overview",
+          "settings/profile",
+          "settings/security",
+          "settings/billing",
+          "settings/notifications",
+          "settings/appearance",
+          "settings/api-token"
         ]
       },
       {
@@ -70,6 +96,15 @@
         ]
       },
       {
+        "group": "Automated Trading",
+        "icon": "robot",
+        "pages": [
+          "automated-trading/trading-accounts",
+          "automated-trading/finding-algorithm",
+          "automated-trading/trading-analytics"
+        ]
+      },
+      {
         "group": "Copy Trading",
         "icon": "users",
         "pages": ["copy-trading/setup"]
@@ -83,7 +118,6 @@
         "group": "Other Features",
         "icon": "star",
         "pages": [
-          "other-features/economic-calendar",
           "other-features/discord",
           "other-features/coming-soon"
         ]

@@ -1,0 +1,37 @@
+---
+title: Settings API Token
+description: Generate and manage API tokens for programmatic access to your trade feed.
+---
+
+# API Token
+
+The `API Token` section provides secure programmatic access for external tools and automations.
+
+> [GIF placeholder: Generating and copying API token]
+
+---
+
+## Token lifecycle
+
+- Generate a new key.
+- Copy the key immediately.
+- Store it in a secure secret manager.
+- Rotate or revoke when needed.
+
+---
+
+## Security expectations
+
+- Tokens are sensitive credentials.
+- Newly generated keys may only be shown once.
+- Never hardcode tokens into client-side code or public repositories.
+
+> [Image placeholder: API token panel with active status]
+
+---
+
+## Operational guidance
+
+- Use separate tokens by environment where possible.
+- Rotate immediately if exposure is suspected.
+- Monitor integrations after token rotation.

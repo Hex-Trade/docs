@@ -1,12 +1,25 @@
 ---
-title: ⚡ POW
-sidebarTitle: ⚡ POW
+title: POW
+sidebarTitle: POW
 description: The POW strategy — a fast NQ (Nasdaq 100) algorithm.
 ---
 
-# ⚡ POW
+# POW
 
-POW is an intraday strategy running on Nasdaq 100 futures (NQ).
+POW is a fast intraday strategy focused on Nasdaq futures (`NQ`) for traders who want a high-reactivity profile.
+
+> [GIF placeholder: POW detail page walkthrough]
+
+---
+
+## At a glance
+
+| Attribute | Details |
+|---|---|
+| Family profile | Fast intraday single-instrument strategy |
+| Coverage | NQ |
+| Typical timeframe | Intraday |
+| Best use | Tactical NQ allocation in diversified portfolios |
 
 ---
 
@@ -18,12 +31,28 @@ POW is an intraday strategy running on Nasdaq 100 futures (NQ).
 
 ---
 
-## Connecting POW
+## Supported platforms
+
+POW can be connected to supported broker accounts through the standard connected-account workflow.
+
+See [Trading Accounts](/automated-trading/trading-accounts) for platform details.
+
+---
+
+## How to connect
 
 1. Go to [dash.hextrade.io/algos](https://dash.hextrade.io/algos) and find `nq-pow`.
 2. Review performance metrics on the detail page.
 3. Connect your broker account, set risk, and activate.
 
+> [Image placeholder: POW connected account setup]
+
 <Warning>
   Intraday strategies generate frequent signals. Monitor your account closely when first activating and ensure your broker supports the trade volume.
 </Warning>
+
+## Related algorithms
+
+- [Blaze](/algorithms/blaze)
+- [Raptor](/algorithms/raptor)
+- [Don](/algorithms/don)
