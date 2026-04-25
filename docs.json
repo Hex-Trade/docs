@@ -40,11 +40,18 @@
         ]
       },
       {
-        "group": "Dashboard",
-        "icon": "layout-dashboard",
+        "group": "Accounts & Brokers",
+        "icon": "building-columns",
         "pages": [
           "accounts",
           "supported-brokers",
+          "subscriptions"
+        ]
+      },
+      {
+        "group": "Portfolio Builder",
+        "icon": "chart-area",
+        "pages": [
           "portfolio/overview",
           "portfolio/cumulative-pnl",
           "portfolio/calendar",
@@ -57,20 +64,7 @@
           "portfolio/share",
           "portfolio/clear",
           "portfolio/optimize",
-          "portfolio/deploy",
-          "algos",
-          "subscriptions",
-          "analytics",
-          "calendar",
-          "trading",
-          "chart-settings",
-          "settings/overview",
-          "settings/profile",
-          "settings/security",
-          "settings/billing",
-          "settings/notifications",
-          "settings/appearance",
-          "settings/api-token"
+          "portfolio/deploy"
         ]
       },
       {
@@ -78,6 +72,7 @@
         "icon": "chart-line",
         "pages": [
           "algorithms/overview",
+          "algos",
           "algorithms/raptor",
           "algorithms/blaze",
           "algorithms/spark",
@@ -110,9 +105,38 @@
         "pages": ["copy-trading/setup"]
       },
       {
+        "group": "Analytics & Calendar",
+        "icon": "chart-bar",
+        "pages": [
+          "analytics",
+          "calendar"
+        ]
+      },
+      {
+        "group": "Trading",
+        "icon": "arrow-trend-up",
+        "pages": [
+          "trading",
+          "chart-settings"
+        ]
+      },
+      {
         "group": "External Algorithms",
         "icon": "bolt",
         "pages": ["external-algorithms/tradingview-webhooks"]
+      },
+      {
+        "group": "Settings",
+        "icon": "gear",
+        "pages": [
+          "settings/overview",
+          "settings/profile",
+          "settings/security",
+          "settings/billing",
+          "settings/notifications",
+          "settings/appearance",
+          "settings/api-token"
+        ]
       },
       {
         "group": "Other Features",
