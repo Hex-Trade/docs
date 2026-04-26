@@ -1,0 +1,256 @@
+---
+title: Portfolio Builder
+sidebarTitle: Portfolio Builder
+description: Build, test, and deploy multi-algorithm portfolios with Hextrade's Portfolio Builder.
+---
+
+# Portfolio Builder
+
+The **Portfolio Builder** lets you combine multiple algorithms into a single risk-managed strategy, validate it across seven analysis views, then deploy it live to a connected account — all from one page.
+
+> [GIF placeholder: Portfolio Builder full walkthrough]
+
+---
+
+## Getting started
+
+<Steps>
+  <Step title="Open Portfolio">
+    Go to [dash.hextrade.io/portfolio](https://dash.hextrade.io/portfolio) from the sidebar.
+  </Step>
+  <Step title="Add algorithms">
+    Click the **Portfolio Builder** panel to expand it. Select algorithms from the list, set contract sizes, and toggle each one on or off.
+  </Step>
+  <Step title="Set starting balance">
+    Enter the account balance you want to simulate against. This scales the equity curve and metric calculations.
+  </Step>
+  <Step title="Analyse across all tabs">
+    Use the seven tabs to validate behavior before going live.
+  </Step>
+  <Step title="Optimize, then deploy">
+    Run the optimizer for a suggested allocation, apply it, and deploy to your target account.
+  </Step>
+</Steps>
+
+> [Image placeholder: Portfolio Builder panel with algorithm selector]
+
+---
+
+## Tabs
+
+### Cumulative P&L
+
+Displays the combined equity curve and drawdown profile for your selected algorithm mix.
+
+> [Image placeholder: Cumulative P&L chart with drawdown overlay]
+
+Use it to:
+- Evaluate smoothness and recovery speed after losing periods.
+- Compare different time ranges (ALL, 6M, 3M, custom).
+- Save snapshots to compare two portfolio versions side by side.
+- Spot whether performance depends on a narrow date window.
+
+**Best practice:** Prefer stable long-run curves over short spikes. Assess drawdown tolerance before optimizing for return.
+
+---
+
+### Calendar
+
+Shows daily and monthly P&L distribution across your strategy mix.
+
+> [Image placeholder: Portfolio calendar heatmap]
+
+Use it to:
+- Identify clusters of winning or losing days.
+- Spot whether results concentrate in a specific narrow period.
+- Validate consistency month over month before deploying.
+
+<Note>
+This is the Portfolio day-level calendar. For macro economic events, see [Calendar](/calendar).
+</Note>
+
+---
+
+### Analytics
+
+A metric dashboard summarising the quality of your selected allocation.
+
+> [Image placeholder: Portfolio analytics metric cards]
+
+Key metrics covered:
+
+| Metric | What it tells you |
+|---|---|
+| **Total Return** | Cumulative gain over the period |
+| **Win Rate** | Percentage of profitable trades |
+| **Max Drawdown** | Largest peak-to-trough decline |
+| **Sharpe Ratio** | Risk-adjusted return quality |
+| **Profit Factor** | Gross profit ÷ gross loss |
+| **Avg Trade Duration** | Average time a position was open |
+
+**Workflow:** Review drawdown metrics first, then return quality. Adjust allocations and re-check before moving to Simulations.
+
+<Note>
+Portfolio `Analytics` evaluates your strategy mix. For live account performance, use [Trading Analytics](/automated-trading/trading-analytics).
+</Note>
+
+---
+
+### Trades
+
+A consolidated, sortable trade log across all enabled algorithms.
+
+> [Image placeholder: Portfolio trades table]
+
+Use it to:
+- Audit which algorithms drive the most wins or losses.
+- Verify trade frequency matches expectations.
+- Cross-reference individual sessions with Cumulative P&L inflection points.
+
+**Troubleshooting signals:**
+- Unexpected trade density → verify enabled algorithms and contract sizing
+- Outlier loss days → check Hedge and Correlation tabs for overlap
+- Weak consistency → test alternative allocations via Optimize
+
+---
+
+### Hedge
+
+Identifies exposure overlap and hedge relationships between selected strategies.
+
+> [Image placeholder: Hedge tracker with overlap details]
+
+Use it to:
+- Detect pairs that share heavy same-session exposure.
+- Understand whether your diversification is real or superficial.
+- Size complementary strategies more confidently.
+
+**Tip:** Treat high same-session overlap as a risk signal. Review the Correlation tab alongside Hedge before running the optimizer.
+
+---
+
+### Correlation
+
+Computes how selected algorithms move relative to each other across shared trading days.
+
+> [Image placeholder: Correlation matrix]
+
+Reading the matrix:
+- **Near +1**: strategies tend to move together.
+- **Near 0**: weak or no relationship.
+- **Near −1**: strategies tend to offset each other.
+
+**Workflow:**
+1. Identify highly correlated clusters.
+2. Avoid concentrating size in those clusters.
+3. Blend lower-correlation algorithms to improve diversification quality.
+4. Validate the result in Analytics.
+
+---
+
+### Simulations
+
+Stress-tests your allocation under modelled uncertainty to show a range of possible outcomes.
+
+> [Image placeholder: Simulation distribution chart]
+
+Use it to:
+- Estimate upside/downside probability bands.
+- Understand capital pressure under adverse scenarios.
+- Compare two candidate allocations under identical assumptions.
+
+<Warning>
+  Simulations are model-based estimates, not predictions. Extreme or correlated market events can exceed any modelled scenario. Always apply conservative sizing when going live.
+</Warning>
+
+---
+
+## Actions
+
+### Import CSV
+
+Load an algorithm allocation from a CSV file instead of configuring each one manually.
+
+> [Image placeholder: Import CSV modal]
+
+1. Click **Import CSV** in the builder header.
+2. Upload a correctly formatted file.
+3. Review the parsed rows and quantities.
+4. Apply, then validate across all tabs before deploying.
+
+---
+
+### Share
+
+Export and share your portfolio configuration for collaboration or archiving.
+
+> [Image placeholder: Share portfolio modal]
+
+1. Build and validate your portfolio.
+2. Click **Share**.
+3. Send the output to your reviewer.
+4. Recipient imports and validates before going live.
+
+---
+
+### Clear
+
+Removes all selected algorithms from the builder session.
+
+> [Image placeholder: Clear confirmation modal]
+
+<Warning>
+  Clear cannot be undone. Use **Share** to save a copy of a promising configuration before clearing.
+</Warning>
+
+---
+
+### Optimize
+
+Analyses your current algorithm set and returns a suggested contract allocation to improve portfolio quality.
+
+> [Image placeholder: Optimizer suggestion bar with Apply button]
+
+1. Enable the algorithms you want included.
+2. Click **Optimize**.
+3. Review the suggested allocation and any recommended news-event filters.
+4. Check Cumulative P&L, Analytics, and Simulations.
+5. Click **Apply** to adopt the suggestion.
+
+**Guardrails:** Optimization is decision support, not autopilot. Always validate the suggested allocation before deploying.
+
+---
+
+### Deploy
+
+Applies your enabled portfolio to a target connected account so algorithms run live.
+
+> [Image placeholder: Deploy modal with per-algorithm status indicators]
+
+**Requirements before deploying:**
+- At least one algorithm enabled in the builder.
+- A connected broker account. See [Supported Brokers](/supported-brokers).
+- Premium subscription (required for deployment).
+
+**Deployment workflow:**
+
+1. Validate across all tabs.
+2. Click **Deploy**.
+3. Select the target account.
+4. Confirm — each algorithm's subscription is created or updated.
+5. Monitor live behavior in [Accounts](/accounts) and [Trading Analytics](/automated-trading/trading-analytics).
+
+<Warning>
+  Live deployment executes real strategy risk on a real account. Start with conservative contract sizing and scale only after observing stable live behavior.
+</Warning>
+
+---
+
+## Related pages
+
+- [Algorithms Overview](/algorithms/overview)
+- [Supported Brokers](/supported-brokers)
+- [Accounts](/accounts)
+- [Subscriptions](/subscriptions)
+- [Trading Analytics](/automated-trading/trading-analytics)
+- [Calendar](/calendar)

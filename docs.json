@@ -40,6 +40,11 @@
         ]
       },
       {
+        "group": "Settings",
+        "icon": "gear",
+        "pages": ["settings"]
+      },
+      {
         "group": "Accounts & Brokers",
         "icon": "building-columns",
         "pages": [
@@ -51,21 +56,7 @@
       {
         "group": "Portfolio Builder",
         "icon": "chart-area",
-        "pages": [
-          "portfolio/overview",
-          "portfolio/cumulative-pnl",
-          "portfolio/calendar",
-          "portfolio/analytics",
-          "portfolio/trades",
-          "portfolio/hedge",
-          "portfolio/correlation",
-          "portfolio/simulations",
-          "portfolio/import-csv",
-          "portfolio/share",
-          "portfolio/clear",
-          "portfolio/optimize",
-          "portfolio/deploy"
-        ]
+        "pages": ["portfolio"]
       },
       {
         "group": "Algorithms",
@@ -124,19 +115,6 @@
         "group": "External Algorithms",
         "icon": "bolt",
         "pages": ["external-algorithms/tradingview-webhooks"]
-      },
-      {
-        "group": "Settings",
-        "icon": "gear",
-        "pages": [
-          "settings/overview",
-          "settings/profile",
-          "settings/security",
-          "settings/billing",
-          "settings/notifications",
-          "settings/appearance",
-          "settings/api-token"
-        ]
       },
       {
         "group": "Other Features",

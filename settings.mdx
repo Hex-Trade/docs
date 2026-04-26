@@ -1,20 +1,183 @@
 ---
 title: Settings
-description: Legacy settings landing page. Use the modular settings guides for full coverage.
+sidebarTitle: Settings
+description: Manage your Hextrade profile, security, billing, notifications, appearance, and API access — all in one place.
 ---
 
 # Settings
 
-Settings documentation has moved to modular pages for easier navigation and deeper detail.
+**Settings** is your control center for every account preference. Reach it from the sidebar at any time.
 
-## Settings guides
+> [GIF placeholder: Settings page full walkthrough]
 
-- [Settings Overview](/settings/overview)
-- [Profile](/settings/profile)
-- [Security](/settings/security)
-- [Billing](/settings/billing)
-- [Notifications](/settings/notifications)
-- [Appearance](/settings/appearance)
-- [API Token](/settings/api-token)
+---
 
-For full account administration context, continue with [Accounts](/accounts) and [Subscriptions](/subscriptions).
+## Profile Information
+
+Keep your account details accurate so notifications, support, and integrations work correctly.
+
+> [Image placeholder: Profile Information panel]
+
+| Field | Notes |
+|---|---|
+| **First Name / Last Name** | Used across the platform and in notifications |
+| **Email Address** | Read-only — set at registration |
+| **Phone Number** | Include country code, e.g. `+1 555 000 0000` |
+| **TradingView Username** | Required to claim exclusive indicators — Premium plan only |
+| **Discord Username** | Enter without the `@` symbol — enables Discord DM alerts |
+
+Click **Save Changes** after editing any field.
+
+---
+
+## Profile Picture
+
+Upload a custom avatar that appears in the header and community spaces.
+
+> [Image placeholder: Avatar upload panel]
+
+- Supported formats: `JPG`, `PNG`, `GIF`, `WebP`
+- Maximum file size: 5 MB
+- Recommended dimensions: 200 × 200 px or larger (square crop)
+
+Choose your file and click **Upload Picture**. Your new avatar appears immediately.
+
+---
+
+## Security
+
+### Change Password
+
+Enter your current password, then set and confirm a new one. Click **Update Password** to apply.
+
+Use a strong, unique password that you do not reuse on other services.
+
+### Two-Factor Authentication (2FA)
+
+2FA protects your account with a time-based one-time code in addition to your password.
+
+> [Image placeholder: 2FA QR code and code input]
+
+**Enable 2FA:**
+
+<Steps>
+  <Step title="Click Enable 2FA">
+    The setup flow begins and a QR code is displayed.
+  </Step>
+  <Step title="Scan the QR code">
+    Open **Google Authenticator**, **Authy**, or any TOTP app → tap **+** → **Scan a QR code**.
+  </Step>
+  <Step title="Enter the 6-digit code">
+    Type the code shown in your authenticator app and click **Verify**.
+  </Step>
+  <Step title="Save your backup codes">
+    Store the one-time backup codes somewhere safe and offline. Each code can only be used once.
+  </Step>
+</Steps>
+
+**Disable 2FA:** Click **Disable 2FA** and confirm with a live authenticator code.
+
+<Warning>
+  Enable 2FA before connecting live funded accounts. If you lose access to your authenticator app without backup codes, account recovery will require identity verification.
+</Warning>
+
+---
+
+## Billing
+
+> [Image placeholder: Billing status panel]
+
+The Billing section shows your active plan details and lets you manage payment.
+
+| Item | Description |
+|---|---|
+| **Status** | Active, cancelled, or past due |
+| **Next Billing Date** | When your subscription renews |
+| **Days Remaining** | Time left in current billing period |
+| **Plan Cost** | Current rate per billing cycle |
+
+Click **Manage billing** to open the billing portal for payment method changes, invoice history, and plan upgrades.
+
+**Promo Code:** Enter a valid discount code and click **Apply** to reduce your active subscription cost.
+
+<Note>
+  Plan level determines which algorithms, deployment features, and account slots are available. See [Subscriptions](/subscriptions) for plan details.
+</Note>
+
+---
+
+## Notifications
+
+Configure exactly where and when Hextrade sends you alerts.
+
+> [Image placeholder: Notifications panel with channel and alert toggles]
+
+### Master Switch
+
+The top toggle controls all notifications globally. Disable it to silence every alert without changing individual settings.
+
+### Delivery Channels
+
+| Channel | How it works |
+|---|---|
+| **Discord Webhook** | Posts alerts to a channel via a webhook URL you configure |
+| **Discord DMs** | Sends direct messages to your Discord account (requires Discord username in Profile) |
+| **Email Alerts** | HTML email to your account email address |
+
+### Alert Types
+
+Enable or disable triggers per event type across all active channels:
+
+| Alert | Trigger |
+|---|---|
+| **Trade Opened** | A position opens on any connected account |
+| **Trade Closed** | A position closes |
+| **Trade Error** | Execution fails or is rejected |
+| **Connection Error** | A broker connection drops |
+| **Account Updated** | Account balance or status changes |
+| **System Alert** | Platform-wide announcements |
+
+### Sound Alerts
+
+Toggle browser audio playback on every trade execution. When enabled, adjust the **Volume** slider (0–100%).
+
+Click **Save Notification Settings** to apply all changes.
+
+---
+
+## Appearance
+
+Personalize the dashboard to match your working style.
+
+> [Image placeholder: Theme picker grid]
+
+### Theme Color
+
+Choose from available accent themes. The selected theme applies immediately across the entire dashboard.
+
+**Current Theme** shows the active color swatch and name.
+
+### Motion & Effects
+
+Toggle **Enable Animations** to control motion effects like snowflakes in seasonal themes (Christmas, Halloween). Disable for a cleaner, lower-distraction environment or to improve performance on slower devices.
+
+---
+
+## API Token
+
+Generate a secure token to access your Hextrade trade feed programmatically from external tools or scripts.
+
+> [Image placeholder: API Token panel showing active status]
+
+**Generate a token:**
+
+1. Expand the API Token section.
+2. Click **Generate new token**.
+3. Copy the key immediately — it is shown only once for security.
+4. Store it in a secret manager or environment variable.
+
+**Rotate or revoke:** Generate a new token at any time to invalidate the previous one.
+
+<Warning>
+  Never commit your API token to a public repository or share it in Discord. Treat it like a password. If it is compromised, generate a new token immediately.
+</Warning>
