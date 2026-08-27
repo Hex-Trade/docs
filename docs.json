@@ -25,103 +25,69 @@
   "navigation": {
     "groups": [
       {
-        "group": "Welcome",
-        "icon": "house",
-        "pages": ["index"]
-      },
-      {
         "group": "Get Started",
         "icon": "rocket",
         "pages": [
-          "getting-started",
-          "get-started/account-creation",
-          "get-started/account-login",
-          "get-started/account-utilities"
+          "index",
+          "getting-started"
         ]
       },
       {
-        "group": "Settings",
-        "icon": "gear",
-        "pages": ["settings"]
-      },
-      {
-        "group": "Accounts & Brokers",
-        "icon": "building-columns",
+        "group": "Platform",
+        "icon": "grid-2",
         "pages": [
           "accounts",
           "supported-brokers",
-          "subscriptions"
-        ]
-      },
-      {
-        "group": "Portfolio Builder",
-        "icon": "chart-area",
-        "pages": ["portfolio"]
-      },
-      {
-        "group": "Algorithms",
-        "icon": "chart-line",
-        "pages": [
           "algorithms/overview",
-          "algos",
-          "algorithms/raptor",
-          "algorithms/blaze",
-          "algorithms/spark",
-          "algorithms/core",
-          "algorithms/volt",
-          "algorithms/strike",
-          "algorithms/flux",
-          "algorithms/bro",
-          "algorithms/pag",
-          "algorithms/don",
-          "algorithms/gray",
-          "algorithms/surge",
-          "algorithms/pulse",
-          "algorithms/beast",
-          "algorithms/pow"
-        ]
-      },
-      {
-        "group": "Automated Trading",
-        "icon": "robot",
-        "pages": [
-          "automated-trading/trading-accounts",
-          "automated-trading/finding-algorithm",
-          "automated-trading/trading-analytics"
-        ]
-      },
-      {
-        "group": "Copy Trading",
-        "icon": "users",
-        "pages": ["copy-trading/setup"]
-      },
-      {
-        "group": "Analytics & Calendar",
-        "icon": "chart-bar",
-        "pages": [
+          {
+            "group": "Algorithm families",
+            "pages": [
+              "algorithms/raptor",
+              "algorithms/blaze",
+              "algorithms/spark",
+              "algorithms/core",
+              "algorithms/volt",
+              "algorithms/strike",
+              "algorithms/flux",
+              "algorithms/bro",
+              "algorithms/pag",
+              "algorithms/don",
+              "algorithms/gray",
+              "algorithms/surge",
+              "algorithms/pulse",
+              "algorithms/beast",
+              "algorithms/pow",
+              "algorithms/vix",
+              "algorithms/bliss",
+              "algorithms/helix",
+              "algorithms/vex",
+              "algorithms/alpha",
+              "algorithms/lzma",
+              "algorithms/markov",
+              "algorithms/dyr",
+              "algorithms/bix",
+              "algorithms/rse",
+              "algorithms/marcon",
+              "algorithms/lon",
+              "algorithms/nox",
+              "algorithms/ms"
+            ]
+          },
+          "copy-trading/setup",
+          "portfolio",
+          "external-algorithms/tradingview-webhooks",
+          "trading",
           "analytics",
           "calendar"
         ]
       },
       {
-        "group": "Trading",
-        "icon": "arrow-trend-up",
+        "group": "Account",
+        "icon": "user",
         "pages": [
-          "trading",
-          "chart-settings"
-        ]
-      },
-      {
-        "group": "External Algorithms",
-        "icon": "bolt",
-        "pages": ["external-algorithms/tradingview-webhooks"]
-      },
-      {
-        "group": "Other Features",
-        "icon": "star",
-        "pages": [
-          "other-features/discord",
-          "other-features/coming-soon"
+          "subscriptions",
+          "settings",
+          "other-features/discord"
         ]
       }
     ]

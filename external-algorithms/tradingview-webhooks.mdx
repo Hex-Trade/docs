@@ -1,34 +1,56 @@
 ---
-title:  Setting up TradingView Webhooks
-description: Connect your TradingView Pine Script strategy to Hextrade via webhook. Automate order execution on ProjectX, Tradovate, Alpaca, and more.
+title: TradingView Webhooks
+sidebarTitle: TradingView Webhooks
+description: Connect your TradingView Pine Script strategy to Hextrade via webhook. Automate order execution on ProjectX, Tradovate, Rithmic, TradeLocker, and more.
 ---
 
-#  Setting up TradingView Webhooks
+# TradingView Webhooks
 
 Use your own **TradingView Pine Script** strategy and let Hextrade automatically execute orders on your connected broker accounts. No code changes required on your broker side — just set the webhook URL and use the correct JSON format.
 
+<video autoPlay loop muted playsInline controls style={{ width: "100%", borderRadius: "0.5rem" }}>
+  <source src="/videos/tradingview-webhooks.mp4" type="video/mp4" />
+</video>
+
 ---
 
-##  Supported Platforms for Webhooks
+## Supported Platforms for Webhooks
+
+Set `platformType` to the lowercase value shown below.
 
 <Columns cols={3}>
 <Card title="ProjectX" icon="p">
-Futures trading on ProjectX via TradingView webhook.
+`projectx` — futures
 </Card>
 <Card title="Tradovate" icon="t">
-Futures on Tradovate. Set `platformType` to `tradovate`.
+`tradovate` — futures
 </Card>
-<Card title="Alpaca" icon="a">
-Equities on Alpaca. Set `platformType` to `alpaca`.
+<Card title="NinjaTrader" icon="n">
+`ninjatrader` — futures
 </Card>
-<Card title="DxTrade" icon="d">
-Multi-asset via DxTrade. Set `platformType` to `dxtrade`.
+<Card title="Rithmic" icon="r">
+`rithmic` — futures
 </Card>
-<Card title="Tradier" icon="t">
-Equities and options via Tradier. Set `platformType` to `tradier`.
+<Card title="TradeLocker" icon="lock">
+`tradelocker` — multi-asset / prop
 </Card>
-<Card title="More coming" icon="plus">
-Additional platforms added regularly. Check Discord for updates.
+<Card title="MatchTrader" icon="m">
+`matchtrader` — forex / CFDs
+</Card>
+<Card title="Volumetrica" icon="v">
+`volumetrica` — futures
+</Card>
+<Card title="MetaTrader 5" icon="chart-candlestick">
+`mt5` — multi-asset
+</Card>
+<Card title="Oanda" icon="o">
+`oanda` — forex / CFDs
+</Card>
+<Card title="Hyperliquid" icon="h">
+`hyperliquid` — crypto perps
+</Card>
+<Card title="Plus500" icon="plus">
+`plus500` — CFDs
 </Card>
 </Columns>
 
@@ -78,7 +100,7 @@ Every webhook payload **must** include:
 
 | Field | Description |
 |-------|-------------|
-| `platformType` | The broker — `projectx`, `tradovate`, `alpaca`, `dxtrade`, `tradier`, etc. |
+| `platformType` | The broker — `projectx`, `tradovate`, `ninjatrader`, `rithmic`, `tradelocker`, `mt5`, etc. |
 | `accountId` | Your account ID from the [Accounts page](https://dash.hextrade.io/accounts). |
 | `symbol` or `ticker` | The instrument to trade. |
 | `quantity` | Number of contracts or shares. |
@@ -186,7 +208,7 @@ In TradingView, open the chart where your strategy is applied. Click **"Add Aler
 </Step>
 <Step title="Customize the JSON for your instrument">
 Adjust the following fields:
-- `"platformType"` — Set to your broker (e.g. `"projectx"`, `"alpaca"`).
+- `"platformType"` — Set to your broker (e.g. `"projectx"`, `"tradovate"`, `"rithmic"`).
 - `"accountId"` — Your account ID.
 - `"ticker"` — Your instrument (e.g. `"NQ"`, `"ES"`, `"AAPL"`).
 - `"tp"` and `"sl"` — Take profit and stop loss in ticks (optional).
@@ -222,16 +244,19 @@ Test with a **small quantity** (e.g. 1 micro contract) first to confirm the webh
 }
 ```
 
-### Alpaca — AAPL Equities
+### Rithmic — MNQ Micros
 
 ```json
 {
-"ticker": "AAPL",
+"ticker": "MNQ",
 "action": "{{strategy.order.action}}",
+"sentiment": "{{strategy.market_position}}",
 "quantity": "{{strategy.order.contracts}}",
 "price": "{{close}}",
-"platformType": "alpaca",
-"accountId": "your_account_id"
+"platformType": "rithmic",
+"accountId": "your_account_id",
+"tp": "80",
+"sl": "20"
 }
 ```
 
@@ -258,7 +283,7 @@ Test with a **small quantity** (e.g. 1 micro contract) first to confirm the webh
 | Issue | Solution |
 |-------|----------|
 | Webhook fires but no order placed | Check `accountId` — must match exactly from the Accounts page. |
-| `platformType` error | Use lowercase: `projectx`, `tradovate`, `alpaca`, `dxtrade`, `tradier`. |
+| `platformType` error | Use lowercase: `projectx`, `tradovate`, `ninjatrader`, `rithmic`, `tradelocker`, `mt5`. |
 | `tp`/`sl` not working | These are in **ticks**, not dollars. Verify tick size for your instrument. |
 | Alert not triggering | Ensure the TradingView alert is active and the strategy is on the chart. |
 | Order rejected by broker | Check account balance, position limits, and broker-side trading hours. |

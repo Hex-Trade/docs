@@ -1,28 +1,26 @@
 ---
 title: Algorithms Overview
 sidebarTitle: Overview
-description: Browse all Hextrade algorithm categories — Raptor, Blaze, Spark, Volt, Strike, and more.
+description: Browse all Hextrade algorithm families — Raptor, Blaze, Spark, Volt, Vix, Helix, and more.
 ---
 
 # Algorithms Overview
 
-Hextrade provides a broad algorithm library across futures, commodities, and crypto instruments. This page helps you understand naming, categories, and how to choose what to test first.
+Hextrade provides a broad algorithm library across equity-index futures, commodities, and crypto instruments. Algorithms are listed on [dash.hextrade.io/algos](https://dash.hextrade.io/algos) by their dashboard ID (for example `NQRAPTOR` or `ESRAPTORV3`).
 
-> [GIF placeholder: Browsing algorithm categories]
+<video autoPlay loop muted playsInline controls style={{ width: "100%", borderRadius: "0.5rem" }}>
+  <source src="/videos/algorithms.mp4" type="video/mp4" />
+</video>
 
 ---
 
 ## Naming format
 
-Algorithms follow:
+Dashboard IDs follow:
 
-`[instrument]-[strategy]-[timeframe]`
+`[instrument][strategy][version]`
 
-Example: `nq-raptor-30m` means:
-
-- Instrument: `NQ` (Nasdaq futures)
-- Strategy family: `Raptor`
-- Chart timeframe: `30m`
+Example: `NQRAPTOR` means Nasdaq futures (`NQ`) + Raptor. `ESRAPTORV3` is the third ES Raptor revision. `NQRAPTOR22` is the 22-minute NQ Raptor variant.
 
 ---
 
@@ -43,25 +41,67 @@ Example: `nq-raptor-30m` means:
 
 ## Strategy Categories
 
-| Category | Variants | Instruments |
-|----------|---------|------------|
-| [Raptor](/algorithms/raptor) | 9 | NQ, ES, GC, CL, BTC, ETH, NKD, YM |
-| [Blaze](/algorithms/blaze) | 6 | NQ, GC, NKD |
-| [Spark](/algorithms/spark) | 2 | NQ, GC |
-| [Core](/algorithms/core) | 1 | ES |
-| [Volt](/algorithms/volt) | 2 | NQ, ES |
-| [Strike](/algorithms/strike) | 1 | GC |
-| [Flux](/algorithms/flux) | 1 | GC |
-| [Bro](/algorithms/bro) | 1 | ES |
-| [Pag](/algorithms/pag) | 1 | ES |
-| [Don](/algorithms/don) | 1 | NQ |
-| [Gray](/algorithms/gray) | 1 | NQ |
-| [Surge](/algorithms/surge) | 1 | NQ |
-| [Pulse](/algorithms/pulse) | 1 | NQ |
-| [Beast](/algorithms/beast) | 1 | NQ |
-| [Pow](/algorithms/pow) | 1 | NQ |
+Public catalog on the Algos page. Variant counts are live IDs from the current repo.
+
+| Category | Variants | Instruments | Notes |
+|----------|---------|------------|-------|
+| [Raptor](/algorithms/raptor) | 11 | NQ, ES, GC, CL, BTC, ETH, NKD, YM | Includes ES V2/V3 and NQ 22-minute |
+| [Blaze](/algorithms/blaze) | 6 | NQ, GC, NKD | V3 is prop-firm ready; others hold overnight |
+| [Spark](/algorithms/spark) | 3 | NQ, GC | Includes NQ V2 |
+| [Volt](/algorithms/volt) | 4 | NQ, ES | Includes V2 |
+| [Core](/algorithms/core) | 1 | ES | Overnight / non-prop |
+| [Strike](/algorithms/strike) | 1 | GC | Deprecated |
+| [Bro](/algorithms/bro) | 1 | ES | |
+| [Pag](/algorithms/pag) | 1 | ES | |
+| [Don](/algorithms/don) | 2 | NQ, ES | NQ Don is beta |
+| [Gray](/algorithms/gray) | 2 | NQ | Includes V2 |
+| [Surge](/algorithms/surge) | 1 | NQ | |
+| [Pulse](/algorithms/pulse) | 1 | NQ | |
+| [Beast](/algorithms/beast) | 1 | NQ | Beta |
+| [Pow](/algorithms/pow) | 2 | NQ, GC | |
+| [Vix](/algorithms/vix) | 2 | NQ, GC | |
+| [Bliss](/algorithms/bliss) | 1 | NQ | |
+| [Helix](/algorithms/helix) | 1 | NQ | |
+| [Vex](/algorithms/vex) | 1 | NQ | |
+| [Alpha](/algorithms/alpha) | 1 | NQ | |
+| [Lzma](/algorithms/lzma) | 1 | NQ | |
+| [Markov](/algorithms/markov) | 1 | NQ | |
+| [Dyr](/algorithms/dyr) | 2 | NQ, GC | |
+| [Bix](/algorithms/bix) | 1 | NQ | |
+| [Rse](/algorithms/rse) | 1 | ES | |
+| [Marcon](/algorithms/marcon) | 1 | NQ | Overnight |
+| [Lon](/algorithms/lon) | 1 | NQ | Overnight |
+| [Nox](/algorithms/nox) | 1 | NQ | Overnight |
+| [Ms](/algorithms/ms) | 1 | NQ | Beta |
 
 > [Image placeholder: Algorithms category cards]
+
+---
+
+## Badges
+
+The Algos page tags each strategy:
+
+| Badge | Meaning |
+|-------|---------|
+| **Prop Firm Ready** | Intraday style, suitable for many prop-firm rules |
+| **Non-Prop** | Typically holds overnight — check your firm's rules |
+| **Overnight** | Designed to hold outside regular hours |
+| **Beta Testing** | Newer strategy; monitor closely |
+| **Deprecated** | Kept for existing connections; prefer a newer family |
+| **Short Term** / **24/7 Scalper** | High-frequency or always-on variants (often in Advanced) |
+
+---
+
+## Advanced / experimental
+
+A separate **Advanced** section on the Algos page includes hidden, beta, and third-party IDs such as `ESBOSS`, `ESVIPER`, `NQVIPER`, `ESVORTEX`, `NQCORE`, `GCFLUX`, `GCNOVA`, `NQHAS`, `GCHAS`, `NQDRIFT`, and `GCBB`. Use these with extra caution.
+
+---
+
+## Supported platforms
+
+Futures algorithms run on connected futures-capable brokers: ProjectX, Tradovate, NinjaTrader, Rithmic, TradeLocker, Plus500, Hyperliquid, CQG, MatchTrader, Volumetrica, cTrader, and MetaTrader 5. **Oanda is excluded** from futures algorithms. See [Supported Brokers](/supported-brokers).
 
 ---
 

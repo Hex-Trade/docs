@@ -1,7 +1,7 @@
 ---
 title: Raptor
 sidebarTitle: Raptor
-description: The Raptor strategy — available across NQ, ES, GC, CL, BTC, ETH, NKD, and YM on 10–30 minute timeframes.
+description: The Raptor strategy — available across NQ, ES, GC, CL, BTC, ETH, NKD, and YM, including ES V2/V3 and the NQ 22-minute variant.
 ---
 
 # Raptor
@@ -18,24 +18,26 @@ Raptor is one of Hextrade's most widely deployed algorithm families, with varian
 |---|---|
 | Family profile | Multi-instrument trend and momentum style variants |
 | Coverage | NQ, ES, GC, CL, BTC, ETH, NKD, YM |
-| Typical timeframe | 10m to 30m depending on variant |
+| Typical timeframe | Intraday (including a 22-minute NQ variant) |
 | Best use | Portfolio diversification across instrument classes |
 
 ---
 
 ## Available Variants
 
-| Channel | Instrument | Timeframe |
-|---------|-----------|----------|
-| `cl-raptor-30m` | Crude Oil (CL) | 30 minutes |
-| `btc-raptor-10m` | Bitcoin (BTC) | 10 minutes |
-| `eth-raptor-30m` | Ethereum (ETH) | 30 minutes |
-| `es-raptor-30m` | S&P 500 (ES) | 30 minutes |
-| `nq-raptor-30m` | Nasdaq 100 (NQ) | 30 minutes |
-| `nq-raptor-22m` | Nasdaq 100 (NQ) | 22 minutes |
-| `nkd-raptor-30m` | Nikkei 225 (NKD) | 30 minutes |
-| `ym-raptor-30m` | Dow Jones (YM) | 30 minutes |
-| `gc-raptor-15m` | Gold (GC) | 15 minutes |
+| Dashboard ID | Instrument | Notes |
+|--------------|-----------|-------|
+| `ESRAPTOR` | S&P 500 (ES) | Prop firm ready |
+| `ESRAPTORV2` | S&P 500 (ES) | Revision 2 |
+| `ESRAPTORV3` | S&P 500 (ES) | Latest ES revision |
+| `NQRAPTOR` | Nasdaq 100 (NQ) | |
+| `NQRAPTOR22` | Nasdaq 100 (NQ) | 22-minute variant |
+| `GCRAPTOR` | Gold (GC) | Overnight |
+| `CLRAPTOR` | Crude Oil (CL) | |
+| `YMRAPTOR` | Dow Jones (YM) | |
+| `NKDRAPTOR` | Nikkei 225 (NKD) | |
+| `BTCRAPTOR` | Bitcoin (BTC) | |
+| `ETHRAPTOR` | Ethereum (ETH) | |
 
 ---
 

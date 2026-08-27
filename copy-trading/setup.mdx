@@ -1,13 +1,18 @@
 ---
-title:  Setting up Copy Trading
+title: Copy Trading
+sidebarTitle: Copy Trading
 description: Manage multiple accounts simultaneously with different risk profiles. Create copy-trade groups with master and follower accounts.
 ---
 
-#  Setting up Copy Trading
+# Copy Trading
 
 Copy trading on Hextrade lets you efficiently manage **multiple accounts with different risk profiles** from a single dashboard. One account acts as the **master** — any trade it makes is automatically replicated across all **follower** accounts in the group.
 
 Visit [**dash.hextrade.io/copy-trade-groups**](https://dash.hextrade.io/copy-trade-groups) to get started.
+
+<video autoPlay loop muted playsInline controls style={{ width: "100%", borderRadius: "0.5rem" }}>
+  <source src="/videos/copy-trading.mp4" type="video/mp4" />
+</video>
 
 ---
 
@@ -46,7 +51,7 @@ Use the description field to document the strategy's logic, source, or any notes
 Choose the **master account** — this is the account whose trades will be copied to all followers. It should be the account running your main algorithm or strategy.
 </Step>
 <Step title="Add follower accounts">
-Select one or more **follower accounts**. These can be accounts across different brokers (all must be connected — see [Trading Accounts](/automated-trading/trading-accounts)).
+Select one or more **follower accounts**. Copy trading currently supports **ProjectX**, **Tradovate**, **NinjaTrader**, **Rithmic**, and **Volumetrica**. All accounts must already be connected — see [Trading Accounts](/automated-trading/trading-accounts).
 </Step>
 <Step title="Set the risk multiplier">
 Define the **risk multiplier** for each follower:
@@ -104,5 +109,5 @@ Pair copy trading with [Trading Analytics](/automated-trading/trading-analytics)
 </Tip>
 
 <Note>
-Follower accounts must be on a **supported platform**. Not all broker combinations support cross-platform copying — verify compatibility on the [Trading Accounts](/automated-trading/trading-accounts) page.
+Copy trading is limited to **ProjectX**, **Tradovate**, **NinjaTrader**, **Rithmic**, and **Volumetrica**. Cross-platform groups among those five are supported. Other connected brokers can run algorithms and webhooks but cannot be used as copy-trade master or follower.
 </Note>

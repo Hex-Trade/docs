@@ -6,7 +6,20 @@ description: The Blaze strategy family — NQ, GC, and NKD variants on 1-hour ti
 
 # Blaze
 
-The Blaze family is a set of hourly algorithms covering Nasdaq 100 (NQ), Gold (GC), and Nikkei 225 (NKD). Multiple NQ versions exist (Blaze, Blazer, BlazeV2, BlazeV3), each with incremental improvements.
+The Blaze family covers Nasdaq 100 (NQ), Gold (GC), and Nikkei 225 (NKD). Most Blaze IDs are **non-prop** (overnight holds). `NQBLAZEV3` is the prop-firm-ready revision.
+
+> [GIF placeholder: Comparing Blaze variants]
+
+---
+
+## At a glance
+
+| Attribute | Details |
+|---|---|
+| Family profile | Hourly strategy family |
+| Coverage | NQ, GC, NKD |
+| Typical timeframe | 1 hour |
+| Best use | Swing-style intraday to multi-session portfolio exposure |
 
 > [GIF placeholder: Comparing Blaze variants]
 
@@ -25,14 +38,14 @@ The Blaze family is a set of hourly algorithms covering Nasdaq 100 (NQ), Gold (G
 
 ## Available Variants
 
-| Channel | Instrument | Timeframe | Notes |
-|---------|-----------|----------|-------|
-| `nq-blazer-1h` | Nasdaq 100 (NQ) | 1 hour | Original Blazer |
-| `nq-blaze-1h` | Nasdaq 100 (NQ) | 1 hour | Blaze standard |
-| `nq-blazev2-1h` | Nasdaq 100 (NQ) | 1 hour | Version 2 |
-| `nq-blazev3-1h` | Nasdaq 100 (NQ) | 1 hour | Version 3 |
-| `gc-blaze-1h` | Gold (GC) | 1 hour | Gold variant |
-| `nkd-blaze-1h` | Nikkei 225 (NKD) | 1 hour | Nikkei variant |
+| Dashboard ID | Instrument | Notes |
+|--------------|-----------|-------|
+| `NQBLAZEV3` | Nasdaq 100 (NQ) | Prop firm ready |
+| `NQBLAZER` | Nasdaq 100 (NQ) | Non-prop / overnight |
+| `NQBLAZE` | Nasdaq 100 (NQ) | Non-prop / overnight |
+| `NQBLAZEV2` | Nasdaq 100 (NQ) | Non-prop / overnight |
+| `GCBLAZE` | Gold (GC) | Non-prop / overnight |
+| `NKDBLAZE` | Nikkei 225 (NKD) | Non-prop / overnight |
 
 ---
 

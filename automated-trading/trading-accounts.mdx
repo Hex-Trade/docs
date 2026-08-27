@@ -1,9 +1,9 @@
 ---
-title:  Trading Accounts
-description: Connect your broker accounts to Hextrade. Supports ProjectX, Tradovate, NinjaTrader, Tradier, Oanda, DxTrade, Alpaca, CQG, and more.
+title: Trading Accounts
+description: Connect your broker accounts to Hextrade. Supports ProjectX, Tradovate, NinjaTrader, Rithmic, TradeLocker, Plus500, Oanda, Hyperliquid, and more.
 ---
 
-#  Trading Accounts
+# Trading Accounts
 
 To start automated trading, copy trading, or webhook-based algorithmic trading, you first need to **connect a broker account** to Hextrade. Once connected, your account appears in the accounts table and is available for algorithms, copy groups, and manual trading.
 
@@ -30,59 +30,79 @@ Once submitted and verified, the account appears in your accounts table — read
 
 ---
 
-##  Supported Platforms
+## Supported Platforms
 
 Hextrade supports a growing list of brokers and prop firms:
 
 <Columns cols={2}>
 <Card title="ProjectX" icon="p">
-Prop trading platform with full futures support. Webhooks, algorithms, and copy trading supported.
+Prop-firm futures. Algorithms, webhooks, and copy trading.
 </Card>
 <Card title="Tradovate" icon="t">
-Futures and trading platform. Full algorithm and copy trade integration.
+Futures. Algorithms, webhooks, and copy trading. Demo create from Tools.
 </Card>
 <Card title="NinjaTrader" icon="n">
-Popular futures and forex platform. Connect and run automated strategies.
+Futures. Same backend as Tradovate. Copy trading supported.
 </Card>
-<Card title="Tradier" icon="t">
-Equities and multi-leg options. Market, limit, stop, stop-limit; day and GTC orders.
+<Card title="Rithmic" icon="r">
+Low-latency futures. Algorithms, webhooks, and copy trading.
+</Card>
+<Card title="TradeLocker" icon="lock">
+Multi-asset / prop. Algorithms and TradingView webhooks.
+</Card>
+<Card title="Plus500" icon="plus">
+CFDs and multi-asset. Algorithms and webhooks.
 </Card>
 <Card title="Oanda" icon="o">
-Forex and CFDs. Connect and trade currency pairs with algorithms.
+Forex and CFDs. Not used on futures algorithms.
 </Card>
-<Card title="DxTrade" icon="d">
-Multi-asset platform with full dashboard integration.
-</Card>
-<Card title="Alpaca" icon="a">
-Commission-free equities API. Fast, developer-friendly connectivity.
+<Card title="Hyperliquid" icon="h">
+Crypto perps. Algorithms and webhooks.
 </Card>
 <Card title="CQG" icon="c">
-Futures and derivatives connectivity. Industry-standard market data.
+Futures and derivatives.
+</Card>
+<Card title="MatchTrader" icon="m">
+Prop-firm forex and CFDs. Webhooks supported.
+</Card>
+<Card title="Volumetrica" icon="v">
+Futures / order-flow. Copy trading and webhooks.
+</Card>
+<Card title="cTrader" icon="chart-line">
+Forex and CFDs. Beta.
+</Card>
+<Card title="MetaTrader 5" icon="chart-candlestick">
+Multi-asset. Webhooks supported.
 </Card>
 </Columns>
 
 <Note>
-More platforms are added regularly. Join the [Discord server](/other-features/discord) to request a new integration or check what's coming.
+**MetaTrader 4** is coming soon. **Tradier** is currently disabled. Join the [Discord server](/other-features/discord) for the latest integrations.
 </Note>
 
 ---
 
-##  Platform Comparison
+## Platform Comparison
 
-| Platform | Asset Class | Algorithm Support | Webhook Support | Copy Trade |
-|----------|-------------|-------------------|-----------------|------------|
-| **ProjectX** | Futures |  |  |  |
-| **Tradovate** | Futures |  |  |  |
-| **NinjaTrader** | Futures / Forex |  |  |  |
-| **Tradier** | Equities / Options |  |  |  |
-| **Oanda** | Forex / CFDs |  |  |  |
-| **DxTrade** | Multi-asset |  |  |  |
-| **Alpaca** | Equities |  |  |  |
-| **CQG** | Futures / Derivatives |  |  |  |
+| Platform | Asset class | Algorithms | Webhooks | Copy trade |
+|----------|-------------|------------|----------|------------|
+| **ProjectX** | Futures | Yes | Yes | Yes |
+| **Tradovate** | Futures | Yes | Yes | Yes |
+| **NinjaTrader** | Futures | Yes | Yes | Yes |
+| **Rithmic** | Futures | Yes | Yes | Yes |
+| **Volumetrica** | Futures | Yes | Yes | Yes |
+| **TradeLocker** | Multi-asset / Prop | Yes | Yes | — |
+| **Plus500** | CFDs | Yes | Yes | — |
+| **Oanda** | Forex / CFDs | Forex only | Yes | — |
+| **Hyperliquid** | Crypto perps | Yes | Yes | — |
+| **MatchTrader** | Forex / CFDs | Yes | Yes | — |
+| **MetaTrader 5** | Multi-asset | Yes | Yes | — |
+| **CQG** | Futures | Yes | — | — |
+| **cTrader** | Forex / CFDs | Yes | — | — |
 
 ---
 
-## ️ Account Limits
+## Account Limits
 
 The number of accounts you can connect depends on your **subscription plan**:
 
@@ -98,21 +118,21 @@ Always use API keys or credentials specific to the Hextrade integration. Do **no
 
 ---
 
-##  What to Do Next
+## What to Do Next
 
 Once your account is connected, you can:
 
 <Columns cols={2}>
-<Card title=" Find an Algorithm" href="/automated-trading/finding-algorithm">
+<Card title="Find an Algorithm" href="/automated-trading/finding-algorithm">
 Browse and activate algorithms on your connected account.
 </Card>
-<Card title=" Set Up Copy Trading" href="/copy-trading/setup">
+<Card title="Set Up Copy Trading" href="/copy-trading/setup">
 Use this account as master or follower in a copy-trade group.
 </Card>
-<Card title=" Connect a Webhook" href="/external-algorithms/tradingview-webhooks">
+<Card title="Connect a Webhook" href="/external-algorithms/tradingview-webhooks">
 Use your own TradingView strategy to drive trades on this account.
 </Card>
-<Card title=" View Analytics" href="/automated-trading/trading-analytics">
+<Card title="View Analytics" href="/automated-trading/trading-analytics">
 Analyze this account's performance, P&L, and trade history.
 </Card>
 </Columns>

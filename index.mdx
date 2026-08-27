@@ -1,7 +1,7 @@
 ---
-title: "Welcome To Hextrade"
-sidebarTitle: "Welcome To Hextrade"
-description: "Documentation for the Hextrade platform — learn how to connect accounts, run algorithms, set up copy trading, and use TradingView webhooks."
+title: Welcome To Hextrade
+sidebarTitle: Welcome
+description: Documentation for the Hextrade platform — learn how to connect accounts, run algorithms, set up copy trading, and use TradingView webhooks.
 ---
 
 <img
@@ -22,75 +22,22 @@ Hextrade is a **copy-trade platform** that blends automation with AI. You can us
 
 ---
 
-## What you can do
-
-<Columns cols={2}>
-  <Card title="Copy Trading" icon="users" href="/copy-trading/setup">
-    Create groups with a master account and follower accounts. Trades from the master are copied automatically to all followers.
-  </Card>
-
-  <Card title="Algorithms" icon="binary" href="/automated-trading/finding-algorithm">
-    Browse and connect to available trading algorithms. View performance metrics like win rate, P&L, and total trades before connecting your account.
-  </Card>
-
-  <Card title="Broker Integrations" icon="plug" href="/automated-trading/trading-accounts">
-    Connect accounts from supported brokers and prop firms including ProjectX, Tradovate, NinjaTrader, Tradier, Oanda, and more.
-  </Card>
-
-  <Card title="TradingView Webhooks" icon="webhook" href="/external-algorithms/tradingview-webhooks">
-    Already have a Pine Script strategy? Connect it to Hextrade via webhook to automate execution on your linked broker accounts.
-  </Card>
-
-  <Card title="Analytics" icon="chart-bar" href="/automated-trading/trading-analytics">
-    Review account performance, trade history, and P&L — both across all accounts and per individual account.
-  </Card>
-
-  <Card title="Portfolio Builder" icon="chart-area" href="/portfolio/overview">
-    Build and compare multi-algorithm portfolios using Cumulative P&L, calendar insights, correlations, and simulations.
-  </Card>
-
-  <Card title="Economic Calendar" icon="calendar" href="/calendar">
-    Check upcoming economic events and plan your trading activity around high-impact market releases.
-  </Card>
-
-  <Card title="Settings" icon="gear" href="/settings/overview">
-    Manage profile, billing, security, notifications, appearance, and API token access.
-  </Card>
-</Columns>
-
----
-
 ## Getting Started
+
+Walk through the four steps — each one has a video — on [Getting Started](/getting-started).
 
 <Steps>
   <Step title="Create your account">
     [Register at dash.hextrade.io/signup](https://dash.hextrade.io/signup)
-
-    <video src="/videos/New-Project-3-Copy.webm" controls />
   </Step>
   <Step title="Log in to your account">
     [Log in at dash.hextrade.io/login](https://dash.hextrade.io/login)
-
-    <video src="/videos/Create-Account.webm" controls />
   </Step>
   <Step title="Purchase premium (optional)">
     [Purchase at dash.hextrade.io/subscriptions](https://dash.hextrade.io/subscriptions)
-
-    <video src="/videos/Premium-1.webm" controls />
   </Step>
   <Step title="Connect a broker account">
-    Go to [Accounts](https://dash.hextrade.io/accounts) and add your first broker or prop firm account. See [Trading Accounts](/automated-trading/trading-accounts) for the full list of supported platforms.<br />
-
-    <video src="/videos/Add-Account.webm" controls />
-  </Step>
-  <Step title="Choose how you want to trade">
-    - **Use an algorithm** — browse [Algos](https://dash.hextrade.io/algos) and connect your account.
-    - **Copy trade** — create a group in [Copy Trading](/copy-trading/setup) with a master and follower accounts.
-    - **Connect your own strategy** — set up a [TradingView webhook](/external-algorithms/tradingview-webhooks).
-    - **Build a strategy mix** — compare combinations in [Portfolio](/portfolio/overview).
-  </Step>
-  <Step title="Monitor your performance">
-    Use [Analytics](https://dash.hextrade.io/analytics), [Portfolio](https://dash.hextrade.io/portfolio), and the [Economic Calendar](https://dash.hextrade.io/calendar) to track results and stay aware of upcoming market events.
+    Go to [Accounts](https://dash.hextrade.io/accounts) and add your first broker or prop firm account. See [Supported Brokers](/supported-brokers) for the full list.
   </Step>
 </Steps>
 
@@ -98,16 +45,23 @@ Hextrade is a **copy-trade platform** that blends automation with AI. You can us
 
 ## Supported Brokers & Platforms
 
-| Platform | Type |
-| --- | --- |
-| **ProjectX** | Prop firm / Futures |
-| **Tradovate** | Futures |
-| **NinjaTrader** | Futures |
-| **Tradier** | Equities & Options |
-| **Oanda** | Forex & CFDs |
-| **DxTrade** | Multi-asset |
-| **Alpaca** | Equities |
-| **CQG** | Futures & Derivatives |
+| Platform | Type | Status |
+|----------|------|--------|
+| **ProjectX** | Prop firm / Futures | Available |
+| **Tradovate** | Futures | Available |
+| **NinjaTrader** | Futures | Available |
+| **Rithmic** | Futures | Available |
+| **TradeLocker** | Multi-asset / Prop | Available |
+| **Plus500** | CFDs / Multi-asset | Available |
+| **Oanda** | Forex & CFDs | Available |
+| **Hyperliquid** | Crypto perps | Available |
+| **CQG** | Futures & Derivatives | Available |
+| **MatchTrader** | Prop firm / Forex & CFDs | Available |
+| **Volumetrica** | Futures / Order-flow | Available |
+| **cTrader** | Forex & CFDs | Beta |
+| **MetaTrader 5** | Multi-asset | Available |
+
+Copy trading is available on **ProjectX**, **Tradovate**, **NinjaTrader**, **Rithmic**, and **Volumetrica**. See [Supported Brokers](/supported-brokers) for connection details.
 
 ---
 
