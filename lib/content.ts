@@ -10,6 +10,8 @@ const CONTENT_DIR = path.join(process.cwd(), "content", "docs");
 export type DocFrontmatter = {
   title: string;
   description?: string;
+  seoTitle?: string;
+  keywords?: string[];
 };
 
 export type Doc = {

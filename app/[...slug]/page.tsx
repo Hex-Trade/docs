@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DocPage } from "@/components/DocPage";
 import { getDoc, getDocSlugs } from "@/lib/content";
+import { getPageBySlug } from "@/lib/nav";
+import { buildDocMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return getDocSlugs()
@@ -16,11 +18,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   try {
-    const doc = getDoc(slug.join("/"));
-    return {
-      title: doc.frontmatter.title,
+    const path = slug.join("/");
+    const doc = getDoc(path);
+    const page = getPageBySlug(doc.slug);
+    return buildDocMetadata({
+      title: doc.frontmatter.seoTitle ?? doc.frontmatter.title,
       description: doc.frontmatter.description,
-    };
+      path: page?.href ?? `/${path}`,
+      keywords: doc.frontmatter.keywords,
+    });
   } catch {
     return {};
   }

@@ -8,12 +8,18 @@ import { mdxComponents } from "./mdx";
 import { PageActions } from "./PageActions";
 import { PrevNext } from "./PrevNext";
 import { Toc } from "./Toc";
+import { DocJsonLd } from "./DocJsonLd";
 
 export async function DocPage({ slug }: { slug: string }) {
   const doc = getDoc(slug);
 
   return (
     <div className="flex gap-10 px-4 py-6 lg:px-10 lg:py-10">
+      <DocJsonLd
+        slug={slug}
+        title={doc.frontmatter.seoTitle ?? doc.frontmatter.title}
+        description={doc.frontmatter.description}
+      />
       <main className="min-w-0 flex-1">
         <div className="rounded-3xl bg-surface/90 p-6 sm:p-8 lg:p-12">
           {slug === "algorithms" ? (

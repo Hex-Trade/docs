@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Hextrade",
-  "description": "Your gateway to smarter, more efficient trading. AI copy-trade platform with algorithms, copy trading, and TradingView webhooks.",
+  "description": "Official Hextrade documentation for algorithmic trading, TradingView webhook automation, copy trading, and multi-broker execution.",
   "theme": "mint",
   "colors": {
     "primary": "#8FA4B8",
