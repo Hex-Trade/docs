@@ -1,43 +1,33 @@
 ---
 title: Brokers
-description: Platforms you can connect — algorithms, webhooks, and copy-trade coverage.
+description: Connect futures, CFD, and crypto platforms — then sign contracts and join firm Discords.
 ---
 
-Connect one or more accounts from **Accounts → Add account**. Each connection shows up on [Accounts](/accounts) with platform, balance, and P&L.
+Pick the product type, then open the broker page for **how to connect**, **how to sign contracts**, and **Discords**.
+
+Premium is required to connect an account. Free is view only.
+
+<Cards>
+  <Card title="Futures" href="/brokers-futures">
+    Tradovate, NinjaTrader, ProjectX, Rithmic, Volumetrica, CQG.
+  </Card>
+  <Card title="CFDs" href="/brokers-cfds">
+    TradeLocker, Plus500, MatchTrader, MetaTrader 5, Oanda, cTrader.
+  </Card>
+  <Card title="Crypto" href="/brokers-crypto">
+    Hyperliquid perps and tokenized indexes.
+  </Card>
+  <Card title="Discords" href="/broker-discords">
+    Hextrade plus popular broker and prop-firm communities.
+  </Card>
+</Cards>
 
 <Video src="/videos/Add-Account.webm" />
 
-## Supported platforms
+## Coverage
 
 <BrokerTable />
 
 <Note>
   MetaTrader 4 is listed in Add account but not connectable yet. Tradier is disabled. Alpaca and DxTrade are not available for new connections.
 </Note>
-
-## What “supported” means
-
-- **Connect** — Login, API keys, or the platform’s own flow
-- **See in one place** — Row on [Accounts](/accounts)
-- **Trade** — Order types on [Trading](/trading) depend on the broker
-- **Algorithms** — Futures algos run on futures-capable brokers. **Oanda is excluded**
-- **Copy trade** — These five only
-- **Webhooks** — See [TradingView webhooks](/webhooks)
-
-## Supported copy trading brokers
-
-<CopyTradePills />
-
-## Connecting
-
-<Steps>
-  <Step title="Open Accounts">
-    [dash.hextrade.io/accounts](https://dash.hextrade.io/accounts)
-  </Step>
-  <Step title="Add account">
-    Pick the broker and complete sign-in or API keys.
-  </Step>
-  <Step title="Confirm the row">
-    Status should show connected. Open **Account stats** for balance and history.
-  </Step>
-</Steps>

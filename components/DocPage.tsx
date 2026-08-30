@@ -4,7 +4,7 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import { getAllDocs, getDoc } from "@/lib/content";
 import { getDiscordOnline } from "@/lib/discord";
-import { getPageBySlug, nav } from "@/lib/nav";
+import { findGroupTitleForSlug, getPageBySlug } from "@/lib/nav";
 import { DocsShell } from "./DocsShell";
 import { FamilyScroll } from "./FamilyScroll";
 import { mdxComponents } from "./mdx";
@@ -15,12 +15,11 @@ export async function DocPage({ slug }: { slug: string }) {
   const discordOnline = await getDiscordOnline();
   const searchItems = getAllDocs().map((item) => {
     const page = getPageBySlug(item.slug);
-    const group = nav.find((entry) => entry.pages.some((navPage) => navPage.slug === item.slug));
     return {
       title: item.frontmatter.title,
       href: page?.href ?? `/${item.slug}`,
       description: item.frontmatter.description,
-      group: group?.title,
+      group: findGroupTitleForSlug(item.slug),
       headings: item.headings,
     };
   });

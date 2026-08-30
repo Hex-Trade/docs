@@ -3,8 +3,10 @@ import { PlatformIcon } from "./PlatformIcon";
 
 function parseSlugs(slugs: string | readonly string[] | undefined) {
   if (!slugs) return [];
-  if (Array.isArray(slugs)) return slugs;
-  return slugs.split(",").map((slug) => slug.trim()).filter(Boolean);
+  if (typeof slugs === "string") {
+    return slugs.split(",").map((slug) => slug.trim()).filter(Boolean);
+  }
+  return [...slugs];
 }
 
 export function PlatformPills({ slugs }: { slugs: string | readonly string[] }) {

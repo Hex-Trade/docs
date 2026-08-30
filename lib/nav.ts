@@ -37,7 +37,8 @@ export type NavPage = {
 export type NavGroup = {
   title: string;
   icon: LucideIcon;
-  pages: NavPage[];
+  pages?: NavPage[];
+  groups?: NavGroup[];
 };
 
 export const nav: NavGroup[] = [
@@ -54,7 +55,6 @@ export const nav: NavGroup[] = [
     icon: Layers,
     pages: [
       { title: "Accounts", href: "/accounts", slug: "accounts", icon: Wallet },
-      { title: "Brokers", href: "/brokers", slug: "brokers", icon: Landmark },
       { title: "Algorithms", href: "/algorithms", slug: "algorithms", icon: Cpu },
       { title: "Copy trading", href: "/copy-trading", slug: "copy-trading", icon: Copy },
       { title: "Portfolio", href: "/portfolio", slug: "portfolio", icon: PieChart },
@@ -62,6 +62,47 @@ export const nav: NavGroup[] = [
       { title: "Trading", href: "/trading", slug: "trading", icon: CandlestickChart },
       { title: "Analytics", href: "/analytics", slug: "analytics", icon: BarChart3 },
       { title: "Calendar", href: "/calendar", slug: "calendar", icon: CalendarDays },
+    ],
+  },
+  {
+    title: "Brokers",
+    icon: Landmark,
+    pages: [
+      { title: "Overview", href: "/brokers", slug: "brokers", icon: Landmark },
+      { title: "Discords", href: "/broker-discords", slug: "broker-discords", icon: MessagesSquare },
+    ],
+    groups: [
+      {
+        title: "Futures",
+        icon: TrendingUp,
+        pages: [
+          { title: "Tradovate", href: "/tradovate", slug: "tradovate", icon: TrendingUp },
+          { title: "NinjaTrader", href: "/ninjatrader", slug: "ninjatrader", icon: TrendingUp },
+          { title: "ProjectX", href: "/projectx", slug: "projectx", icon: Shield },
+          { title: "Rithmic", href: "/rithmic", slug: "rithmic", icon: Zap },
+          { title: "Volumetrica", href: "/volumetrica", slug: "volumetrica", icon: BarChart3 },
+          { title: "CQG", href: "/cqg", slug: "cqg", icon: Landmark },
+        ],
+      },
+      {
+        title: "CFDs",
+        icon: CircleDollarSign,
+        pages: [
+          { title: "TradeLocker", href: "/tradelocker", slug: "tradelocker", icon: CircleDollarSign },
+          { title: "Plus500", href: "/plus500", slug: "plus500", icon: CircleDollarSign },
+          { title: "MatchTrader", href: "/matchtrader", slug: "matchtrader", icon: CircleDollarSign },
+          { title: "MetaTrader 5", href: "/mt5", slug: "mt5", icon: CircleDollarSign },
+          { title: "Oanda", href: "/oanda", slug: "oanda", icon: CircleDollarSign },
+          { title: "cTrader", href: "/ctrader", slug: "ctrader", icon: CircleDollarSign },
+        ],
+      },
+      {
+        title: "Crypto",
+        icon: Coins,
+        pages: [
+          { title: "Hyperliquid", href: "/hyperliquid", slug: "hyperliquid", icon: Coins },
+        ],
+      },
     ],
   },
   {
@@ -100,7 +141,11 @@ export const nav: NavGroup[] = [
   },
 ];
 
-export const flatPages = nav.flatMap((group) => group.pages);
+function pagesInGroup(group: NavGroup): NavPage[] {
+  return [...(group.pages ?? []), ...(group.groups ?? []).flatMap(pagesInGroup)];
+}
+
+export const flatPages = nav.flatMap(pagesInGroup);
 
 export function getPageBySlug(slug: string) {
   return flatPages.find((page) => page.slug === slug);
@@ -112,4 +157,21 @@ export function getAdjacentPages(slug: string) {
     prev: index > 0 ? flatPages[index - 1] : null,
     next: index >= 0 && index < flatPages.length - 1 ? flatPages[index + 1] : null,
   };
+}
+
+export function findGroupForHref(href: string): { group: NavGroup; subgroup?: NavGroup } | null {
+  for (const group of nav) {
+    if (group.pages?.some((page) => page.href === href)) return { group };
+    for (const subgroup of group.groups ?? []) {
+      if (subgroup.pages?.some((page) => page.href === href)) return { group, subgroup };
+    }
+  }
+  return null;
+}
+
+export function findGroupTitleForSlug(slug: string) {
+  const page = getPageBySlug(slug);
+  if (!page) return undefined;
+  const match = findGroupForHref(page.href);
+  return match?.subgroup?.title ?? match?.group.title;
 }
