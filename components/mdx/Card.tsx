@@ -1,16 +1,21 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { DiscordIcon } from "../DiscordIcon";
 
 type CardProps = {
   title: string;
   href?: string;
+  icon?: string;
   children?: ReactNode;
 };
 
-export function Card({ title, href, children }: CardProps) {
+export function Card({ title, href, icon, children }: CardProps) {
   const inner = (
     <>
-      <p className="text-sm font-semibold text-text">{title}</p>
+      <p className="flex items-center gap-2 text-sm font-semibold text-text">
+        {icon === "discord" ? <DiscordIcon size={16} /> : null}
+        {title}
+      </p>
       {children ? <div className="mt-1 text-[13px] leading-5 text-muted [&>p]:m-0">{children}</div> : null}
     </>
   );

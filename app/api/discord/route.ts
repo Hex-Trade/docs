@@ -1,6 +1,5 @@
-import { getDiscordOnline } from "@/lib/discord";
+import { getDiscordCounts } from "@/lib/discord";
 
 export async function GET() {
-  const online = await getDiscordOnline();
-  return Response.json({ online });
+  return Response.json(await getDiscordCounts());
 }

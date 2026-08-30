@@ -161,6 +161,12 @@ body {
   font-size: 0.8125rem;
 }
 
+.docs-prose .payload-example pre {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
 .docs-prose code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.84em;
@@ -208,6 +214,30 @@ body {
   border: 0;
   border-radius: 4px;
   vertical-align: middle;
+}
+
+.docs-prose img.docs-icon {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  margin: 0;
+  border: 0;
+  border-radius: 3px;
+}
+
+.docs-prose a.discord-badge img.docs-icon {
+  border-radius: 12px;
+}
+
+.docs-prose a.discord-badge,
+.docs-prose a.discord-badge:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.docs-prose a.discord-badge span {
+  text-decoration: none;
 }
 
 html.light {

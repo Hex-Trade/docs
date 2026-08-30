@@ -21,7 +21,10 @@ import {
   PlatformPills,
   WebhookPills,
 } from "./PlatformPills";
+import { PayloadExample } from "./PayloadExample";
 import { WebhookPlatformTable } from "./WebhookPlatformTable";
+import { DiscordBadge } from "../DiscordBadge";
+import { BrokerDiscordTable, CfdPropDiscordTable, FuturesPropDiscordTable } from "./DiscordTables";
 
 function MdxImage(props: ImgHTMLAttributes<HTMLImageElement>) {
   const cutout = props.src === "/hex-logo.png" || String(props.className ?? "").includes("logo-cutout");
@@ -55,5 +58,10 @@ export const mdxComponents = {
   FuturesPills,
   CfdPills,
   HyperliquidPills,
+  PayloadExample,
   WebhookPlatformTable,
+  DiscordBadge,
+  BrokerDiscordTable,
+  FuturesPropDiscordTable,
+  CfdPropDiscordTable,
 };

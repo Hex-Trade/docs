@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { DocsShell } from "@/components/DocsShell";
+import { getSearchItems } from "@/lib/content";
+import { getDiscordOnline } from "@/lib/discord";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -18,7 +21,9 @@ export const metadata: Metadata = {
   icons: { icon: "/hex-logo.png" },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const [searchItems, discordOnline] = [getSearchItems(), await getDiscordOnline()];
+
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
@@ -28,7 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className="bg-bg font-sans text-text antialiased">{children}</body>
+      <body className="bg-bg font-sans text-text antialiased">
+        <DocsShell searchItems={searchItems} discordOnline={discordOnline}>
+          {children}
+        </DocsShell>
+      </body>
     </html>
   );
 }

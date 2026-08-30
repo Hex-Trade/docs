@@ -13,7 +13,8 @@ export function PlatformIcon({
   return (
     <img
       src={`/images/platforms/${platform.file}`}
-      alt=""
+      alt={platform.name}
+      title={platform.name}
       width={size}
       height={size}
       className="inline-icon rounded-[4px] object-contain"

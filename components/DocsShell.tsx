@@ -2,22 +2,15 @@
 
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import type { Heading } from "@/lib/headings";
 import { Logo } from "./Logo";
-import { PageActions } from "./PageActions";
 import type { SearchItem } from "./Search";
 import { Sidebar } from "./Sidebar";
-import { Toc } from "./Toc";
 
 export function DocsShell({
-  slug,
-  headings,
   searchItems,
   discordOnline,
   children,
 }: {
-  slug: string;
-  headings: Heading[];
   searchItems: SearchItem[];
   discordOnline: number;
   children: React.ReactNode;
@@ -58,18 +51,7 @@ export function DocsShell({
               Dashboard
             </a>
           </header>
-
-          <div className="flex gap-10 px-4 py-6 lg:px-10 lg:py-10">
-            <main className="min-w-0 flex-1">
-              <div className="rounded-3xl bg-surface/90 p-6 sm:p-8 lg:p-12">
-                {children}
-              </div>
-            </main>
-            <aside className="sticky top-8 hidden h-fit w-56 shrink-0 xl:block">
-              <Toc headings={headings} />
-              <PageActions slug={slug} />
-            </aside>
-          </div>
+          {children}
         </div>
       </div>
     </div>

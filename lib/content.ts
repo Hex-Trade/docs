@@ -2,6 +2,8 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { extractHeadings, type Heading } from "./headings";
+import { findGroupTitleForSlug, getPageBySlug } from "./nav";
+import type { SearchItem } from "@/components/Search";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "docs");
 
@@ -39,4 +41,17 @@ export function getDoc(slug: string): Doc {
 
 export function getAllDocs() {
   return getDocSlugs().map(getDoc);
+}
+
+export function getSearchItems(): SearchItem[] {
+  return getAllDocs().map((item) => {
+    const page = getPageBySlug(item.slug);
+    return {
+      title: item.frontmatter.title,
+      href: page?.href ?? `/${item.slug}`,
+      description: item.frontmatter.description,
+      group: findGroupTitleForSlug(item.slug),
+      headings: item.headings,
+    };
+  });
 }
