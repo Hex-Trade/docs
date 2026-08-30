@@ -1,0 +1,39 @@
+---
+title: Rithmic
+description: Connect Rithmic — system name, market-data agreements, and prop Discords.
+---
+
+<BrokerHeading slugs={["rithmic"]} />
+
+Low-latency futures. Algorithms, webhooks, and copy trade. Webhook `platformType`: `rithmic`.
+
+## How to connect
+
+<Steps>
+  <Step title="Open Add account">
+    [Accounts](/accounts) → **Add account** → Rithmic. Premium is required.
+  </Step>
+  <Step title="Pick the server / system name">
+    Must match what the FCM or prop issued. Examples: `Rithmic 01`, `Rithmic Paper Trading`, `Apex`, `TopstepTrader`, `LucidTrading`, `Earn2Trade`, `Bulenox`.
+  </Step>
+  <Step title="Username and password">
+    R | Trader / firm credentials. Verify, then select the account.
+  </Step>
+</Steps>
+
+<Warning>
+  Wrong system name is the usual fail. Copy it from the firm’s welcome email or R | Trader login screen.
+</Warning>
+
+## How to sign contracts
+
+1. Complete FCM or prop onboarding.
+2. In **R | Trader** (or the firm portal), accept **market-data agreements** for the exchanges you trade (CME, CBOT, COMEX, NYMEX).
+3. Enable the products you need. Unsigned books will reject.
+4. Then connect those credentials in Hextrade.
+
+## Discords
+
+- [Hextrade](https://discord.com/invite/hextrade)
+- [rithmic.com](https://www.rithmic.com/)
+- Apex, Lucid, Earn2Trade, Bulenox, Topstep: [Broker Discords](/broker-discords)
