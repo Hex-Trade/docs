@@ -1,0 +1,73 @@
+---
+title: Algorithms
+description: Browse families, read the ID format, then attach a connected account and set risk.
+---
+
+Algorithms live on [dash.hextrade.io/algos](https://dash.hextrade.io/algos). Each row is a dashboard ID such as `NQRAPTOR` or `ESRAPTORV3`.
+
+## Naming format
+
+`[instrument][strategy][version]`
+
+- `NQRAPTOR` — Nasdaq futures + Raptor
+- `ESRAPTORV3` — third ES Raptor revision
+- `NQRAPTOR22` — 22-minute NQ Raptor variant
+
+## Instruments
+
+| Code | Instrument | Exchange |
+| --- | --- | --- |
+| **NQ** | Nasdaq 100 Futures | CME |
+| **ES** | S&P 500 Futures | CME |
+| **GC** | Gold Futures | COMEX |
+| **CL** | Crude Oil Futures | NYMEX |
+| **YM** | Dow Jones Futures | CBOT |
+| **NKD** | Nikkei 225 Futures | CME |
+| **BTC** | Bitcoin | Crypto |
+| **ETH** | Ethereum | Crypto |
+
+## Catalog
+
+Filter by family, instrument, or dashboard ID. Old family URLs such as `/algorithms/raptor` still land on the matching row.
+
+<AlgorithmCatalog />
+
+## Badges
+
+| Badge | Meaning |
+| --- | --- |
+| **Prop Firm Ready** | Intraday style, suitable for many prop-firm rules |
+| **Non-Prop** | Typically holds overnight — check your firm’s rules |
+| **Overnight** | Designed to hold outside regular hours |
+| **Beta Testing** | Newer strategy; monitor closely |
+| **Deprecated** | Kept for existing connections; prefer a newer family |
+| **Short Term** / **24/7 Scalper** | High-frequency or always-on variants (often in Advanced) |
+
+## Advanced / experimental
+
+The **Advanced** section on Algos includes hidden, beta, and third-party IDs such as `ESBOSS`, `ESVIPER`, `NQVIPER`, `ESVORTEX`, `NQCORE`, `GCFLUX`, `GCNOVA`, `NQHAS`, `GCHAS`, `NQDRIFT`, and `GCBB`. Use extra caution.
+
+## Supported platforms
+
+Futures algorithms run on connected futures-capable brokers: ProjectX, Tradovate, NinjaTrader, Rithmic, TradeLocker, Plus500, Hyperliquid, CQG, MatchTrader, Volumetrica, cTrader, and MetaTrader 5. **Oanda is excluded.** See [Brokers](/brokers).
+
+## How to connect
+
+<Steps>
+  <Step title="Browse Algos">
+    Open [dash.hextrade.io/algos](https://dash.hextrade.io/algos) and pick a variant.
+  </Step>
+  <Step title="Read the metrics">
+    Check APY, win rate, total trades, and P&L on the detail page.
+  </Step>
+  <Step title="Confirm the broker">
+    The variant must support a [connected account](/accounts).
+  </Step>
+  <Step title="Attach and set risk">
+    In **Connected Accounts**, select the account, set risk, then activate.
+  </Step>
+</Steps>
+
+<Warning>
+  Review history and set risk before going live. Past performance does not guarantee future results. Start with micro size to confirm the integration.
+</Warning>

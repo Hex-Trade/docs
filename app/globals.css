@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0a0b;
+  --color-surface: #141416;
+  --color-surface-2: #1b1b1e;
+  --color-border: #2a2a2e;
+  --color-border-strong: #3a3a40;
+  --color-text: #fafafa;
+  --color-muted: #9f9fa9;
+  --color-accent: #00ccff;
+  --color-accent-hover: #33d6ff;
+  --color-accent-dim: color-mix(in srgb, #00ccff 14%, transparent);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 50% at 8% 0%, rgba(255, 255, 255, 0.035), transparent 50%),
+    linear-gradient(180deg, #121214 0%, #0b0b0c 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, #00ccff 32%, transparent);
+}
+
+.page-gradient {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.docs-prose {
+  font-size: 0.975rem;
+  line-height: 1.7;
+  color: #d4d4d8;
+}
+
+.docs-prose > :first-child {
+  margin-top: 0;
+}
+
+.docs-prose h1,
+.docs-prose h2,
+.docs-prose h3 {
+  color: var(--color-text);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  scroll-margin-top: 6rem;
+}
+
+.docs-prose h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+.docs-prose h2 {
+  font-size: 1.25rem;
+  margin: 2.25rem 0 0.75rem;
+}
+
+.docs-prose h3 {
+  font-size: 1.05rem;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.docs-prose p {
+  margin: 0.85rem 0;
+}
+
+.docs-prose a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.docs-prose a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.docs-prose strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.docs-prose ul,
+.docs-prose ol {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.docs-prose li {
+  margin: 0.35rem 0;
+}
+
+.docs-prose ul {
+  list-style: disc;
+}
+
+.docs-prose ol {
+  list-style: decimal;
+}
+
+.docs-prose hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 2rem 0;
+}
+
+.docs-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.docs-prose th,
+.docs-prose td {
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.docs-prose th {
+  color: var(--color-text);
+  font-weight: 600;
+  background: var(--color-surface-2);
+}
+
+.docs-prose td {
+  color: #d4d4d8;
+}
+
+.docs-prose pre {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.85rem;
+  background: #0d0d0f;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0;
+  font-size: 0.8125rem;
+}
+
+.docs-prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.84em;
+}
+
+.docs-prose :not(pre) > code {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: 0.35rem;
+  padding: 0.1rem 0.35rem;
+  color: #e4e4e7;
+}
+
+.docs-prose blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 1rem;
+  border-left: 2px solid var(--color-accent);
+  color: var(--color-muted);
+}
+
+.docs-prose img,
+.docs-prose video {
+  display: block;
+  width: 100%;
+  border-radius: 0.85rem;
+  border: 1px solid var(--color-border);
+  margin: 1rem 0 1.25rem;
+}
+
+.docs-prose img.logo-cutout {
+  width: 7.5rem;
+  height: auto;
+  margin: 0 0 1.25rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.docs-prose table img,
+.docs-prose .inline-icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  border: 0;
+  border-radius: 4px;
+  vertical-align: middle;
+}
+
+html.light {
+  color-scheme: light;
+  --color-bg: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef1f4;
+  --color-border: #d5dbe1;
+  --color-border-strong: #b8c0c8;
+  --color-text: #111318;
+  --color-muted: #5c6570;
+}
+
+html.light body {
+  background:
+    radial-gradient(ellipse 80% 50% at 0% 0%, rgba(0, 204, 255, 0.06), transparent 50%),
+    linear-gradient(180deg, #f3f4f6 0%, #f7f7f8 100%);
+}
+
+html.light .docs-prose {
+  color: #3d4650;
+}
+
+html.light .docs-prose h1,
+html.light .docs-prose h2,
+html.light .docs-prose h3,
+html.light .docs-prose strong,
+html.light .docs-prose th {
+  color: #111318;
+}
+
+.search-overlay {
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(36px) saturate(0.7);
+  -webkit-backdrop-filter: blur(36px) saturate(0.7);
+}
+
+html.light .search-overlay {
+  background: rgba(244, 246, 248, 0.55);
+}
+
+@media (min-width: 1536px) {
+  .sidebar-scale {
+    zoom: 1.25;
+  }
+}

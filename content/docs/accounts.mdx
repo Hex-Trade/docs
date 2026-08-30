@@ -1,0 +1,71 @@
+---
+title: Accounts
+description: Your home after login — every connected broker, portfolio value, trades, and account limit.
+---
+
+Open **Accounts** from the sidebar. This is the first screen after login and the place you add, inspect, and remove broker connections.
+
+<Video src="/videos/Add-Account.webm" />
+
+## Summary cards
+
+| Card | What it shows |
+| --- | --- |
+| **Portfolio value** | Total value across connected accounts. Updates with live P&L when available. |
+| **Completed trades** | Closed trades across accounts. |
+| **Active accounts** | How many brokers you have connected. |
+| **Account limit** | Your plan’s maximum. Raise it in [Subscriptions](/subscriptions). |
+
+The table under the cards lists each account’s name, platform, status, and P&L, plus actions such as **Account stats** and disconnect.
+
+## Add an account
+
+<Steps>
+  <Step title="Open Accounts">
+    Go to [dash.hextrade.io/accounts](https://dash.hextrade.io/accounts).
+  </Step>
+  <Step title="Click Add account">
+    Choose the broker. Limits come from your [subscription](/subscriptions).
+  </Step>
+  <Step title="Complete the connection">
+    Sign in or paste API keys for that platform. The row appears in the table when it succeeds.
+  </Step>
+  <Step title="Open Account stats">
+    Review balance, trade history, and broker-specific metrics for that account only.
+  </Step>
+</Steps>
+
+<Tip>
+  On Tradovate you can generate a trial demo from **Tools** on Accounts, then add it to Hextrade.
+</Tip>
+
+Connection fields, copy-trade coverage, and webhook `platformType` values live on [Brokers](/brokers).
+
+## What you can do from here
+
+- View every connected account in one table
+- Open **Account stats** for a single account
+- Use shared reports across accounts
+- Open the **Webhooks** section to copy your unique URL
+- Add more brokers until you hit the plan limit
+
+## After accounts are connected
+
+<Cards>
+  <Card title="Algorithms" href="/algorithms">
+    Attach an account to a strategy and set risk.
+  </Card>
+  <Card title="Copy trading" href="/copy-trading">
+    Use ProjectX, Tradovate, NinjaTrader, Rithmic, or Volumetrica as master or follower.
+  </Card>
+  <Card title="Trading" href="/trading">
+    Place manual orders on the selected account.
+  </Card>
+  <Card title="Settings" href="/settings">
+    Profile, 2FA, notifications, and API token.
+  </Card>
+</Cards>
+
+## Limits
+
+When you hit the account cap, **Add account** shows a message. Upgrade in **Subscriptions**. Each broker connection counts as one slot. “Unlimited” plans show no cap on this page.

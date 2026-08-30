@@ -1,0 +1,69 @@
+---
+title: Brokers
+description: Platforms you can connect — algorithms, webhooks, and copy-trade coverage.
+---
+
+Connect one or more accounts from **Accounts → Add account**. Each connection shows up on [Accounts](/accounts) with platform, balance, and P&L.
+
+<Video src="/videos/Add-Account.webm" />
+
+## Supported platforms
+
+<BrokerTable />
+
+<Note>
+  MetaTrader 4 is listed in Add account but not connectable yet. Tradier is disabled. Alpaca and DxTrade are not available for new connections.
+</Note>
+
+## What “supported” means
+
+- **Connect** — Login, API keys, or the platform’s own flow
+- **See in one place** — Row on [Accounts](/accounts)
+- **Trade** — Order types on [Trading](/trading) depend on the broker
+- **Algorithms** — Futures algos run on futures-capable brokers. **Oanda is excluded**
+- **Copy trade** — ProjectX, Tradovate, NinjaTrader, Rithmic, Volumetrica only
+- **Webhooks** — See [TradingView webhooks](/webhooks)
+
+## Broker notes
+
+### ProjectX
+
+Username, password, and server. Algorithms, webhooks, and copy trading.
+
+### Tradovate / NinjaTrader
+
+Username, password, and environment (demo or live). NinjaTrader uses the Tradovate backend. Both support algorithms, webhooks, and copy trading.
+
+### Rithmic
+
+Server, username, and password, then pick the account. Low-latency futures. Algorithms, webhooks, and copy trading.
+
+### TradeLocker / MatchTrader / Plus500 / MetaTrader 5
+
+Login flow per platform. Algorithms and webhooks yes; copy trading no.
+
+### Oanda
+
+Forex and CFDs only. Not offered on futures algorithms.
+
+### Hyperliquid
+
+Wallet / account connect. Webhook `platformType` is `hyperliquid`.
+
+### CQG / Volumetrica / cTrader
+
+Volumetrica supports copy trading and webhooks. CQG can be connected for account management and algorithms. cTrader is beta — webhook and copy-trade coverage is thinner.
+
+## Connecting
+
+<Steps>
+  <Step title="Open Accounts">
+    [dash.hextrade.io/accounts](https://dash.hextrade.io/accounts)
+  </Step>
+  <Step title="Add account">
+    Pick the broker and complete sign-in or API keys.
+  </Step>
+  <Step title="Confirm the row">
+    Status should show connected. Open **Account stats** for balance and history.
+  </Step>
+</Steps>

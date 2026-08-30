@@ -1,0 +1,122 @@
+---
+title: Portfolio
+description: Mix algorithms, validate across seven tabs, optimize the allocation, then deploy live.
+---
+
+Open [dash.hextrade.io/portfolio](https://dash.hextrade.io/portfolio). Portfolio Builder combines algorithms into one risk-managed mix, then deploys that mix to a connected account.
+
+## Getting started
+
+<Steps>
+  <Step title="Open Portfolio">
+    Use **Portfolio** in the dashboard sidebar.
+  </Step>
+  <Step title="Add algorithms">
+    Expand **Portfolio Builder**. Select algorithms, set contract sizes, and toggle each one on or off.
+  </Step>
+  <Step title="Set starting balance">
+    This scales the equity curve and metrics.
+  </Step>
+  <Step title="Read every tab">
+    Validate behavior before you deploy.
+  </Step>
+  <Step title="Optimize, then deploy">
+    Apply a suggested allocation if you want, then deploy to a target account. Deploy requires Premium.
+  </Step>
+</Steps>
+
+## Tabs
+
+### Cumulative P&L
+
+Combined equity curve and drawdown. Compare ALL / 6M / 3M / custom ranges and save snapshots.
+
+Prefer a stable long-run curve over a short spike. Check drawdown before you optimize for return.
+
+### Calendar
+
+Daily and monthly P&L for the mix. Use it to spot clustered winning or losing days.
+
+<Note>
+  This is the portfolio day calendar. Macro events are on [Calendar](/calendar).
+</Note>
+
+### Analytics
+
+Quality of the selected allocation — not live account analytics.
+
+| Metric | What it tells you |
+| --- | --- |
+| **Total Return** | Cumulative gain over the period |
+| **Win Rate** | Share of profitable trades |
+| **Max Drawdown** | Largest peak-to-trough decline |
+| **Sharpe Ratio** | Risk-adjusted return |
+| **Profit Factor** | Gross profit ÷ gross loss |
+| **Avg Trade Duration** | How long positions stay open |
+
+Review drawdown first, then return quality. Live account numbers are on [Analytics](/analytics).
+
+### Trades
+
+Sortable log across enabled algorithms. Unexpected density usually means a toggle or contract size is wrong. Outlier loss days belong on Hedge and Correlation.
+
+### Hedge
+
+Same-session overlap between strategies. High overlap means you are less diversified than the name list suggests.
+
+### Correlation
+
+How selected algorithms move on shared days.
+
+- Near **+1** — they move together
+- Near **0** — weak relationship
+- Near **−1** — they tend to offset
+
+Avoid stacking size inside a highly correlated cluster.
+
+### Simulations
+
+Modelled upside / downside bands. These are estimates, not forecasts.
+
+<Warning>
+  Extreme or correlated markets can exceed any modelled scenario. Size conservatively when you go live.
+</Warning>
+
+## Actions
+
+### Import CSV
+
+Load an allocation from a file, review parsed rows, then validate every tab before deploy.
+
+### Share
+
+Export a configuration for review or archive. Recipients should import and validate before going live.
+
+### Clear
+
+Removes every selected algorithm from the session. This cannot be undone — **Share** first if the mix is worth keeping.
+
+### Optimize
+
+Suggests contract sizes (and sometimes news-event filters) for the enabled set. Decision support, not autopilot. Check Cumulative P&L, Analytics, and Simulations, then **Apply**.
+
+### Deploy
+
+<Steps>
+  <Step title="Requirements">
+    At least one algorithm enabled, a [connected broker](/brokers), and Premium.
+  </Step>
+  <Step title="Validate">
+    Walk the seven tabs.
+  </Step>
+  <Step title="Deploy">
+    Choose the target account. Each algorithm subscription is created or updated.
+  </Step>
+  <Step title="Monitor">
+    Watch [Accounts](/accounts) and [Analytics](/analytics).
+  </Step>
+</Steps>
+
+<Warning>
+  Deploy executes real risk on a real account. Start small and scale only after live behavior looks stable.
+</Warning>

@@ -1,0 +1,143 @@
+---
+title: TradingView webhooks
+description: Send Pine Script alerts to Hextrade and execute on a connected broker.
+---
+
+Use your own TradingView strategy. Hextrade places the order on the account you name in the payload.
+
+## Webhook platforms
+
+Set `platformType` to the lowercase value.
+
+| Platform | `platformType` |
+| --- | --- |
+| ProjectX | `projectx` |
+| Tradovate | `tradovate` |
+| NinjaTrader | `ninjatrader` |
+| Rithmic | `rithmic` |
+| TradeLocker | `tradelocker` |
+| MatchTrader | `matchtrader` |
+| Volumetrica | `volumetrica` |
+| MetaTrader 5 | `mt5` |
+| Oanda | `oanda` |
+| Hyperliquid | `hyperliquid` |
+| Plus500 | `plus500` |
+
+## Payload template
+
+Paste this into the TradingView alert message:
+
+```json
+{
+  "ticker": "NQ",
+  "action": "{{strategy.order.action}}",
+  "sentiment": "{{strategy.market_position}}",
+  "quantity": "{{strategy.order.contracts}}",
+  "price": "{{close}}",
+  "platformType": "projectx",
+  "accountId": "your_account_id",
+  "tp": "100",
+  "sl": "20"
+}
+```
+
+<Note>
+  `tp` and `sl` are **ticks**, not dollars. Match the instrument tick size.
+</Note>
+
+## Required fields
+
+| Field | Description |
+| --- | --- |
+| `platformType` | Broker slug from the table above |
+| `accountId` | Exact ID from [Accounts](https://dash.hextrade.io/accounts) |
+| `symbol` or `ticker` | Instrument |
+| `quantity` | Contracts or shares |
+| `side` or `action` | `buy` or `sell` |
+
+## Optional fields
+
+| Field | Purpose |
+| --- | --- |
+| `strategyName` / `alertName` | Label in logs |
+| `note` / `tags` | Notes and filters |
+| `dryRun` | Validate only — no order |
+| `maxQty` | Hard cap on size |
+| `cooldown` | Seconds before another fill on the same account + symbol |
+| `session` / `sessionTimezone` | `RTH` = 09:30–16:00, `ETH` = outside that window |
+| `tradeWindow` | Custom days and times (`timezone`, `days`, `start`, `end`) |
+| `allowedSymbols` | Whitelist |
+| `symbolOverride` | Send a different symbol than `ticker` |
+| `maxTradesPerDay` | In-memory cap; resets on process restart |
+| `comment` / `timeInForce` / `slippage` | Passed to the broker when supported |
+| `callbackUrl` | POST after success or failure |
+
+`cooldown` and `maxTradesPerDay` are in-memory. `dryRun: true` returns HTTP 200 with the planned trade and does not update those counters.
+
+## Set it up in TradingView
+
+<Steps>
+  <Step title="Copy your webhook URL">
+    On [Accounts](https://dash.hextrade.io/accounts) open **Webhooks**. It looks like `https://api.hextrade.io/webhook/your-unique-token`.
+  </Step>
+  <Step title="Add an alert">
+    On the chart with your strategy, click **Add Alert**.
+  </Step>
+  <Step title="Paste URL and JSON">
+    Condition = your strategy. Webhook URL = the Hextrade URL. Message = the payload. Replace `your_account_id`.
+  </Step>
+  <Step title="Set platform and ticker">
+    `platformType`, `accountId`, `ticker`, and optional `tp` / `sl`.
+  </Step>
+  <Step title="Test small">
+    Start with 1 micro contract before you scale.
+  </Step>
+</Steps>
+
+## Example payloads
+
+### Rithmic — MNQ
+
+```json
+{
+  "ticker": "MNQ",
+  "action": "{{strategy.order.action}}",
+  "sentiment": "{{strategy.market_position}}",
+  "quantity": "{{strategy.order.contracts}}",
+  "price": "{{close}}",
+  "platformType": "rithmic",
+  "accountId": "your_account_id",
+  "tp": "80",
+  "sl": "20"
+}
+```
+
+### Tradovate — ES
+
+```json
+{
+  "ticker": "ES",
+  "action": "{{strategy.order.action}}",
+  "sentiment": "{{strategy.market_position}}",
+  "quantity": "{{strategy.order.contracts}}",
+  "price": "{{close}}",
+  "platformType": "tradovate",
+  "accountId": "your_account_id",
+  "tp": "50",
+  "sl": "15"
+}
+```
+
+## Troubleshooting
+
+| Issue | Fix |
+| --- | --- |
+| Alert fires, no order | `accountId` must match Accounts exactly |
+| `platformType` error | Use lowercase slugs |
+| `tp` / `sl` ignored | Values are ticks |
+| Alert never fires | Alert must be active and the strategy must be on the chart |
+| Broker reject | Balance, limits, or session hours |
+
+<Warning>
+  TradingView can delay delivery by a few seconds. Watch the first live fills. Keep the webhook URL private — regenerate it on Accounts if it leaks.
+</Warning>

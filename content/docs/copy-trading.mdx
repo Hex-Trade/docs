@@ -1,0 +1,72 @@
+---
+title: Copy trading
+description: One master account, many followers — each with its own risk multiplier.
+---
+
+Open [dash.hextrade.io/copy-trade-groups](https://dash.hextrade.io/copy-trade-groups). Trades on the **master** replicate to every **follower** in the group.
+
+Copy trading works on **ProjectX**, **Tradovate**, **NinjaTrader**, **Rithmic**, and **Volumetrica**. Cross-platform groups among those five are supported. Other brokers can run algorithms and webhooks but cannot be master or follower.
+
+## What you get
+
+<Cards>
+  <Card title="Risk multipliers">
+    `1.0` matches the master. `0.5` is half size. `2.0` is double. Set this per follower.
+  </Card>
+  <Card title="Named groups">
+    Give each group a name and a description so you remember the strategy later.
+  </Card>
+  <Card title="Instant copy">
+    Master fills replicate automatically. Deactivate a group to pause without deleting it.
+  </Card>
+  <Card title="Group stats">
+    Success rate and P&L sit on the groups table next to master and follower count.
+  </Card>
+</Cards>
+
+## Create a group
+
+<Steps>
+  <Step title="Add Group">
+    Open Copy Trade Groups and click **Add Group**.
+  </Step>
+  <Step title="Name it">
+    Use something you will recognize later, such as `NQ Scalp — Low Risk`.
+  </Step>
+  <Step title="Pick the master">
+    This should be the account already running your main algorithm or strategy.
+  </Step>
+  <Step title="Add followers">
+    Accounts must already be connected. See [Accounts](/accounts).
+  </Step>
+  <Step title="Set multipliers">
+    Match each follower’s capital and prop-firm rules. A high multiplier on a funded account can breach limits.
+  </Step>
+  <Step title="Save and activate">
+    Set status to **Active** to start copying.
+  </Step>
+</Steps>
+
+## The Copy Trade page
+
+Summary cards at the top:
+
+- Total groups
+- Active groups
+- Total followers
+- Success rate
+
+The table lists master, follower count, status, success rate, and total P&L.
+
+## Managing groups
+
+| Action | Result |
+| --- | --- |
+| **View** | Master, followers, history, and stats |
+| **Activate / Deactivate** | Pause copying without deleting |
+| **Edit** | Name, description, master, followers, multiplier |
+| **Delete** | Removes the group. Followers stay connected. |
+
+<Tip>
+  Run `0.5x` on the most sensitive funded account and `1.0x` on a personal account. Watch group performance in [Analytics](/analytics).
+</Tip>

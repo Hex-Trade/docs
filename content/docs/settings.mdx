@@ -1,0 +1,111 @@
+---
+title: Settings
+description: Profile, security, billing, notifications, Aqua theme, and API token.
+---
+
+Open **Settings** from the sidebar any time.
+
+## Profile
+
+<Video src="/videos/Account-details1.mp4" />
+
+<Steps>
+  <Step title="Edit details">
+    First name, last name, phone, TradingView username, Discord username. Email is read-only.
+  </Step>
+  <Step title="Save Changes">
+    Updates apply immediately.
+  </Step>
+</Steps>
+
+| Field | Notes |
+| --- | --- |
+| **Name** | Used across the platform and in notifications |
+| **Email** | Set at registration |
+| **Phone** | Include country code, e.g. `+1 555 000 0000` |
+| **TradingView username** | Exclusive indicators — Premium and Ultimate |
+| **Discord username** | Without `@`. Links Hex AI and Discord DM alerts. You must be in the Hextrade server. |
+
+Avatar: JPG, PNG, GIF, or WebP, max 5 MB. Square 200×200 or larger.
+
+## Password
+
+<Video src="/videos/Account-details2.mp4" />
+
+Enter the current password, then set and confirm a new one. Other sessions may be signed out.
+
+## Two-factor authentication
+
+<Steps>
+  <Step title="Enable 2FA">
+    A QR code appears.
+  </Step>
+  <Step title="Scan it">
+    Google Authenticator, Authy, 1Password, or any TOTP app.
+  </Step>
+  <Step title="Verify">
+    Enter the 6-digit code.
+  </Step>
+  <Step title="Save backup codes">
+    Store them offline. Each code works once.
+  </Step>
+</Steps>
+
+Disable with a live authenticator code. Turn 2FA on before connecting funded accounts.
+
+<Warning>
+  If you lose the authenticator and the backup codes, recovery needs identity verification.
+</Warning>
+
+## Billing
+
+Review status, next billing date, days remaining, and plan cost. **Manage billing** opens the portal for payment method, invoices, and upgrades. Promo codes apply here. Plan level controls algorithms, deploy, and account slots — see [Subscriptions](/subscriptions).
+
+## Notifications
+
+<Steps>
+  <Step title="Master switch">
+    **All Notifications** silences every channel without wiping the rest of the form.
+  </Step>
+  <Step title="Channels">
+    Discord webhook (use **Test**), Discord DMs, email. DMs need a Discord username on the profile.
+  </Step>
+  <Step title="Alert types">
+    Trade opened, trade closed, trade error, connection error, account updated, system alert.
+  </Step>
+  <Step title="Sound">
+    Browser audio on each execution, volume 0–100%.
+  </Step>
+  <Step title="Save">
+    Click **Save Notification Settings**.
+  </Step>
+</Steps>
+
+## Appearance
+
+<Video src="/videos/Account-utlities.mp4" />
+
+Light / dark sits in the **top-right** of the dashboard. **Hextrade Aqua** (dark background, cyan accents) is the native brand theme — the same language these docs use.
+
+Accent swatches: Aqua, Zinc, Slate, Stone, Gray, Neutral, Red, Rose, Orange, Blue, Yellow, Violet, Halloween, Christmas.
+
+**Motion & Effects** turns off snowflakes and other seasonal motion if you need a calmer or faster UI.
+
+Fullscreen is the expand icon in the top-right. Escape or the same icon exits.
+
+## API token
+
+<Steps>
+  <Step title="Generate Key">
+    Shown once. Copy it immediately.
+  </Step>
+  <Step title="Store it privately">
+    Use it on `wss://api.hextrade.io/alerts?apiKey=hxt_...` or `GET api.hextrade.io/user-webhooks/trades`.
+  </Step>
+</Steps>
+
+Regenerate or revoke at any time — the old key dies immediately. The in-page setup guide covers WebSocket frames (`trade`, `algoTrade`, subscribe / unsubscribe), keepalive pings, and REST history filters. The dashboard **Feed** page is a live monitor.
+
+<Warning>
+  Treat the token like a password. Never commit it or paste it in Discord. Rotate it if it leaks.
+</Warning>

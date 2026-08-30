@@ -1,0 +1,82 @@
+import type { LucideIcon } from "lucide-react";
+import {
+  BarChart3,
+  CalendarDays,
+  CandlestickChart,
+  Copy,
+  CreditCard,
+  Cpu,
+  Home,
+  Landmark,
+  Layers,
+  MessagesSquare,
+  PieChart,
+  Rocket,
+  Settings,
+  User,
+  Wallet,
+  Webhook,
+  Zap,
+} from "lucide-react";
+
+export type NavPage = {
+  title: string;
+  href: string;
+  slug: string;
+  icon: LucideIcon;
+};
+
+export type NavGroup = {
+  title: string;
+  icon: LucideIcon;
+  pages: NavPage[];
+};
+
+export const nav: NavGroup[] = [
+  {
+    title: "Start",
+    icon: Rocket,
+    pages: [
+      { title: "Welcome", href: "/", slug: "index", icon: Home },
+      { title: "Quick start", href: "/quick-start", slug: "quick-start", icon: Zap },
+    ],
+  },
+  {
+    title: "Platform",
+    icon: Layers,
+    pages: [
+      { title: "Accounts", href: "/accounts", slug: "accounts", icon: Wallet },
+      { title: "Brokers", href: "/brokers", slug: "brokers", icon: Landmark },
+      { title: "Algorithms", href: "/algorithms", slug: "algorithms", icon: Cpu },
+      { title: "Copy trading", href: "/copy-trading", slug: "copy-trading", icon: Copy },
+      { title: "Portfolio", href: "/portfolio", slug: "portfolio", icon: PieChart },
+      { title: "TradingView webhooks", href: "/webhooks", slug: "webhooks", icon: Webhook },
+      { title: "Trading", href: "/trading", slug: "trading", icon: CandlestickChart },
+      { title: "Analytics", href: "/analytics", slug: "analytics", icon: BarChart3 },
+      { title: "Calendar", href: "/calendar", slug: "calendar", icon: CalendarDays },
+    ],
+  },
+  {
+    title: "Account",
+    icon: User,
+    pages: [
+      { title: "Subscriptions", href: "/subscriptions", slug: "subscriptions", icon: CreditCard },
+      { title: "Settings", href: "/settings", slug: "settings", icon: Settings },
+      { title: "Discord", href: "/discord", slug: "discord", icon: MessagesSquare },
+    ],
+  },
+];
+
+export const flatPages = nav.flatMap((group) => group.pages);
+
+export function getPageBySlug(slug: string) {
+  return flatPages.find((page) => page.slug === slug);
+}
+
+export function getAdjacentPages(slug: string) {
+  const index = flatPages.findIndex((page) => page.slug === slug);
+  return {
+    prev: index > 0 ? flatPages[index - 1] : null,
+    next: index >= 0 && index < flatPages.length - 1 ? flatPages[index + 1] : null,
+  };
+}
