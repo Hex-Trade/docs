@@ -1,0 +1,57 @@
+---
+title: Tradovate webhook
+seoTitle: Tradovate Webhook JSON
+description: Tradovate webhook payload for HexTrade — platformType tradovate, accountId, TradingView setup, and dryRun.
+keywords:
+  - Tradovate webhook
+  - TradingView webhook Tradovate
+  - TradingView to Tradovate JSON
+---
+
+Tradovate does **not** accept a TradingView webhook URL in the native UI. HexTrade is the hop. Marketing page: [TradingView to Tradovate](https://hextrade.io/tradingview-to-tradovate).
+
+## Payload
+
+```json
+{
+  "ticker": "ES",
+  "action": "{{strategy.order.action}}",
+  "sentiment": "{{strategy.market_position}}",
+  "quantity": "{{strategy.order.contracts}}",
+  "price": "{{close}}",
+  "platformType": "tradovate",
+  "accountId": "your_account_id",
+  "tp": "50",
+  "sl": "15"
+}
+```
+
+`accountId` is the exact ID on [Accounts](https://dash.hextrade.io/accounts) after Tradovate is connected. `tp` / `sl` are ticks.
+
+## Steps
+
+<Steps>
+  <Step title="Sign up and connect Tradovate">
+    [Create a free account](https://dash.hextrade.io/signup), then add Tradovate on Accounts.
+  </Step>
+  <Step title="Copy the webhook URL">
+    Accounts → Webhooks.
+  </Step>
+  <Step title="TradingView alert">
+    Paste the URL. Message = the JSON above. Paid TradingView plan required.
+  </Step>
+  <Step title="dryRun then one micro">
+    `"dryRun": true` first, then one MES/MNQ live fill.
+  </Step>
+</Steps>
+
+See also [Connect Tradovate](/tradovate) and the generic [webhooks](/webhooks) hub.
+
+<Cards>
+  <Card title="Get your webhook URL" href="https://dash.hextrade.io/signup">
+    Free account. Then Accounts → Webhooks.
+  </Card>
+  <Card title="Tradovate trade copier" href="https://hextrade.io/tradovate-trade-copier">
+    Fan a webhook leader to follower Tradovate accounts.
+  </Card>
+</Cards>

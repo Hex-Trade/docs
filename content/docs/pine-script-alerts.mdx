@@ -1,0 +1,58 @@
+---
+title: Pine Script alerts
+seoTitle: Pine Script Webhook JSON
+description: TradingView Pine Script webhook JSON for HexTrade — alert_message placeholders, valid JSON, and the 3-second timeout.
+keywords:
+  - pine script webhook json
+  - strategy.order.alert_message
+  - TradingView alert JSON
+---
+
+HexTrade needs a **valid JSON** body. TradingView will POST whatever you put in the alert message. If the message is not JSON, the webhook fails.
+
+You need a [free HexTrade account](https://dash.hextrade.io/signup) to copy a webhook URL. Marketing walkthrough: [TradingView webhook automation](https://hextrade.io/tradingview-webhook-automation).
+
+## Placeholders that work
+
+Paste this as the TradingView alert message after you replace `accountId`:
+
+```json
+{
+  "ticker": "NQ",
+  "action": "{{strategy.order.action}}",
+  "sentiment": "{{strategy.market_position}}",
+  "quantity": "{{strategy.order.contracts}}",
+  "price": "{{close}}",
+  "platformType": "tradovate",
+  "accountId": "your_account_id"
+}
+```
+
+`{{strategy.order.action}}` is `buy` or `sell`. Prefer `{{strategy.order.alert_message}}` only if your Pine already builds a full JSON string.
+
+## Requirements TradingView documents
+
+- Paid TradingView plan for webhook alerts
+- Two-factor authentication enabled
+- Ports 80 or 443 only
+- HexTrade must respond within a few seconds — do not point the alert at a slow self-hosted box
+
+Official reference: [How to configure webhook alerts](https://www.tradingview.com/support/solutions/43000529348-how-to-configure-webhook-alerts/).
+
+## Test without an order
+
+Add `"dryRun": true` to the payload. HexTrade returns the planned trade and does not send an order.
+
+## Next
+
+<Cards>
+  <Card title="Create a free account" href="https://dash.hextrade.io/signup">
+    Copy the private webhook URL from Accounts → Webhooks.
+  </Card>
+  <Card title="Full payload fields" href="/webhooks">
+    Required and optional fields, including tp/sl ticks.
+  </Card>
+  <Card title="Alert not firing?" href="/webhook-troubleshooting">
+    Common TradingView and HexTrade failures.
+  </Card>
+</Cards>

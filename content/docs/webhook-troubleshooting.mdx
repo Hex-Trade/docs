@@ -1,0 +1,40 @@
+---
+title: Webhook troubleshooting
+seoTitle: TradingView Webhook Not Working
+description: Fix TradingView webhook failures on HexTrade — alert not firing, rejected platformType, wrong accountId, and symbol mapping.
+keywords:
+  - TradingView webhook not working
+  - TradingView alert not firing
+  - webhook rejected
+---
+
+Most failed webhooks are one of five things: the alert is off, the JSON is invalid, `platformType` is wrong, `accountId` does not match Accounts, or the ticker is a CFD name on a futures account.
+
+You need an account to read execution logs: [sign up](https://dash.hextrade.io/signup). Pair page: [TradingView webhook automation](https://hextrade.io/tradingview-webhook-automation).
+
+## Checklist
+
+| Symptom | Fix |
+| --- | --- |
+| Alert never fires | Strategy must be on the chart and the alert must stay active |
+| Alert fires, no order | `accountId` must match [Accounts](https://dash.hextrade.io/accounts) exactly |
+| `platformType` error | Lowercase slugs only (`tradovate`, `projectx`, `rithmic`, `ninjatrader`) |
+| `tp` / `sl` ignored | Values are **ticks**, not dollars |
+| Broker reject | Balance, session hours, or prop-firm rules |
+| NQ on a CFD account | Send `NAS100` — see [Symbol mapping](/symbol-mapping) |
+
+## Still stuck
+
+Do not paste your webhook token in Discord. Regenerate it on Accounts if it leaked.
+
+<Cards>
+  <Card title="Pine Script JSON" href="/pine-script-alerts">
+    Valid placeholders and dryRun.
+  </Card>
+  <Card title="Ask in Discord" href="https://discord.gg/hextrade">
+    #webhooks-external — redact the URL.
+  </Card>
+  <Card title="Create an account" href="https://dash.hextrade.io/signup">
+    Required to see execution logs.
+  </Card>
+</Cards>

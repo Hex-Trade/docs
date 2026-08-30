@@ -1,0 +1,39 @@
+---
+title: Symbol mapping
+seoTitle: TradingView Symbol Mapping
+description: Map TradingView tickers for HexTrade webhooks — NQ vs NAS100, MES/MNQ micros, and Hyperliquid NAS100 → xyz:XYZ100.
+keywords:
+  - NQ vs NAS100
+  - TradingView symbol mapping
+  - MNQ webhook ticker
+---
+
+Send the symbol the **connected account** trades. A futures Tradovate account wants `NQ`. A TradeLocker CFD account wants `NAS100`. Mixing them is the most common silent reject.
+
+## Futures
+
+Use CME-style roots: `ES`, `NQ`, `YM`, `RTY`, `GC`, `CL`, `MES`, `MNQ`, `MGC`. Match the contract the broker lists on that account.
+
+## CFDs
+
+Use the broker’s CFD name: `NAS100`, `US500`, `GER40`. See [CFDs](/cfds).
+
+## Hyperliquid
+
+`NAS100` remaps to `xyz:XYZ100` on Hyperliquid. Details: [Crypto](/crypto).
+
+## TradingView chart vs payload
+
+The chart symbol can differ from `ticker` in the JSON. Use `symbolOverride` on the webhook if you need the chart on a continuous contract but the broker wants a specific root.
+
+<Cards>
+  <Card title="Webhook payload" href="/webhooks">
+    ticker, symbolOverride, allowedSymbols.
+  </Card>
+  <Card title="TradingView to Tradovate" href="https://hextrade.io/tradingview-to-tradovate">
+    Futures pair page on the marketing site.
+  </Card>
+  <Card title="Create an account" href="https://dash.hextrade.io/signup">
+    Connect a broker, then copy accountId.
+  </Card>
+</Cards>
