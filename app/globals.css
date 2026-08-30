@@ -78,6 +78,14 @@ body {
   margin: 0.85rem 0;
 }
 
+.docs-prose .faq-item > summary {
+  list-style: none;
+}
+
+.docs-prose .faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+
 .docs-prose a {
   color: var(--color-accent);
   text-decoration: none;

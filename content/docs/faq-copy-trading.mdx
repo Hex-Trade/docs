@@ -1,0 +1,27 @@
+---
+title: Copy trading FAQ
+description: Master and follower accounts, risk multipliers, supported platforms, and group limits.
+---
+
+<AccordionGroup>
+  <Accordion title="How does copy trading work?">
+    One **master** account’s fills are replicated to **follower** accounts in the same group. Open [dash.hextrade.io/copy-trade-groups](https://dash.hextrade.io/copy-trade-groups). Setup: [Copy trading](/copy-trading).
+  </Accordion>
+  <Accordion title="Which platforms can be master or follower?">
+    ProjectX, Tradovate, NinjaTrader, Rithmic, and Volumetrica. Mixed groups among those five are supported.
+  </Accordion>
+  <Accordion title="What does the risk multiplier do?">
+    It scales follower quantity vs the master. `1.0` = same size, `0.5` = half, `2.0` = double. Set it per follower against that account’s capital and prop rules.
+  </Accordion>
+  <Accordion title="Will deleting a group close follower positions?">
+    No. Deleting a group stops future copies. Existing follower positions are unchanged. Deactivate a group if you only want to pause copying.
+  </Accordion>
+  <Accordion title="Why can’t I create another group?">
+    Copy-trade group count can be capped by your [subscription](/subscriptions). Upgrade if the dashboard reports a group limit.
+  </Accordion>
+  <Accordion title="Can I copy from Tradovate to TradeLocker or MT5?">
+    Not through copy-trade groups. Those platforms run algorithms and webhooks but are not copy master/follower.
+  </Accordion>
+</AccordionGroup>
+
+Related: [Copy trading](/copy-trading) · [Position sizing](/position-sizing)

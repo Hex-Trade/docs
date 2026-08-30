@@ -1,0 +1,21 @@
+---
+title: TradingView FAQ
+description: Webhook URL, JSON body, platformType values, and symbol mapping.
+---
+
+<AccordionGroup>
+  <Accordion title="What is a Hextrade webhook?">
+    TradingView sends an alert HTTP POST to Hextrade. Hextrade places the order on the broker account you named in the JSON. Guide: [TradingView webhooks](/webhooks).
+  </Accordion>
+  <Accordion title="Which platforms accept webhooks?">
+    ProjectX, Tradovate, NinjaTrader, Rithmic, TradeLocker, MatchTrader, Volumetrica, MetaTrader 5, Oanda, Hyperliquid, and Plus500. Set `platformType` to the lowercase name (`tradovate`, `projectx`, `hyperliquid`, …).
+  </Accordion>
+  <Accordion title="Which symbol should I send — NQ or NAS100?">
+    Match the **account’s product**. Futures accounts use `NQ` / `ES`. CFD accounts use `NAS100` / `US500`. On Hyperliquid, `NAS100` remaps to `xyz:XYZ100`. See [Crypto](/crypto).
+  </Accordion>
+  <Accordion title="Why did the webhook reject or do nothing?">
+    Check `platformType`, account id, and that the account is still connected. Confirm the symbol is valid for that broker. Review execution logs in the dashboard after a test alert.
+  </Accordion>
+</AccordionGroup>
+
+Related: [TradingView webhooks](/webhooks) · [Brokers](/brokers)

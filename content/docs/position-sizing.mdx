@@ -1,0 +1,49 @@
+---
+title: Position sizing
+description: Pick contract count, CFD lots, or Hyperliquid size so a normal losing streak fits the account.
+---
+
+Hextrade sends the quantity you configure. It does not cap risk for you.
+
+<Cards>
+  <Card title="Futures" href="/futures">
+    Start on micros. One mini is about 10× a micro.
+  </Card>
+  <Card title="CFDs" href="/cfds">
+    Convert a micro into lots using pt/lot.
+  </Card>
+  <Card title="Crypto" href="/crypto">
+    Hyperliquid `sz` is not a CME contract.
+  </Card>
+  <Card title="Prop firm rules" href="/prop-firm-rules">
+    Daily loss is counted in dollars.
+  </Card>
+</Cards>
+
+## Futures
+
+Start on **micros**. Raise quantity only after you have lived with the dollar swing.
+
+| Goal | Typical start |
+| --- | --- |
+| Learn an algorithm | 1 micro (MNQ, MES, MGC) |
+| Small personal account | 1–2 micros |
+| Match a mini | 10 micros (5 for Nikkei) — or 1 mini if margin allows |
+
+Formulas live on [Futures](/futures).
+
+## CFDs
+
+Convert from a micro on [CFDs](/cfds). If the broker pt/lot is not the Hextrade default, recompute lots.
+
+## Copy-trade followers
+
+Do not raise the master’s size to “help” a larger follower. Leave the master conservative and set each follower’s **risk multiplier** (`0.5`, `1.0`, `2.0`). See [Copy trading](/copy-trading).
+
+## Prop accounts
+
+Daily loss and trailing drawdown are counted in dollars. One extra mini can be a full daily-loss hit. Details: [Prop firm rules](/prop-firm-rules).
+
+<Warning>
+  Switching MNQ → NQ at the same quantity is a 10× risk change. Treat it like a new strategy.
+</Warning>

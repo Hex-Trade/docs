@@ -21,13 +21,11 @@ export function Sidebar({
 }) {
   const pathname = usePathname();
   const activeGroup = nav.find((group) => group.pages.some((page) => page.href === pathname))?.title;
-  const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() =>
-    Object.fromEntries(nav.map((group) => [group.title, true])),
-  );
+  const [openGroup, setOpenGroup] = useState<string | null>(activeGroup ?? null);
 
   useEffect(() => {
     if (!activeGroup) return;
-    setOpenGroups((current) => ({ ...current, [activeGroup]: true }));
+    setOpenGroup(activeGroup);
   }, [activeGroup]);
 
   return (
@@ -40,14 +38,13 @@ export function Sidebar({
       </div>
 
       <nav className="flex-1 overflow-y-auto px-3 pb-6">
-        <p className="mb-2 px-2.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-muted">Hextrade</p>
         {nav.map((group) => {
-          const expanded = openGroups[group.title] ?? false;
+          const expanded = openGroup === group.title;
           return (
             <div key={group.title} className="mb-1">
               <button
                 type="button"
-                onClick={() => setOpenGroups((current) => ({ ...current, [group.title]: !expanded }))}
+                onClick={() => setOpenGroup(expanded ? null : group.title)}
                 className="flex h-8 w-full items-center justify-between rounded-lg px-2.5 text-[13px] text-text transition hover:bg-surface-2"
               >
                 <span>{group.title}</span>

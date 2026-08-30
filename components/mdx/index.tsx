@@ -1,4 +1,5 @@
 import type { ImgHTMLAttributes } from "react";
+import { Accordion, AccordionGroup } from "./Accordion";
 import { Note, Tip, Warning } from "./Callout";
 import { Card, Cards } from "./Card";
 import { Step, Steps } from "./Steps";
@@ -29,6 +30,8 @@ function MdxImage(props: ImgHTMLAttributes<HTMLImageElement>) {
 
 export const mdxComponents = {
   img: MdxImage,
+  Accordion,
+  AccordionGroup,
   Note,
   Tip,
   Warning,

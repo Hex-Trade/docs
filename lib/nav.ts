@@ -21,6 +21,10 @@ import {
   Wallet,
   Webhook,
   Zap,
+  Scale,
+  Shield,
+  TrendingDown,
+  CircleHelp,
 } from "lucide-react";
 
 export type NavPage = {
@@ -76,6 +80,22 @@ export const nav: NavGroup[] = [
       { title: "Futures", href: "/futures", slug: "futures", icon: TrendingUp },
       { title: "CFDs", href: "/cfds", slug: "cfds", icon: CircleDollarSign },
       { title: "Crypto", href: "/crypto", slug: "crypto", icon: Coins },
+      { title: "Position sizing", href: "/position-sizing", slug: "position-sizing", icon: Scale },
+      { title: "Prop firm rules", href: "/prop-firm-rules", slug: "prop-firm-rules", icon: Shield },
+      { title: "Drawdown", href: "/drawdown", slug: "drawdown", icon: TrendingDown },
+    ],
+  },
+  {
+    title: "FAQ",
+    icon: CircleHelp,
+    pages: [
+      { title: "Overview", href: "/faq", slug: "faq", icon: CircleHelp },
+      { title: "Account", href: "/faq-account", slug: "faq-account", icon: User },
+      { title: "Brokers", href: "/faq-brokers", slug: "faq-brokers", icon: Landmark },
+      { title: "Algorithms", href: "/faq-algorithms", slug: "faq-algorithms", icon: Cpu },
+      { title: "Copy trading", href: "/faq-copy-trading", slug: "faq-copy-trading", icon: Copy },
+      { title: "TradingView", href: "/faq-tradingview", slug: "faq-tradingview", icon: Webhook },
+      { title: "Sizing", href: "/faq-sizing", slug: "faq-sizing", icon: Scale },
     ],
   },
 ];

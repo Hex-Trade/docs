@@ -41,7 +41,6 @@ const nextConfig: NextConfig = {
       { source: "/supported-brokers", destination: "/brokers", permanent: true },
       { source: "/algorithms/overview", destination: "/algorithms", permanent: true },
       { source: "/algos", destination: "/algorithms", permanent: true },
-      { source: "/faq", destination: "/futures", permanent: true },
       { source: "/futures-cfds", destination: "/futures", permanent: true },
       { source: "/copy-trade", destination: "/copy-trading", permanent: true },
       { source: "/copy-trading/setup", destination: "/copy-trading", permanent: true },

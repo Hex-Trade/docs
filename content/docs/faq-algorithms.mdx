@@ -1,0 +1,24 @@
+---
+title: Algorithms FAQ
+description: Algorithm IDs, badges, prop vs overnight, and attaching a broker account.
+---
+
+<AccordionGroup>
+  <Accordion title="How do algorithm IDs work?">
+    Format is `[instrument][strategy][version]`. `NQRAPTOR` is Nasdaq + Raptor. `ESRAPTORV3` is the third ES Raptor revision. Catalog: [Algorithms](/algorithms).
+  </Accordion>
+  <Accordion title="What does Prop Firm Ready mean?">
+    Intraday-style strategies that are a better fit for many funded-account rules. **Overnight** / **Non-Prop** families often hold past the cash close. See [Prop firm rules](/prop-firm-rules).
+  </Accordion>
+  <Accordion title="Why does an algorithm say I need a subscription?">
+    Free accounts can only **view** algorithms, portfolios, and analytics. Connecting a broker, running an algorithm, copy trading, and deploy all require Premium. Open [Subscriptions](/subscriptions).
+  </Accordion>
+  <Accordion title="How do I run an algorithm on my account?">
+    Open [dash.hextrade.io/algos](https://dash.hextrade.io/algos), pick a strategy, review metrics, then attach a connected account and set risk. Walkthrough: [Algorithms](/algorithms).
+  </Accordion>
+  <Accordion title="Can I combine several algorithms?">
+    Yes. Use [Portfolio](/portfolio) to mix sizes, inspect drawdown and correlation, then deploy to one account. Deploy requires Premium.
+  </Accordion>
+</AccordionGroup>
+
+Related: [Algorithms](/algorithms) · [Portfolio](/portfolio)

@@ -1,0 +1,30 @@
+---
+title: Prop firm rules
+description: Daily loss, trailing drawdown, consistency, and overnight rules when you run Hextrade on a funded account.
+---
+
+Most prop firms care about **rules**, not whether the trade came from an algorithm. Hextrade will place what you enable. The firm will still breach you.
+
+## Rules that show up most often
+
+| Rule | What it usually means |
+| --- | --- |
+| **Daily loss** | Stop trading (or fail) when today’s realized + unrealized hit a dollar cap. |
+| **Max / trailing drawdown** | Equity cannot fall more than X from a high-water mark. |
+| **Consistency** | One huge day cannot be most of the profit target. |
+| **News lockout** | No open risk through CPI, FOMC, NFP, and similar. |
+| **Overnight / weekend** | Flat before the cash close or before Friday halt. |
+| **Restricted products** | Some firms ban CL, crypto, or mixing minis and micros. |
+
+## What to use on Hextrade
+
+- Prefer algorithms tagged **Prop Firm Ready** on [Algorithms](/algorithms).
+- Avoid **Overnight** / **Non-Prop** families on funded accounts unless the firm allows holds.
+- Size in **micros** and keep copy-trade multipliers at or below `1.0` until you know the daily-loss math.
+- Watch the [Calendar](/calendar) on news days.
+
+<Warning>
+  A 2.0× copy-trade multiplier on a funded follower can violate daily-loss even when the master is fine. Tailor each follower.
+</Warning>
+
+Next: [Drawdown](/drawdown) · [Position sizing](/position-sizing)

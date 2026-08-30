@@ -1,0 +1,26 @@
+---
+title: Drawdown
+description: Daily loss vs trailing drawdown — how to read Hextrade portfolio curves before you scale size.
+---
+
+**Drawdown** is the drop from a peak in equity. Two numbers get confused:
+
+| Term | Measured from | Typical use |
+| --- | --- | --- |
+| **Daily loss** | Start of the trading day | Prop daily cap. Resets (or does not) per firm rules. |
+| **Trailing / max drawdown** | Highest equity (or balance) so far | Prop trailing lock. Personal risk budget. |
+
+An algorithm can be green for the month and still breach a daily-loss cap on one bad morning.
+
+## How to inspect it on Hextrade
+
+1. Open [Portfolio](/portfolio) and add the algorithms you plan to run together.
+2. Use **Cumulative P&L** for the long-run curve and depth of dips.
+3. Use **Calendar** for single-day clusters — that is what daily-loss rules feel like.
+4. Run the optimizer only after you accept the drawdown shape, not before.
+
+<Tip>
+  Prefer a smaller, smoother mix over a higher-return stack that needs one extra mini to “catch up.”
+</Tip>
+
+Related: [Portfolio](/portfolio) · [Prop firm rules](/prop-firm-rules) · [Position sizing](/position-sizing)
