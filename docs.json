@@ -4,9 +4,9 @@
   "description": "Your gateway to smarter, more efficient trading. AI copy-trade platform with algorithms, copy trading, and TradingView webhooks.",
   "theme": "mint",
   "colors": {
-    "primary": "#58A6FF",
-    "light": "#79C0FF",
-    "dark": "#388BFD"
+    "primary": "#8FA4B8",
+    "light": "#A8B9C8",
+    "dark": "#6F869C"
   },
   "appearance": {
     "default": "dark"

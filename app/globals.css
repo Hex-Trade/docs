@@ -8,9 +8,9 @@
   --color-border-strong: #3a3a40;
   --color-text: #fafafa;
   --color-muted: #9f9fa9;
-  --color-accent: #58a6ff;
-  --color-accent-hover: #79c0ff;
-  --color-accent-dim: color-mix(in srgb, #58a6ff 14%, transparent);
+  --color-accent: #8fa4b8;
+  --color-accent-hover: #a8b9c8;
+  --color-accent-dim: color-mix(in srgb, #8fa4b8 14%, transparent);
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -31,7 +31,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, #58a6ff 32%, transparent);
+  background: color-mix(in srgb, #8fa4b8 32%, transparent);
 }
 
 .page-gradient {
