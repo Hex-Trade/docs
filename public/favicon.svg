@@ -12,12 +12,12 @@
   <defs>
     <linearGradient id="ring" x1="4" y1="3" x2="29" y2="29" gradientUnits="userSpaceOnUse">
       <stop stop-color="#F4F4F5"/>
-      <stop offset="0.45" stop-color="#00CCFF"/>
+      <stop offset="0.45" stop-color="#58A6FF"/>
       <stop offset="1" stop-color="#9CA3AF"/>
     </linearGradient>
     <linearGradient id="core" x1="10" y1="10" x2="22" y2="22" gradientUnits="userSpaceOnUse">
       <stop stop-color="#E8E8EA"/>
-      <stop offset="1" stop-color="#00AADD"/>
+      <stop offset="1" stop-color="#388BFD"/>
     </linearGradient>
   </defs>
 </svg>

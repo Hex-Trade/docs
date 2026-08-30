@@ -21,7 +21,6 @@ export async function DocPage({ slug }: { slug: string }) {
               <FamilyScroll />
             </Suspense>
           ) : null}
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-accent">HEXTRADE</p>
           <h1>{doc.frontmatter.title}</h1>
           {doc.frontmatter.description ? <p className="mt-0 mb-6 text-muted">{doc.frontmatter.description}</p> : null}
           <div className="docs-prose">
