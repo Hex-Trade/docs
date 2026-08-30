@@ -7,17 +7,27 @@ description: Manage your Hextrade profile, security, billing, notifications, app
 
 **Settings** is your control center for every account preference. Reach it from the sidebar at any time.
 
-<video autoPlay loop muted playsInline controls style={{ width: "100%", borderRadius: "0.5rem" }}>
-  <source src="/videos/settings.mp4" type="video/mp4" />
-</video>
+<video src="/videos/settings.mp4" controls />
 
 ---
 
 ## Profile Information
 
+Keep your account details accurate so notifications, support, and integrations work correctly.
+
 <video src="/videos/Account-details1.mp4" controls />
 
-Keep your account details accurate so notifications, support, and integrations work correctly.
+<Steps>
+  <Step title="Open Settings">
+    Open **Settings** from the sidebar.
+  </Step>
+  <Step title="Edit your details">
+    Update **First Name**, **Last Name**, **Phone Number**, **TradingView Username**, and **Discord Username**. Email is read-only.
+  </Step>
+  <Step title="Save Changes">
+    Click **Save Changes**. Updates apply immediately.
+  </Step>
+</Steps>
 
 | Field | Notes |
 |---|---|
@@ -27,37 +37,54 @@ Keep your account details accurate so notifications, support, and integrations w
 | **TradingView Username** | Connect your TradingView account to claim exclusive indicators — Premium and Ultimate only |
 | **Discord Username** | Enter without the `@`. Links your Hex dashboard to Discord so Hex AI can see your accounts and algos when you chat. You must be in the HexTrade Discord server for the link to work. Also required for Discord DM alerts. |
 
-Click **Save Changes** after editing any field.
-
 ---
 
 ## Profile Picture
 
 Upload a custom avatar that appears in the header and community spaces.
 
+<video src="/videos/placeholder.mp4" controls />
+
+<Steps>
+  <Step title="Choose an image">
+    Click **Choose an image** and select a file from your device.
+  </Step>
+  <Step title="Upload Picture">
+    Click **Upload Picture**. Your new avatar appears immediately.
+  </Step>
+</Steps>
+
 - Supported formats: `JPG`, `PNG`, `GIF`, `WebP`
 - Maximum file size: 5 MB
 - Recommended dimensions: 200 × 200 px or larger (square crop)
 
-Choose your file and click **Upload Picture**. Your new avatar appears immediately.
-
 ---
 
-## Security
+## Change Password
 
-### Change Password
+Enter your current password, then set and confirm a new one.
 
 <video src="/videos/Account-details2.mp4" controls />
 
-Enter your current password, then set and confirm a new one. Click **Update Password** to apply.
+<Steps>
+  <Step title="Enter current password">
+    Type your existing password for verification.
+  </Step>
+  <Step title="Set a new password">
+    Enter and confirm a strong, unique password you do not reuse on other services.
+  </Step>
+  <Step title="Update Password">
+    Click **Update Password**. Other active sessions may be signed out.
+  </Step>
+</Steps>
 
-Use a strong, unique password that you do not reuse on other services.
+---
 
-### Two-Factor Authentication (2FA)
+## Two-Factor Authentication (2FA)
 
 2FA protects your account with a time-based one-time code in addition to your password.
 
-**Enable 2FA:**
+<video src="/videos/placeholder.mp4" controls />
 
 <Steps>
   <Step title="Click Enable 2FA">
@@ -86,16 +113,19 @@ Use a strong, unique password that you do not reuse on other services.
 
 The Billing section shows your active plan details and lets you manage payment.
 
-| Item | Description |
-|---|---|
-| **Status** | Active, cancelled, or past due |
-| **Next Billing Date** | When your subscription renews |
-| **Days Remaining** | Time left in current billing period |
-| **Plan Cost** | Current rate per billing cycle |
+<video src="/videos/placeholder.mp4" controls />
 
-Click **Manage billing** to open the billing portal for payment method changes, invoice history, and plan upgrades.
-
-**Promo Code:** Enter a valid discount code and click **Apply** to reduce your active subscription cost.
+<Steps>
+  <Step title="Review your plan">
+    Check **Status**, **Next Billing Date**, **Days Remaining**, and **Plan Cost**.
+  </Step>
+  <Step title="Manage billing">
+    Click **Manage billing** to open the billing portal for payment method changes, invoice history, and plan upgrades.
+  </Step>
+  <Step title="Apply a promo code">
+    Enter a valid discount code and click **Apply**.
+  </Step>
+</Steps>
 
 <Note>
   Plan level determines which algorithms, deployment features, and account slots are available. See [Subscriptions](/subscriptions) for plan details.
@@ -107,60 +137,99 @@ Click **Manage billing** to open the billing portal for payment method changes, 
 
 Configure exactly where and when Hextrade sends you alerts.
 
-### Master Switch
+<video src="/videos/placeholder.mp4" controls />
 
-**All Notifications** is the global toggle. Disable it to silence every alert without changing individual settings.
-
-### Delivery Channels
-
-| Channel | How it works |
-|---|---|
-| **Discord Webhook** | Posts alerts to a Discord channel via a webhook URL you configure. Use **Test** to confirm the webhook before saving. |
-| **Discord DMs** | Sends direct messages to your Discord account (requires Discord username in Profile) |
-| **Email Alerts** | HTML email to your account email address |
-
-### Alert Types
-
-Choose which events trigger alerts across all enabled channels.
-
-| Alert | Trigger |
-|---|---|
-| **Trade Opened** | A position opens on any connected account |
-| **Trade Closed** | A position closes |
-| **Trade Error** | Execution fails or is rejected |
-| **Connection Error** | A broker connection drops |
-| **Account Updated** | Account balance or status changes |
-| **System Alert** | Platform-wide announcements |
-
-### Sound Alerts
-
-Play a sound in the browser when a trade execution arrives. When enabled, adjust the **Volume** slider (0–100%).
-
-Click **Save Notification Settings** to apply all changes.
+<Steps>
+  <Step title="Set the master switch">
+    **All Notifications** silences every alert when disabled, without changing individual settings.
+  </Step>
+  <Step title="Choose delivery channels">
+    Enable **Discord Webhook**, **Discord DMs**, and/or **Email Alerts**. Discord DMs require a Discord username in Profile. Use **Test** to confirm a webhook URL.
+  </Step>
+  <Step title="Choose alert types">
+    Turn on the events you want: Trade Opened, Trade Closed, Trade Error, Connection Error, Account Updated, and System Alert.
+  </Step>
+  <Step title="Set sound alerts">
+    Toggle browser audio on every execution and adjust **Volume** (0–100%).
+  </Step>
+  <Step title="Save Notification Settings">
+    Click **Save Notification Settings** to apply all changes.
+  </Step>
+</Steps>
 
 ---
 
-## Appearance
+## Light Mode / Dark Mode
+
+Switch between light and dark from the header to match your workspace.
 
 <video src="/videos/Account-utlities.mp4" controls />
 
-Personalize the dashboard to match your working style. You can also switch **Light** and **Dark** mode from the header.
+<Steps>
+  <Step title="Find the theme toggle">
+    Look for the light / dark control in the **top-right** of the dashboard.
+  </Step>
+  <Step title="Switch the mode">
+    Click the toggle. The change applies instantly and is saved for your next session.
+  </Step>
+</Steps>
+
+<Tip>
+  The **Hextrade Aqua** theme (dark background with cyan accents) is the native brand theme.
+</Tip>
+
+---
+
+## Fullscreen Mode
+
+Expand the dashboard for monitoring charts and multiple accounts.
 
 <video src="/videos/Account-utlities2.mp4" controls />
 
-Use the header fullscreen control to expand the dashboard. Press the same control again or **Escape** to exit.
+<Steps>
+  <Step title="Enter fullscreen">
+    Click the fullscreen icon in the **top-right** of the dashboard.
+  </Step>
+  <Step title="Exit fullscreen">
+    Click the same icon again or press **Escape**.
+  </Step>
+</Steps>
 
-### Theme Color
+---
 
-Choose from available accent themes. The selected theme applies immediately across the entire dashboard.
+## Theme Color
 
-**Aqua** · **Zinc** · **Slate** · **Stone** · **Gray** · **Neutral** · **Red** · **Rose** · **Orange** · **Blue** · **Yellow** · **Violet** · **Halloween** · **Christmas**
+Choose an accent theme. The selected theme applies immediately across the dashboard.
+
+<video src="/videos/placeholder.mp4" controls />
+
+<Steps>
+  <Step title="Open Appearance">
+    Scroll to **Appearance** on the Settings page.
+  </Step>
+  <Step title="Pick a theme">
+    Click a swatch: **Aqua**, **Zinc**, **Slate**, **Stone**, **Gray**, **Neutral**, **Red**, **Rose**, **Orange**, **Blue**, **Yellow**, **Violet**, **Halloween**, or **Christmas**.
+  </Step>
+</Steps>
 
 **Current Theme** shows the active color swatch and name.
 
-### Motion & Effects
+---
 
-Toggle **Enable Animations** to control snowflakes and other motion effects in Christmas and Halloween themes. Disable for a cleaner, lower-distraction environment or to improve performance on slower devices.
+## Motion & Effects
+
+Control snowflakes and other motion effects in seasonal themes.
+
+<video src="/videos/placeholder.mp4" controls />
+
+<Steps>
+  <Step title="Find Enable Animations">
+    Open **Motion & Effects** on the Settings page.
+  </Step>
+  <Step title="Toggle animations">
+    Turn **Enable Animations** off to hide snowflakes and other motion in Christmas and Halloween themes. This can improve performance on slower devices.
+  </Step>
+</Steps>
 
 ---
 
@@ -168,22 +237,23 @@ Toggle **Enable Animations** to control snowflakes and other motion effects in C
 
 Generate a key to authenticate against the HexTrade API and access your trade feed from external tools or scripts.
 
-| Access | Endpoint | Purpose |
-|---|---|---|
-| **WSS** | `wss://api.hextrade.io/alerts?apiKey=hxt_...` | Real-time push — connected automatically by this dashboard |
-| **GET** | `api.hextrade.io/user-webhooks/trades` | Paginated trade history |
-| **Feed** | Dashboard **Feed** page | Real-time monitor · stats by algo · open positions · history |
+<video src="/videos/placeholder.mp4" controls />
 
-**Generate a key:**
-
-1. Expand the **API Token** section.
-2. Click **Generate Key**.
-3. Copy the key immediately — it is shown only once for security.
-4. Store it in a secret manager or environment variable.
+<Steps>
+  <Step title="Expand API Token">
+    Open the **API Token** section on Settings.
+  </Step>
+  <Step title="Generate Key">
+    Click **Generate Key**. Copy the key immediately — it is shown only once.
+  </Step>
+  <Step title="Store the key">
+    Save it in a secret manager or environment variable. Use it on `wss://api.hextrade.io/alerts?apiKey=hxt_...` or `GET api.hextrade.io/user-webhooks/trades`.
+  </Step>
+</Steps>
 
 **Rotate or revoke:** Click **Regenerate Key** or **Revoke Key** at any time. Regenerating or revoking immediately invalidates the previous key.
 
-The in-page **Setup Guide** covers WebSocket frames (`trade`, `algoTrade`, subscribe/unsubscribe), keepalive pings, and REST history filters.
+The in-page **Setup Guide** covers WebSocket frames (`trade`, `algoTrade`, subscribe/unsubscribe), keepalive pings, and REST history filters. The dashboard **Feed** page is a real-time monitor with stats by algo, open positions, and history.
 
 <Warning>
   Never commit your API token to a public repository or share it in Discord. Treat it like a password. If it is compromised, generate a new token immediately.
