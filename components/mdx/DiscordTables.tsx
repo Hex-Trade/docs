@@ -24,10 +24,15 @@ const brokers = [
   { name: "Tradovate", slug: "tradovate", href: "https://www.tradovate.com/", label: "tradovate.com — support and terms" },
   { name: "NinjaTrader", slug: "ninjatrader", href: "https://discord.com/invite/ninjatrader", label: "NinjaTrader Discord" },
   { name: "Rithmic", slug: "rithmic", href: "https://www.rithmic.com/", label: "rithmic.com — use your FCM/prop Discord" },
+  { name: "ProjectX", slug: "projectx", href: "https://www.projectx.com/", label: "projectx.com" },
+  { name: "CQG", slug: "cqg", href: "https://www.cqg.com/", label: "cqg.com" },
+  { name: "Volumetrica", slug: "volumetrica", href: "https://www.volumetricatrading.com/", label: "volumetricatrading.com" },
   { name: "Hyperliquid", slug: "hyperliquid", href: "https://app.hyperliquid.xyz", label: "app.hyperliquid.xyz" },
   { name: "OANDA", slug: "oanda", href: "https://www.oanda.com/", label: "oanda.com" },
   { name: "Plus500", slug: "plus500", href: "https://www.plus500.com/", label: "plus500.com" },
   { name: "TradeLocker", slug: "tradelocker", href: "https://www.tradelocker.com/", label: "tradelocker.com" },
+  { name: "MatchTrader", slug: "matchtrader", href: "https://www.match-trader.com/", label: "match-trader.com" },
+  { name: "cTrader", slug: "ctrader", href: "https://ctrader.com/", label: "ctrader.com" },
   { name: "MetaTrader 5", slug: "mt5", href: "https://www.metatrader5.com/", label: "metatrader5.com" },
 ];
 
@@ -50,6 +55,17 @@ const futuresProps = [
   { name: "TickTickTrader", file: "tickticktrader.png", href: "https://tickticktrader.com", platforms: ["tradovate", "rithmic"] },
   { name: "Bulenox", file: "bulenox.png", href: "https://bulenox.com", platforms: ["tradovate", "rithmic"] },
   { name: "Earn2Trade", file: "earn2trade.jpg", href: "https://www.earn2trade.com/", platforms: ["tradovate", "rithmic", "ninjatrader"] },
+  { name: "Funded Futures Family", file: "fundedfuturesfamily.png", href: "https://www.fundedfuturesfamily.com/", platforms: ["tradovate", "ninjatrader"] },
+  { name: "Traders Launch", file: "traderslaunch.png", href: "https://traderslaunch.com/", platforms: ["tradovate", "ninjatrader"] },
+  { name: "AquaFutures", file: "aquafutures.png", href: "https://www.aquafutures.io/", platforms: ["volumetrica"] },
+  { name: "Blue Guardian Futures", file: "blueguardian.png", href: "https://blueguardian.com/", platforms: ["tradovate", "ninjatrader"] },
+  { name: "The Trading Pit Futures", file: "thetradingpit.png", href: "https://www.thetradingpit.com/", platforms: ["tradovate", "ninjatrader", "rithmic"] },
+  { name: "BluSky", file: "blusky.png", href: "https://blusky.pro/", platforms: ["tradovate", "ninjatrader", "rithmic", "volumetrica"] },
+  { name: "TX3 Funding", file: "tx3funding.png", href: "https://tx3funding.com/", platforms: ["tradovate", "ninjatrader"] },
+  { name: "FXIFY Futures", file: "fxifyfutures.png", href: "https://fxify.com/", platforms: ["tradovate", "ninjatrader"] },
+  { name: "The Futures Desk", file: "thefuturesdesk.png", href: "https://thefuturesdesk.com/", platforms: ["tradovate", "ninjatrader"] },
+  { name: "Hola Prime Futures", file: "holaprime.png", href: "https://holaprime.com/", platforms: ["tradovate", "ninjatrader"] },
+  { name: "Funding Futures", file: "fundingfutures.png", href: "https://fundingfutures.com/", platforms: ["tradovate", "ninjatrader"] },
 ];
 
 const cfdProps = [
@@ -61,6 +77,18 @@ const cfdProps = [
   { name: "Hola Prime", file: "holaprime.png", href: "https://holaprime.com", platforms: ["matchtrader", "mt5", "tradelocker", "ctrader"] },
   { name: "Blue Guardian", file: "blueguardian.png", href: "https://blueguardian.com", platforms: ["matchtrader", "mt5", "tradelocker"] },
   { name: "FTMO", file: "ftmo.svg", href: "https://ftmo.com", platforms: ["mt5", "ctrader"] },
+  { name: "Alpha Capital", file: "alphacapital.svg", href: "https://alphacapitalgroup.com/", platforms: ["mt5", "tradelocker", "ctrader"] },
+  { name: "BrightFunded", file: "brightfunded.png", href: "https://brightfunded.com/", platforms: ["mt5", "ctrader"] },
+  { name: "AquaFunded", file: "aquafunded.png", href: "https://aquafunded.com/", platforms: ["matchtrader", "mt5", "tradelocker", "ctrader"] },
+  { name: "Maven", file: "maven.png", href: "https://maventrading.com/", platforms: ["matchtrader", "mt5", "ctrader"] },
+  { name: "Instant Funding", file: "instantfunding.png", href: "https://instantfunding.com/", platforms: ["matchtrader", "mt5", "ctrader"] },
+  { name: "Top One Trader", file: "toponetrader.png", href: "https://toponetrader.com/", platforms: ["matchtrader", "mt5", "tradelocker", "ctrader"] },
+  { name: "For Traders", file: "fortraders.png", href: "https://fortraders.com/", platforms: ["mt5", "tradelocker", "ctrader"] },
+  { name: "Funded Trading Plus", file: "fundedtradingplus.png", href: "https://www.fundedtradingplus.com/", platforms: ["matchtrader", "mt5", "ctrader"] },
+  { name: "City Traders Imperium", file: "cti.png", href: "https://citytradersimperium.com/", platforms: ["matchtrader", "mt5"] },
+  { name: "FundedElite", file: "fundedelite.png", href: "https://fundedelite.com/", platforms: ["matchtrader", "mt5", "tradelocker"] },
+  { name: "Crypto Fund Trader", file: "cryptofundtrader.png", href: "https://cryptofundtrader.com/", platforms: ["matchtrader", "mt5"] },
+  { name: "The Trading Pit", file: "thetradingpit.png", href: "https://www.thetradingpit.com/", platforms: ["mt5", "ctrader"] },
 ];
 
 function Table({

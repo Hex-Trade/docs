@@ -226,8 +226,8 @@ body {
   border-radius: 3px;
 }
 
-.docs-prose a.discord-badge img.docs-icon {
-  border-radius: 12px;
+a.discord-badge img.docs-icon {
+  border-radius: 8px;
 }
 
 .docs-prose a.discord-badge,
