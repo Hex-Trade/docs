@@ -9,19 +9,7 @@ Use your own TradingView strategy. Hextrade places the order on the account you 
 
 Set `platformType` to the lowercase value.
 
-| Platform | `platformType` |
-| --- | --- |
-| ProjectX | `projectx` |
-| Tradovate | `tradovate` |
-| NinjaTrader | `ninjatrader` |
-| Rithmic | `rithmic` |
-| TradeLocker | `tradelocker` |
-| MatchTrader | `matchtrader` |
-| Volumetrica | `volumetrica` |
-| MetaTrader 5 | `mt5` |
-| Oanda | `oanda` |
-| Hyperliquid | `hyperliquid` |
-| Plus500 | `plus500` |
+<WebhookPlatformTable />
 
 ## Payload template
 
@@ -42,7 +30,7 @@ Paste this into the TradingView alert message:
 ```
 
 <Note>
-  `tp` and `sl` are **ticks**, not dollars. Match the instrument tick size.
+  `tp` and `sl` are **ticks**, not dollars. Match the instrument tick size. See [Futures](/futures), [CFDs](/cfds), and [Crypto](/crypto).
 </Note>
 
 ## Required fields
@@ -98,6 +86,8 @@ Paste this into the TradingView alert message:
 
 ### Rithmic — MNQ
 
+<PlatformIcons slugs="rithmic" />
+
 ```json
 {
   "ticker": "MNQ",
@@ -113,6 +103,8 @@ Paste this into the TradingView alert message:
 ```
 
 ### Tradovate — ES
+
+<PlatformIcons slugs="tradovate" />
 
 ```json
 {

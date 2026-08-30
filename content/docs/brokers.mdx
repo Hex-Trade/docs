@@ -21,38 +21,10 @@ Connect one or more accounts from **Accounts → Add account**. Each connection 
 - **See in one place** — Row on [Accounts](/accounts)
 - **Trade** — Order types on [Trading](/trading) depend on the broker
 - **Algorithms** — Futures algos run on futures-capable brokers. **Oanda is excluded**
-- **Copy trade** — ProjectX, Tradovate, NinjaTrader, Rithmic, Volumetrica only
+- **Copy trade** — These five only
 - **Webhooks** — See [TradingView webhooks](/webhooks)
 
-## Broker notes
-
-### ProjectX
-
-Username, password, and server. Algorithms, webhooks, and copy trading.
-
-### Tradovate / NinjaTrader
-
-Username, password, and environment (demo or live). NinjaTrader uses the Tradovate backend. Both support algorithms, webhooks, and copy trading.
-
-### Rithmic
-
-Server, username, and password, then pick the account. Low-latency futures. Algorithms, webhooks, and copy trading.
-
-### TradeLocker / MatchTrader / Plus500 / MetaTrader 5
-
-Login flow per platform. Algorithms and webhooks yes; copy trading no.
-
-### Oanda
-
-Forex and CFDs only. Not offered on futures algorithms.
-
-### Hyperliquid
-
-Wallet / account connect. Webhook `platformType` is `hyperliquid`.
-
-### CQG / Volumetrica / cTrader
-
-Volumetrica supports copy trading and webhooks. CQG can be connected for account management and algorithms. cTrader is beta — webhook and copy-trade coverage is thinner.
+<CopyTradePills />
 
 ## Connecting
 

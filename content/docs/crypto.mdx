@@ -1,0 +1,55 @@
+---
+title: Crypto
+description: Hyperliquid crypto perps and tokenized indexes — XYZ100, S&P 500, BTC, ETH, SOL.
+---
+
+Hyperliquid is **perpetual futures**, not CME contracts and not CFDs. You trade a **size** in the coin. Collateral and P&L are in USDC.
+
+- Native crypto — `BTC`, `ETH`, `SOL`
+- Tokenized equity indexes on the HIP-3 `xyz` dex — `XYZ100`, `SP500`
+
+Exchange futures sizing is on [Futures](/futures). CFD lots and pt/lot are on [CFDs](/cfds).
+
+<InstrumentTable group="crypto" />
+
+Hextrade broker for this path:
+
+<HyperliquidPills />
+
+## Tokenized indexes
+
+**XYZ100** tracks Nasdaq 100. **SP500** tracks S&P 500. They are HIP-3 perps on Hyperliquid (`xyz:XYZ100`, `xyz:SP500`), not `NQ` / `ES` and not `NAS100` / `US500` CFDs.
+
+Hextrade maps the usual algo and webhook tickers onto those coins so the same payload can hit Hyperliquid:
+
+<ContractSpecsTable group="crypto" />
+
+`NAS100` on a CFD broker stays a CFD lot. `NAS100` on Hyperliquid becomes `xyz:XYZ100`.
+
+<Warning>
+  Do not size XYZ100 like 1 NQ or 1 NAS100 lot. Confirm min size and decimals on the Hyperliquid market before you scale.
+</Warning>
+
+## Crypto perps
+
+`BTC`, `ETH`, and `SOL` are native Hyperliquid perps. Webhook aliases such as `BTCUSD` and `ETHUSDT` map to `BTC` and `ETH`.
+
+These are not CME Bitcoin / Ether futures (`BTC`, `ETH` on CME) and not `BTCUSD` CFDs.
+
+## Size and P&L
+
+```
+P&L (USDC) = price move × size
+```
+
+Size is the Hyperliquid `sz` (coin units), not CME contracts and not MT5 lots. Min size follows each market’s `szDecimals`.
+
+Tokenized indexes quote like the cash index. Crypto perps quote in USDC per coin.
+
+## What to set on a Hyperliquid account
+
+Connect the wallet and agent key from [Accounts](/accounts). `platformType` is `hyperliquid`. Send `XYZ100`, `SP500`, `NAS100`, `US500`, `BTC`, or `ETH` — Hextrade canonicalizes to the coin in the table.
+
+Confirm one small fill before you scale.
+
+See [Algorithms](/algorithms), [Portfolio](/portfolio), and [TradingView webhooks](/webhooks).

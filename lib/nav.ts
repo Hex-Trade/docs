@@ -3,6 +3,9 @@ import {
   BarChart3,
   CalendarDays,
   CandlestickChart,
+  BookOpen,
+  CircleDollarSign,
+  Coins,
   Copy,
   CreditCard,
   Cpu,
@@ -12,6 +15,7 @@ import {
   MessagesSquare,
   PieChart,
   Rocket,
+  TrendingUp,
   Settings,
   User,
   Wallet,
@@ -63,6 +67,15 @@ export const nav: NavGroup[] = [
       { title: "Subscriptions", href: "/subscriptions", slug: "subscriptions", icon: CreditCard },
       { title: "Settings", href: "/settings", slug: "settings", icon: Settings },
       { title: "Discord", href: "/discord", slug: "discord", icon: MessagesSquare },
+    ],
+  },
+  {
+    title: "Learn",
+    icon: BookOpen,
+    pages: [
+      { title: "Futures", href: "/futures", slug: "futures", icon: TrendingUp },
+      { title: "CFDs", href: "/cfds", slug: "cfds", icon: CircleDollarSign },
+      { title: "Crypto", href: "/crypto", slug: "crypto", icon: Coins },
     ],
   },
 ];

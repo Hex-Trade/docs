@@ -1,0 +1,82 @@
+---
+title: CFDs
+description: Lots, nano, pt/lot, and how to match a futures micro on a CFD broker.
+---
+
+A **contract for difference** is an OTC product from your broker. You do not own the future. You trade the price difference.
+
+- Lot size and **$/point** are set by the broker, not CME
+- Names look like `NAS100`, `USTEC`, `US100`, `XAUUSD` — not `NQ`
+- 1 lot on one broker is often not 1 lot on another
+- You trade **lots**, then set **pt/lot** in Hextrade
+
+Exchange futures sizing (mini / micro / ticks) is on [Futures](/futures). Hyperliquid tokenized indexes are on [Crypto](/crypto).
+
+<InstrumentTable group="cfd" />
+
+Common Hextrade brokers for CFDs:
+
+<CfdPills />
+
+<Note>
+  Portfolio contract type `mt5` is the CFD path. Always confirm pt/lot on your broker’s spec sheet. Hextrade defaults are a starting point, not a guarantee.
+</Note>
+
+## What is a nano?
+
+**Nano** is a CFD / forex size, not a CME futures contract. There is no `NNQ` in Hextrade.
+
+- **Forex** — 0.001 lot (100 units). Mini lot = 0.1, micro lot = 0.01, standard = 1.0
+- **Index CFDs** — a very small broker-defined size, sometimes 0.01 lot
+
+Use **MT5 / CFD** mode and a small lot, or a lower pt/lot, to approximate nano risk.
+
+## What is pt/lot?
+
+**pt/lot** is dollars of PnL for **1.00 price point** on **1.00 lot**.
+
+```
+P&L = price move × lots × pt/lot
+```
+
+<ContractSpecsTable group="cfd" />
+
+Hextrade Portfolio defaults when pt/lot is empty:
+
+- Index CFDs (`NAS100`, `US500`, `US30`, `JPN225`) → **$1 / point / lot**
+- Gold (`XAUUSD`) → **$100 / point / lot** (100 oz)
+- Oil (`USOIL`) → **$100 / point / lot** (100 bbl)
+
+Override if your broker’s spec is different.
+
+## CFD P&L examples
+
+`NAS100` at the default $1/pt/lot, up 10 points:
+
+- 1.00 lot: `10 × $1 = $10`
+- 2.00 lots: `10 × $2 = $20` ← same as **1 MNQ**
+- 20.00 lots: `10 × $20 = $200` ← same as **1 NQ**
+
+## Match a futures micro on a CFD
+
+```
+lots = futures $/pt  ÷  your CFD pt/lot
+```
+
+| You want | Futures $/pt | CFD pt/lot | Lots |
+| --- | --- | --- | --- |
+| 1 MNQ | $2 | $1 | **2.00** |
+| 1 NQ | $20 | $1 | **20.00** |
+| 1 MES | $5 | $1 | **5.00** |
+| 1 MGC | $10 | $100 | **0.10** |
+| 1 MCL | $100 | $100 | **1.00** |
+
+<Tip>
+  Gold and oil CFDs are often $100/pt per lot. 0.10 lot of XAUUSD ≈ 1 MGC, not 1 GC.
+</Tip>
+
+## What to set on a CFD account
+
+Set contract type to `mt5`, pick the broker ticker (`NAS100`, `XAUUSD`, …), then set **pt/lot** from the spec sheet. Confirm one small fill before you scale.
+
+See [Algorithms](/algorithms), [Portfolio](/portfolio), and [TradingView webhooks](/webhooks).

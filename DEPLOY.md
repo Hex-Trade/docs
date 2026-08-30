@@ -11,7 +11,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-Walkthrough videos belong in `public/videos/` (same filenames as before: `Create-Account.mp4`, `Login-Account.mp4`, `Purchase-Sub.mp4`, `Add-Account.webm`, and the page videos). Platform logos belong in `public/images/platforms/`.
+Walkthrough videos belong in `public/videos/` (same filenames as before: `Create-Account.mp4`, `Login-Account.mp4`, `Purchase-Sub.mp4`, `Add-Account.webm`, and the page videos). Platform logos belong in `public/images/platforms/`. Instrument icons belong in `public/images/instruments/`.
 
 ## Vercel
 

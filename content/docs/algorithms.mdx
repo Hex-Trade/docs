@@ -15,16 +15,19 @@ Algorithms live on [dash.hextrade.io/algos](https://dash.hextrade.io/algos). Eac
 
 ## Instruments
 
-| Code | Instrument | Exchange |
-| --- | --- | --- |
-| **NQ** | Nasdaq 100 Futures | CME |
-| **ES** | S&P 500 Futures | CME |
-| **GC** | Gold Futures | COMEX |
-| **CL** | Crude Oil Futures | NYMEX |
-| **YM** | Dow Jones Futures | CBOT |
-| **NKD** | Nikkei 225 Futures | CME |
-| **BTC** | Bitcoin | Crypto |
-| **ETH** | Ethereum | Crypto |
+### Futures
+
+<InstrumentTable group="futures" />
+
+### CFDs
+
+<InstrumentTable group="cfd" />
+
+### Crypto
+
+<InstrumentTable group="crypto" />
+
+Contract sizes: [Futures](/futures), [CFDs](/cfds), and [Crypto](/crypto).
 
 ## Catalog
 
@@ -49,7 +52,9 @@ The **Advanced** section on Algos includes hidden, beta, and third-party IDs suc
 
 ## Supported platforms
 
-Futures algorithms run on connected futures-capable brokers: ProjectX, Tradovate, NinjaTrader, Rithmic, TradeLocker, Plus500, Hyperliquid, CQG, MatchTrader, Volumetrica, cTrader, and MetaTrader 5. **Oanda is excluded.** See [Brokers](/brokers).
+Futures algorithms run on connected futures-capable brokers. **Oanda is excluded.** See [Brokers](/brokers).
+
+<AlgorithmPills />
 
 ## How to connect
 

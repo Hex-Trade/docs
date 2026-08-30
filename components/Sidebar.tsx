@@ -22,7 +22,7 @@ export function Sidebar({
   const pathname = usePathname();
   const activeGroup = nav.find((group) => group.pages.some((page) => page.href === pathname))?.title;
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>(() =>
-    Object.fromEntries(nav.map((group) => [group.title, group.title === activeGroup])),
+    Object.fromEntries(nav.map((group) => [group.title, true])),
   );
 
   useEffect(() => {

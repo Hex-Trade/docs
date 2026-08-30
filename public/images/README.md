@@ -27,4 +27,17 @@ Broker logos live in `platforms/` and match the dashboard account icons (`Dashbo
 | `platforms/ctrader.png` | cTrader |
 | `platforms/metatrader5.png` | MetaTrader 5 |
 
+Instrument icons live in `instruments/`:
+
+| File | Instrument |
+| ---- | ---------- |
+| `instruments/nq.svg` | Nasdaq 100 (NQ) |
+| `instruments/es.svg` | S&P 500 (ES) |
+| `instruments/gc.svg` | Gold (GC) |
+| `instruments/cl.svg` | Crude Oil (CL) |
+| `instruments/ym.svg` | Dow Jones (YM) |
+| `instruments/nkd.svg` | Nikkei 225 (NKD) |
+| `instruments/btc.svg` | Bitcoin (BTC) |
+| `instruments/eth.svg` | Ethereum (ETH) |
+
 Use PNG or JPG. Keep file sizes reasonable (e.g. under 500 KB) for fast loading. If a file is missing, the doc will show a broken image until you add it.

@@ -1,0 +1,68 @@
+---
+title: Futures
+description: Mini vs micro, ticks, point values, and how Hextrade sizes exchange futures.
+---
+
+A futures contract is a standardized agreement to buy or sell an instrument at a future date. Size, tick, and expiration are set by the exchange (CME, COMEX, NYMEX, CBOT).
+
+- Traded on an exchange through a futures broker
+- Margin and daily settlement follow exchange rules
+- One **point** of price movement has a fixed dollar value
+- You trade **contracts**, not lots
+
+Running the same algorithm on a CFD broker? See [CFDs](/cfds). Hyperliquid tokenized indexes are on [Crypto](/crypto).
+
+<InstrumentTable group="futures" />
+
+Common Hextrade brokers for futures:
+
+<FuturesPills />
+
+## What is a mini?
+
+**Mini** is the standard E-mini (or equivalent) size — `NQ`, `ES`, `YM`, `GC`, `CL`. One mini NQ is **$20 per index point**. A 10-point move is **$200** per contract.
+
+Historically “E-mini” was already smaller than the original full-size S&P. In Hextrade, mini = the main listed contract.
+
+## What is a micro?
+
+A **micro** is usually **1/10 of the mini**. Start with 1 micro when you attach an algorithm or test a webhook.
+
+<ContractSpecsTable group="futures" />
+
+<Warning>
+  One mini is about 10× the dollar risk of one micro (except Nikkei, which is 1/5). Do not flip an account from micro to mini without changing quantity.
+</Warning>
+
+## Futures P&L
+
+```
+P&L = price move × contracts × $/point
+```
+
+Example — NQ up 10 points:
+
+- 1 **MNQ**: `10 × $2 = $20`
+- 1 **NQ**: `10 × $20 = $200`
+- 3 MNQ: `10 × 3 × $2 = $60`
+
+## Ticks vs points
+
+A **tick** is the smallest price increment. A **point** is 1.00 on the quote.
+
+| Ticker | Tick | Mini $ / tick | Micro $ / tick |
+| --- | --- | --- | --- |
+| NQ / MNQ | 0.25 | $5 | $0.50 |
+| ES / MES | 0.25 | $12.50 | $1.25 |
+| YM / MYM | 1.00 | $5 | $0.50 |
+| GC / MGC | 0.10 | $10 | $1 |
+| CL / MCL | 0.01 | $10 | $1 |
+| NKD / MKD | 5.00 | $25 | $5 |
+
+Webhook `tp` and `sl` are **ticks**, not dollars. 20 ticks on NQ = 5 points = $10 on MNQ.
+
+## What to set on a futures account
+
+Choose **mini** or **micro** so it matches the symbol the account actually trades. Confirm one small fill before you scale.
+
+See [Algorithms](/algorithms), [Portfolio](/portfolio), and [TradingView webhooks](/webhooks).
