@@ -3,7 +3,9 @@ title: Prop firm rules
 description: Daily loss, trailing drawdown, consistency, and overnight rules when you run Hextrade on a funded account.
 ---
 
-Most prop firms care about **rules**, not whether the trade came from an algorithm. Hextrade will place what you enable. The firm will still breach you.
+Prop-firm rules differ by firm, account stage, platform, and execution method. Some prohibit algorithms or hosted order relays entirely; others permit trader-owned automation or copying only among accounts you own. A technically connected account is not evidence that the firm permits the workflow.
+
+Check the dated [prop-firm automation and copy-trading rules database](https://hextrade.io/blog/prop-firm-automation-copy-trading-rules-database), then confirm the current official policy with the firm before enabling an order route.
 
 ## Rules that show up most often
 
@@ -18,7 +20,7 @@ Most prop firms care about **rules**, not whether the trade came from an algorit
 
 ## What to use on Hextrade
 
-- Prefer algorithms tagged **Prop Firm Ready** on [Algorithms](/algorithms).
+- Treat algorithms tagged for prop use on [Algorithms](/algorithms) as research filters, not firm approval.
 - Avoid **Overnight** / **Non-Prop** families on funded accounts unless the firm allows holds.
 - Size in **micros** and keep copy-trade multipliers at or below `1.0` until you know the daily-loss math.
 - Watch the [Calendar](/calendar) on news days.
